@@ -3,7 +3,6 @@
 
 
 
-
 dateWrap::dateWrap(int day, int month, int year)//Constructor
 {
     if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))){
@@ -98,7 +97,7 @@ dateWrap& dateWrap::operator+= (int increment)
     return *this;
 }
 
-dateWrap& dateWrap::operator+ (int increment)
+dateWrap dateWrap::operator+ (int increment)
 {
     dateWrap newDate(this->day, this->month, this->year);
     newDate += increment;

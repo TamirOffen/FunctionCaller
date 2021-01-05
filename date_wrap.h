@@ -26,7 +26,7 @@ class dateWrap
     bool operator!= (const dateWrap&) const;
     dateWrap operator++ (int);
     dateWrap& operator+= (int);
-    dateWrap& operator+ (int);
+    dateWrap operator+ (int);
 
 };
 #endif//DATEWRAP_H_
