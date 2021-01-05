@@ -1,6 +1,6 @@
 #include <iostream>
 #include "date_wrap.h"
-
+using std::ostream;
 
 
 dateWrap::dateWrap(int day, int month, int year)//Constructor
@@ -28,6 +28,12 @@ const int dateWrap::yearReturn()
     return year;
 }
 
+
+ostream& operator<<(ostream& out, const dateWrap& date)
+{
+    out << date.day << '/' << date.month << '/' << date.year;
+    return out;
+}
 
 bool dateWrap::operator< (const dateWrap& date) const //Should use the copy functions maybe instead of typing this.
 {

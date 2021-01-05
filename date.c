@@ -29,7 +29,7 @@ Date dateCreate(int day, int month, int year){
         return NULL;
     }
 
-    Date date = malloc(sizeof(*date));
+    Date date = (Date)malloc(sizeof(*date));// Added (Date)////////////////////////////////////////////////////
     if(date == NULL){
         return NULL;
     }
@@ -52,7 +52,7 @@ Date dateCopy(Date date){
         return NULL;
     }
 
-    Date copied_date = malloc(sizeof(*copied_date));
+    Date copied_date = (Date)malloc(sizeof(*copied_date));//Added (Date) /////////////////////////////////////////////////////
     if(copied_date == NULL){
         return NULL;
     }

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "date.h"
+using std::ostream;
 
 class dateWrap 
 {
@@ -17,7 +18,7 @@ class dateWrap
     const int monthReturn ();
     const int yearReturn();
 
-    //friend std::ostream& operator<< (std::ostream& out, const dateWrap& date);
+    friend ostream& operator<< (ostream& out, const dateWrap& date);
     bool operator< (const dateWrap&) const;
     bool operator> (const dateWrap&) const;
     bool operator== (const dateWrap&) const;
