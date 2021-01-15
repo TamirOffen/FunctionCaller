@@ -3,8 +3,6 @@
 using std::cout;
 using std::endl;
 
-
-
 int main ()
 {
     dateWrap date1(30, 11, 2020);
@@ -17,11 +15,13 @@ int main ()
     cout << date1 << endl; // output: "1/12/2020"
     date1 += 7;
     cout << date1 << endl; // output: "8/12/2020"
-    cout << (date1 > dateWrap(29, 11, 2020)) << endl; // output: "1"
-    cout << (date1 <= dateWrap(29, 11, 2020)) << endl; // output: "0"
-    cout << (date1 == dateWrap(30, 11, 2020)) << endl; // output: "0"
+    cout << (date1 > DateWrap(29, 11, 2020)) << endl; // output: "1"
+    cout << (date1 <= DateWrap(29, 11, 2020)) << endl; // output: "0"
+    cout << (date1 == DateWrap(30, 11, 2020)) << endl; // output: "0"
     //date1 += (-3); // throw exception NegativeDays
     //date1 = date1 + (-3); // throw exception NegativeDays
+    
+
     return 0;
 
 }
