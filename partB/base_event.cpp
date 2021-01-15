@@ -3,22 +3,69 @@
 #include <iostream>
 #include "base_event.h"
 
+using std::endl;
+using std::cout;
+
+#define MIN_STUDENT 1
+#define MAX_STUDENT 20000
+
 // Implementation of the Students Linked List:
-StudentsList::StudentsList() {
-    head = NULL;
+StudentsList::StudentsList(): head(NULL) {
 }
 
 StudentsList::~StudentsList() {
     while(head) {
         removeStudent(head->id);
     }
+
 }
 
 void StudentsList::addStudent(int id) {
+    if(studentInList(id) == true) {
+        return;
+    }
+
     StudentNode *new_student = new StudentNode(); //check the ()
     new_student->id = id;
-    new_student->next = head;
-    head = new_student;
+
+    if(head == NULL) {
+        head = new_student;
+        head->next = NULL;
+        return;
+    }
+
+    if(head->next == NULL) {
+        if(id > head->id) {
+            head->next = new_student;
+            new_student->next = NULL;
+        } else {
+            StudentNode *temp_node = head;
+            head = new_student;
+            head->next = temp_node;
+        }
+        return;
+    }
+
+    if(id < head->id) {
+        StudentNode *temp_node = head;
+        head = new_student;
+        head->next = temp_node;
+    }
+
+    for(StudentNode *elem = head; elem != NULL; elem=elem->next) {
+        if(id > elem->id && elem->next == NULL) {
+            new_student->next = NULL;
+            elem->next = new_student;
+            return;
+        }
+        if(id > elem->id && id < elem->next->id) {
+            StudentNode *temp_next_node = elem->next;
+            elem->next = new_student;
+            new_student->next = temp_next_node;
+            return;
+        }
+    }
+
 }
 
 void StudentsList::removeStudent(int id) {
@@ -44,7 +91,7 @@ void StudentsList::removeStudent(int id) {
     }
 }
 
-bool StudentsList::studentInList(int id) {
+bool StudentsList::studentInList(int id) const {
     for(StudentNode *elem = head; elem != NULL; elem=elem->next) 
     {
         if(elem->id == id) 
@@ -55,8 +102,19 @@ bool StudentsList::studentInList(int id) {
     return false;
 }
 
-StudentsList::StudentsList(const StudentsList& list) {
-    
+// copy constructor 
+StudentsList::StudentsList(const StudentsList& list): head(NULL){
+    for(StudentNode *elem = list.head; elem != NULL; elem=elem->next) 
+    {
+        addStudent(elem->id);
+    }
+}
+
+void StudentsList::printStudents(ostream& out) const {
+    for(StudentNode *elem = head; elem != NULL; elem=elem->next) 
+    {
+        out << elem->id << endl;
+    }
 }
 
 
@@ -64,7 +122,56 @@ StudentsList::StudentsList(const StudentsList& list) {
 // Implementation of BaseEvent class:
 BaseEvent::BaseEvent(const DateWrap& date, const string& name): date(date), name(name)
 {
+    
+}
 
+void BaseEvent::registerParticpant(int student) {
+    if(student < MIN_STUDENT || student > MAX_STUDENT) {
+        //TODO: Throw exeption  InvalidStudent
+    }
+    
+    if(students.studentInList(student) == true) {
+        //TODO: throw exeption  AlreadyRegistred
+    }
+
+    students.addStudent(student);
+}
+
+void BaseEvent::unregisterParticipant(int student) {
+    if(students.studentInList(student) == false) {
+        //TODO: throw exeption  NotRegistered
+    }
+
+    //TODO: check if it is needed
+    if(student < MIN_STUDENT || student > MAX_STUDENT) {
+        //TODO: Throw exeption  InvalidStudent
+    }
+
+    students.removeStudent(student);
+}
+
+ostream& BaseEvent::printShort(ostream& out) {
+    out << name << " " << date << endl;
+    return out;
+}
+
+ostream& BaseEvent::printLong(ostream& out) {
+    out << name << " " << date << endl;
+    students.printStudents(out);
+    return out;
+}
+
+
+BaseEvent* BaseEvent::clone() const {
+    BaseEvent* base_event_copy = new BaseEvent(date, name);
+    
+    StudentsList students_copy = students;
+    
+    base_event_copy->students.~StudentsList(); //maybe not needed?
+    
+    base_event_copy->students = students_copy;
+
+    return base_event_copy;
 }
 
 

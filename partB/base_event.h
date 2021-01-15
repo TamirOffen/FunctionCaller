@@ -26,7 +26,8 @@ public:
 
     void addStudent(int);
     void removeStudent(int);
-    bool studentInList(int);
+    bool studentInList(int) const;
+    void printStudents(ostream&) const;
 };
 
 
@@ -40,9 +41,16 @@ private:
 
 public:
     BaseEvent(const DateWrap&, const string&); //constructor
-    BaseEvent(const BaseEvent&); //copy constructor
+    //BaseEvent(const BaseEvent&); //copy constructor TODO
 
 
+    virtual void registerParticpant(int);
+    virtual void unregisterParticipant(int);
+
+    ostream& printShort(ostream&);
+    ostream& printLong(ostream&);
+
+    virtual BaseEvent* clone() const;
 
 };
 
