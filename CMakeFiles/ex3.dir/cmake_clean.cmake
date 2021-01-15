@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ex3.dir/Part_A/date.cpp.o"
   "CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.o"
-  "CMakeFiles/ex3.dir/Part_A/main.cpp.o"
+  "CMakeFiles/ex3.dir/main.cpp.o"
   "ex3"
   "ex3.pdb"
 )

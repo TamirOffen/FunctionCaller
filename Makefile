@@ -196,32 +196,32 @@ Part_A/date_wrap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.s
 .PHONY : Part_A/date_wrap.cpp.s
 
-Part_A/main.o: Part_A/main.cpp.o
+main.o: main.cpp.o
 
-.PHONY : Part_A/main.o
+.PHONY : main.o
 
 # target to build an object file
-Part_A/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/main.cpp.o
-.PHONY : Part_A/main.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-Part_A/main.i: Part_A/main.cpp.i
+main.i: main.cpp.i
 
-.PHONY : Part_A/main.i
+.PHONY : main.i
 
 # target to preprocess a source file
-Part_A/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/main.cpp.i
-.PHONY : Part_A/main.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-Part_A/main.s: Part_A/main.cpp.s
+main.s: main.cpp.s
 
-.PHONY : Part_A/main.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-Part_A/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/main.cpp.s
-.PHONY : Part_A/main.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -238,9 +238,9 @@ help:
 	@echo "... Part_A/date_wrap.o"
 	@echo "... Part_A/date_wrap.i"
 	@echo "... Part_A/date_wrap.s"
-	@echo "... Part_A/main.o"
-	@echo "... Part_A/main.i"
-	@echo "... Part_A/main.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

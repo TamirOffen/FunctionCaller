@@ -17,6 +17,6 @@ add_executable(
     Part_A/date_wrap.cpp
     Part_A/date.cpp  #need to link provided library instead
 
-    Part_A/main.cpp
+    main.cpp
 )
 

@@ -6,17 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_A/date.cpp
-stdio.h
+/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_A/date.h
+stdbool.h
 -
-assert.h
--
-stdlib.h
+
+/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_A/date_wrap.h
+iostream
 -
 date.h
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_A/date.h
 
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_A/date.h
-stdbool.h
+/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/main.cpp
+iostream
 -
+Part_A/date_wrap.h
+/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_A/date_wrap.h
 
