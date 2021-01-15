@@ -2,12 +2,12 @@
 #include "date_wrap.h"
 using std::ostream;
 
-// tamir - test
-
 DateWrap::DateWrap(int day, int month, int year) //Constructor
 {
-    if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))) 
+    // if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))) // too complicated 
+    if(day < 1 || day > 30 || month < 1 || month > 12) 
     {
+        // throw exeption: InvalidDate
         return;
     }
     this->day = day;
@@ -15,17 +15,17 @@ DateWrap::DateWrap(int day, int month, int year) //Constructor
     this->year = year;
 }
 
-const int DateWrap::dayReturn ()
+const int DateWrap::dayReturn () const
 {
     return day;
 }
 
-const int DateWrap::monthReturn ()
+const int DateWrap::monthReturn () const
 {
     return month;
 }
 
-const int DateWrap::yearReturn()
+const int DateWrap::yearReturn() const
 {
     return year;
 }
@@ -88,6 +88,7 @@ DateWrap DateWrap::operator++ (int)
     Date date = dateCreate(this->day, this->month, this->year);
     dateTick(date);
     dateGet(date, &this->day, &this->month, &this->year);
+    // dateGet(date, &day, &month, &year);
     dateDestroy(date);
 
     return temp;    
@@ -112,3 +113,5 @@ DateWrap DateWrap::operator+ (int increment)
 
     return newDate;
 }
+
+

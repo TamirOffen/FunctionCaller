@@ -11,12 +11,13 @@ class DateWrap
     int month;
     int year;
 
-    public:
+public:
     DateWrap(int day, int month, int year);
 
-    const int dayReturn ();
-    const int monthReturn ();
-    const int yearReturn();
+    const int dayReturn () const; 
+    const int monthReturn () const;
+    const int yearReturn() const;
+
 
     friend ostream& operator<< (ostream& out, const DateWrap& date);
     bool operator< (const DateWrap&) const;
@@ -28,6 +29,7 @@ class DateWrap
     DateWrap operator++ (int);
     DateWrap& operator+= (int);
     DateWrap operator+ (int);
+    
 
 };
 
