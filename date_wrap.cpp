@@ -2,6 +2,7 @@
 #include "date_wrap.h"
 using std::ostream;
 
+// tamir - test
 
 dateWrap::dateWrap(int day, int month, int year)//Constructor
 {
