@@ -12,7 +12,7 @@ DateWrap::DateWrap(int day, int month, int year) : day(day), month(month), year(
     // if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))) 
     if(day < 1 || day > 30 || month < 1 || month > 12) 
     {
-        // throw exeption: InvalidDate
+        //throw InvalidDate;
         return;
     }
 }
@@ -99,6 +99,11 @@ DateWrap DateWrap::operator++ (int)
 
 DateWrap& DateWrap::operator+= (int increment)
 {
+    if(increment < 0){
+        //throw NegativeDays;
+        return;
+    }
+
     Date date = dateCreate(this->day, this->month, this->year);
     for (int i = 0 ; i < increment ; i++)
     {
@@ -111,6 +116,11 @@ DateWrap& DateWrap::operator+= (int increment)
 
 DateWrap DateWrap::operator+(int increment)
 {
+    if(increment < 0){
+        //throw NegativeDays;
+        return;
+    }
+
     DateWrap newDate(this->day, this->month, this->year);
     newDate += increment;
 
@@ -119,6 +129,11 @@ DateWrap DateWrap::operator+(int increment)
 
 DateWrap operator+ (int increment, DateWrap& date)
 {
+        if(increment < 0){
+        //throw NegativeDays;
+        return;
+    }
+
     DateWrap newDate(date.day, date.month, date.year);
     newDate += increment;
 

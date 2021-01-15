@@ -31,7 +31,7 @@ public:
     DateWrap operator+ (int);
     friend DateWrap operator+ (int, DateWrap&);
     
-
+    
 };
 
 #endif//DATEWRAP_H_
