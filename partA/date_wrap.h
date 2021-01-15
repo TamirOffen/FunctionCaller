@@ -29,6 +29,7 @@ public:
     DateWrap operator++ (int);
     DateWrap& operator+= (int);
     DateWrap operator+ (int);
+    friend DateWrap operator+ (int, DateWrap&);
     
 
 };
