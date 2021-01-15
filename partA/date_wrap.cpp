@@ -7,17 +7,14 @@ extern "C"
     #include "date.h"
 }
 
-DateWrap::DateWrap(int day, int month, int year) //Constructor
+DateWrap::DateWrap(int day, int month, int year) : day(day), month(month), year(year)
 {
-    // if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))) // too complicated 
+    // if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))) 
     if(day < 1 || day > 30 || month < 1 || month > 12) 
     {
         // throw exeption: InvalidDate
         return;
     }
-    this->day = day;
-    this->month = month;
-    this->year = year;
 }
 
 
