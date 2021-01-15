@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(ex3 LANGUAGES CXX)
+project(app LANGUAGES CXX)
 
 set(MTM_FLAGS_DEBUG "-std=c++11 -pedantic-errors -Wall -Werror -g")
 
@@ -13,10 +13,11 @@ set(CMAKE_CXX_STANDARD 11)
 # link_directories() TODO: add in
 
 add_executable(
-    ex3
-    Part_A/date_wrap.cpp
-    Part_A/date.cpp  #need to link provided library instead
+    app
+    partA/date_wrap.cpp
+    partA/date.cpp  #need to link provided library instead
 
-    Part_A/main.cpp
+    partB/base_event.cpp
+    partB/main_B.cpp
 )
 
