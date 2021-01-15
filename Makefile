@@ -142,6 +142,33 @@ ex3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
 .PHONY : ex3/fast
 
+Part_A/date.o: Part_A/date.cpp.o
+
+.PHONY : Part_A/date.o
+
+# target to build an object file
+Part_A/date.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date.cpp.o
+.PHONY : Part_A/date.cpp.o
+
+Part_A/date.i: Part_A/date.cpp.i
+
+.PHONY : Part_A/date.i
+
+# target to preprocess a source file
+Part_A/date.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date.cpp.i
+.PHONY : Part_A/date.cpp.i
+
+Part_A/date.s: Part_A/date.cpp.s
+
+.PHONY : Part_A/date.s
+
+# target to generate assembly for a file
+Part_A/date.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date.cpp.s
+.PHONY : Part_A/date.cpp.s
+
 Part_A/date_wrap.o: Part_A/date_wrap.cpp.o
 
 .PHONY : Part_A/date_wrap.o
@@ -205,6 +232,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ex3"
+	@echo "... Part_A/date.o"
+	@echo "... Part_A/date.i"
+	@echo "... Part_A/date.s"
 	@echo "... Part_A/date_wrap.o"
 	@echo "... Part_A/date_wrap.i"
 	@echo "... Part_A/date_wrap.s"
