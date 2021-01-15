@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(
     ex3
     Part_A/date_wrap.cpp
-    Part_A/date.c  #need to link provided library instead
+    Part_A/date.cpp  #need to link provided library instead
 
     Part_A/main.cpp
 )
