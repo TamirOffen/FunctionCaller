@@ -21,6 +21,7 @@ private:
 
 public:
     StudentsList(); //constructor
+    StudentsList(const StudentsList&); //copy constructor
     ~StudentsList(); //destructor
 
     void addStudent(int);
