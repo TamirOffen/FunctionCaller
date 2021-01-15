@@ -5,8 +5,8 @@ using std::endl;
 
 int main ()
 {
-    dateWrap date1(30, 11, 2020);
-    dateWrap date2(5, 9, 2017);
+    DateWrap date1(30, 11, 2020);
+    DateWrap date2(5, 9, 2017);
     
     cout << date1 << endl; // output: "30/11/2020"
     cout << date1 + 4 << endl; // output: "4/12/2020"
