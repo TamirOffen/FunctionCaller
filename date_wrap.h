@@ -28,6 +28,7 @@ class dateWrap
     dateWrap operator++ (int);
     dateWrap& operator+= (int);
     dateWrap operator+ (int);
+    dateWrap operator+ (const dateWrap&);
 
 };
 #endif//DATEWRAP_H_
