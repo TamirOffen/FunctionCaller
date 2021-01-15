@@ -6,39 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date.cpp
-stdio.h
--
-assert.h
--
-stdlib.h
--
-date.h
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date.h
-
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date.h
 stdbool.h
 -
 
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date_wrap.cpp
-iostream
--
-date_wrap.h
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date_wrap.h
-date.h
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date.h
-
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date_wrap.h
 iostream
 -
 date.h
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date.h
-
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/base_event.cpp
-iostream
--
-base_event.h
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/base_event.h
 
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/base_event.h
 iostream
