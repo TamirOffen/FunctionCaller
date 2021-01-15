@@ -107,9 +107,9 @@ DateWrap& DateWrap::operator+= (int increment)
     return *this;
 }
 
-DateWrap operator+(DateWrap& date, int increment)
+DateWrap DateWrap::operator+(int increment)
 {
-    DateWrap newDate(date.day, date.month, date.year);
+    DateWrap newDate(this->day, this->month, this->year);
     newDate += increment;
 
     return newDate;

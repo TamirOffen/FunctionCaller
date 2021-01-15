@@ -28,7 +28,7 @@ public:
     bool operator!= (const DateWrap&) const;
     DateWrap operator++ (int);
     DateWrap& operator+= (int);
-    friend DateWrap operator+ (DateWrap&, int);
+    DateWrap operator+ (int);
     friend DateWrap operator+ (int, DateWrap&);
     
 
