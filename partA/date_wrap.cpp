@@ -2,6 +2,11 @@
 #include "date_wrap.h"
 //using std::ostream;
 
+extern "C" 
+{
+    #include "date.h"
+}
+
 DateWrap::DateWrap(int day, int month, int year) //Constructor
 {
     // if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))) // too complicated 
