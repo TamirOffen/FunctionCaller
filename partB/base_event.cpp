@@ -21,6 +21,13 @@ StudentsList::~StudentsList() {
 }
 
 void StudentsList::addStudent(int id) {
+    /*
+    StudentNode *new_student = new StudentNode(); //check the ()
+    new_student->id = id;
+    new_student->next = head;
+    head = new_student; 
+    */
+
     if(studentInList(id) == true) {
         return;
     }
@@ -65,6 +72,7 @@ void StudentsList::addStudent(int id) {
             return;
         }
     }
+    
 
 }
 
@@ -163,13 +171,11 @@ ostream& BaseEvent::printLong(ostream& out) {
 
 
 BaseEvent* BaseEvent::clone() const {
-    BaseEvent* base_event_copy = new BaseEvent(date, name);
-    
-    StudentsList students_copy = students;
+    BaseEvent* base_event_copy = new BaseEvent(DateWrap(date), string(name));
     
     base_event_copy->students.~StudentsList(); //maybe not needed?
-    
-    base_event_copy->students = students_copy;
+
+    base_event_copy->students = students;
 
     return base_event_copy;
 }
