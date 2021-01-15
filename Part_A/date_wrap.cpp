@@ -1,6 +1,6 @@
 #include <iostream>
 #include "date_wrap.h"
-using std::ostream;
+//using std::ostream;
 
 DateWrap::DateWrap(int day, int month, int year) //Constructor
 {
@@ -14,6 +14,7 @@ DateWrap::DateWrap(int day, int month, int year) //Constructor
     this->month = month;
     this->year = year;
 }
+
 
 const int DateWrap::dayReturn () const
 {
@@ -106,12 +107,18 @@ DateWrap& DateWrap::operator+= (int increment)
     return *this;
 }
 
-DateWrap DateWrap::operator+ (int increment)
+DateWrap operator+(DateWrap& date, int increment)
 {
-    DateWrap newDate(this->day, this->month, this->year);
+    DateWrap newDate(date.day, date.month, date.year);
     newDate += increment;
 
     return newDate;
 }
 
+DateWrap operator+ (int increment, DateWrap& date)
+{
+    DateWrap newDate(date.day, date.month, date.year);
+    newDate += increment;
 
+    return newDate;
+}
