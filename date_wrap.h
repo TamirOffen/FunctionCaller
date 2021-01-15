@@ -5,29 +5,32 @@
 #include "date.h"
 using std::ostream;
 
-class dateWrap 
+class DateWrap 
 {
     int day;
     int month;
     int year;
 
     public:
-    dateWrap(int day, int month, int year);
+    DateWrap(int day, int month, int year);
 
     const int dayReturn ();
     const int monthReturn ();
     const int yearReturn();
 
-    friend ostream& operator<< (ostream& out, const dateWrap& date);
-    bool operator< (const dateWrap&) const;
-    bool operator> (const dateWrap&) const;
-    bool operator== (const dateWrap&) const;
-    bool operator<= (const dateWrap&) const;
-    bool operator>= (const dateWrap&) const;
-    bool operator!= (const dateWrap&) const;
-    dateWrap operator++ (int);
-    dateWrap& operator+= (int);
-    dateWrap operator+ (int);
+    friend ostream& operator<< (ostream& out, const DateWrap& date);
+    bool operator< (const DateWrap&) const;
+    bool operator> (const DateWrap&) const;
+    bool operator== (const DateWrap&) const;
+    bool operator<= (const DateWrap&) const;
+    bool operator>= (const DateWrap&) const;
+    bool operator!= (const DateWrap&) const;
+    DateWrap operator++ (int);
+    DateWrap& operator+= (int);
+    DateWrap operator+ (int);
 
 };
+
 #endif//DATEWRAP_H_
+
+

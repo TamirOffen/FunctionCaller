@@ -4,9 +4,10 @@ using std::ostream;
 
 // tamir - test
 
-dateWrap::dateWrap(int day, int month, int year)//Constructor
+DateWrap::DateWrap(int day, int month, int year) //Constructor
 {
-    if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))){
+    if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))) 
+    {
         return;
     }
     this->day = day;
@@ -14,29 +15,29 @@ dateWrap::dateWrap(int day, int month, int year)//Constructor
     this->year = year;
 }
 
-const int dateWrap::dayReturn ()
+const int DateWrap::dayReturn ()
 {
     return day;
 }
 
-const int dateWrap::monthReturn ()
+const int DateWrap::monthReturn ()
 {
     return month;
 }
 
-const int dateWrap::yearReturn()
+const int DateWrap::yearReturn()
 {
     return year;
 }
 
 
-ostream& operator<<(ostream& out, const dateWrap& date)
+ostream& operator<<(ostream& out, const DateWrap& date)
 {
     out << date.day << '/' << date.month << '/' << date.year;
     return out;
 }
 
-bool dateWrap::operator< (const dateWrap& date) const //Should use the copy functions maybe instead of typing this.
+bool DateWrap::operator< (const DateWrap& date) const //Should use the copy functions maybe instead of typing this.
 {
     if(this->year < date.year){
         return true;
@@ -53,12 +54,12 @@ bool dateWrap::operator< (const dateWrap& date) const //Should use the copy func
     }
 }
 
- bool dateWrap::operator> (const dateWrap& date) const
+ bool DateWrap::operator> (const DateWrap& date) const
  {
      return (date < *this);
  }
 
-bool dateWrap::operator== (const dateWrap& date) const
+bool DateWrap::operator== (const DateWrap& date) const
 {
     if (this->day == date.day && this->month == date.month && this->year == date.year){
         return true;
@@ -66,24 +67,24 @@ bool dateWrap::operator== (const dateWrap& date) const
     return false;  
 }
 
-bool dateWrap::operator<= (const dateWrap& date) const
+bool DateWrap::operator<= (const DateWrap& date) const
 {
     return (*this < date || *this == date);
 }
 
-bool dateWrap::operator>= (const dateWrap& date) const
+bool DateWrap::operator>= (const DateWrap& date) const
 {
     return (date <= *this);
 }
 
-bool dateWrap::operator!= (const dateWrap& date) const
+bool DateWrap::operator!= (const DateWrap& date) const
 {
     return (!(*this == date));
 }
 
-dateWrap dateWrap::operator++ (int)
+DateWrap DateWrap::operator++ (int)
 {
-    dateWrap temp = *this;
+    DateWrap temp = *this;
     Date date = dateCreate(this->day, this->month, this->year);
     dateTick(date);
     dateGet(date, &this->day, &this->month, &this->year);
@@ -92,7 +93,7 @@ dateWrap dateWrap::operator++ (int)
     return temp;    
 }
 
-dateWrap& dateWrap::operator+= (int increment)
+DateWrap& DateWrap::operator+= (int increment)
 {
     Date date = dateCreate(this->day, this->month, this->year);
     for (int i = 0 ; i < increment ; i++)
@@ -104,9 +105,9 @@ dateWrap& dateWrap::operator+= (int increment)
     return *this;
 }
 
-dateWrap dateWrap::operator+ (int increment)
+DateWrap DateWrap::operator+ (int increment)
 {
-    dateWrap newDate(this->day, this->month, this->year);
+    DateWrap newDate(this->day, this->month, this->year);
     newDate += increment;
 
     return newDate;
