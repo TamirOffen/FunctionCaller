@@ -55,10 +55,17 @@ bool StudentsList::studentInList(int id) {
     return false;
 }
 
+StudentsList::StudentsList(const StudentsList& list) {
+    
+}
+
+
 
 // Implementation of BaseEvent class:
 BaseEvent::BaseEvent(const DateWrap& date, const string& name): date(date), name(name)
 {
 
 }
+
+
 
