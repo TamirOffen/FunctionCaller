@@ -8,7 +8,5 @@ CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.o: Part_A/date.h
 CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.o: Part_A/date_wrap.cpp
 CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.o: Part_A/date_wrap.h
 
-CMakeFiles/ex3.dir/main.cpp.o: Part_A/date.h
-CMakeFiles/ex3.dir/main.cpp.o: Part_A/date_wrap.h
-CMakeFiles/ex3.dir/main.cpp.o: main.cpp
+CMakeFiles/ex3.dir/Part_B/main_B.cpp.o: Part_B/main_B.cpp
 

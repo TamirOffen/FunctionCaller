@@ -102,31 +102,31 @@ CMakeFiles/ex3.dir/Part_A/date.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Part_A/date.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_A/date.cpp" -o CMakeFiles/ex3.dir/Part_A/date.cpp.s
 
-CMakeFiles/ex3.dir/main.cpp.o: CMakeFiles/ex3.dir/flags.make
-CMakeFiles/ex3.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ex3.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/main.cpp.o -c "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/main.cpp"
+CMakeFiles/ex3.dir/Part_B/main_B.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Part_B/main_B.cpp.o: Part_B/main_B.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ex3.dir/Part_B/main_B.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Part_B/main_B.cpp.o -c "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_B/main_B.cpp"
 
-CMakeFiles/ex3.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/main.cpp" > CMakeFiles/ex3.dir/main.cpp.i
+CMakeFiles/ex3.dir/Part_B/main_B.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Part_B/main_B.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_B/main_B.cpp" > CMakeFiles/ex3.dir/Part_B/main_B.cpp.i
 
-CMakeFiles/ex3.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/main.cpp" -o CMakeFiles/ex3.dir/main.cpp.s
+CMakeFiles/ex3.dir/Part_B/main_B.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Part_B/main_B.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/Part_B/main_B.cpp" -o CMakeFiles/ex3.dir/Part_B/main_B.cpp.s
 
 # Object files for target ex3
 ex3_OBJECTS = \
 "CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.o" \
 "CMakeFiles/ex3.dir/Part_A/date.cpp.o" \
-"CMakeFiles/ex3.dir/main.cpp.o"
+"CMakeFiles/ex3.dir/Part_B/main_B.cpp.o"
 
 # External object files for target ex3
 ex3_EXTERNAL_OBJECTS =
 
 ex3: CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.o
 ex3: CMakeFiles/ex3.dir/Part_A/date.cpp.o
-ex3: CMakeFiles/ex3.dir/main.cpp.o
+ex3: CMakeFiles/ex3.dir/Part_B/main_B.cpp.o
 ex3: CMakeFiles/ex3.dir/build.make
 ex3: CMakeFiles/ex3.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ex3"

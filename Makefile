@@ -130,98 +130,125 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ex3
+# Target rules for targets named app
 
 # Build rule for target.
-ex3: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex3
-.PHONY : ex3
+app: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app
+.PHONY : app
 
 # fast build rule for target.
-ex3/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
-.PHONY : ex3/fast
+app/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
+.PHONY : app/fast
 
-Part_A/date.o: Part_A/date.cpp.o
+partA/date.o: partA/date.cpp.o
 
-.PHONY : Part_A/date.o
-
-# target to build an object file
-Part_A/date.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date.cpp.o
-.PHONY : Part_A/date.cpp.o
-
-Part_A/date.i: Part_A/date.cpp.i
-
-.PHONY : Part_A/date.i
-
-# target to preprocess a source file
-Part_A/date.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date.cpp.i
-.PHONY : Part_A/date.cpp.i
-
-Part_A/date.s: Part_A/date.cpp.s
-
-.PHONY : Part_A/date.s
-
-# target to generate assembly for a file
-Part_A/date.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date.cpp.s
-.PHONY : Part_A/date.cpp.s
-
-Part_A/date_wrap.o: Part_A/date_wrap.cpp.o
-
-.PHONY : Part_A/date_wrap.o
+.PHONY : partA/date.o
 
 # target to build an object file
-Part_A/date_wrap.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.o
-.PHONY : Part_A/date_wrap.cpp.o
+partA/date.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partA/date.cpp.o
+.PHONY : partA/date.cpp.o
 
-Part_A/date_wrap.i: Part_A/date_wrap.cpp.i
+partA/date.i: partA/date.cpp.i
 
-.PHONY : Part_A/date_wrap.i
+.PHONY : partA/date.i
 
 # target to preprocess a source file
-Part_A/date_wrap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.i
-.PHONY : Part_A/date_wrap.cpp.i
+partA/date.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partA/date.cpp.i
+.PHONY : partA/date.cpp.i
 
-Part_A/date_wrap.s: Part_A/date_wrap.cpp.s
+partA/date.s: partA/date.cpp.s
 
-.PHONY : Part_A/date_wrap.s
+.PHONY : partA/date.s
 
 # target to generate assembly for a file
-Part_A/date_wrap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Part_A/date_wrap.cpp.s
-.PHONY : Part_A/date_wrap.cpp.s
+partA/date.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partA/date.cpp.s
+.PHONY : partA/date.cpp.s
 
-main.o: main.cpp.o
+partA/date_wrap.o: partA/date_wrap.cpp.o
 
-.PHONY : main.o
+.PHONY : partA/date_wrap.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.o
-.PHONY : main.cpp.o
+partA/date_wrap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partA/date_wrap.cpp.o
+.PHONY : partA/date_wrap.cpp.o
 
-main.i: main.cpp.i
+partA/date_wrap.i: partA/date_wrap.cpp.i
 
-.PHONY : main.i
+.PHONY : partA/date_wrap.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.i
-.PHONY : main.cpp.i
+partA/date_wrap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partA/date_wrap.cpp.i
+.PHONY : partA/date_wrap.cpp.i
 
-main.s: main.cpp.s
+partA/date_wrap.s: partA/date_wrap.cpp.s
 
-.PHONY : main.s
+.PHONY : partA/date_wrap.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.s
-.PHONY : main.cpp.s
+partA/date_wrap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partA/date_wrap.cpp.s
+.PHONY : partA/date_wrap.cpp.s
+
+partB/base_event.o: partB/base_event.cpp.o
+
+.PHONY : partB/base_event.o
+
+# target to build an object file
+partB/base_event.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/base_event.cpp.o
+.PHONY : partB/base_event.cpp.o
+
+partB/base_event.i: partB/base_event.cpp.i
+
+.PHONY : partB/base_event.i
+
+# target to preprocess a source file
+partB/base_event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/base_event.cpp.i
+.PHONY : partB/base_event.cpp.i
+
+partB/base_event.s: partB/base_event.cpp.s
+
+.PHONY : partB/base_event.s
+
+# target to generate assembly for a file
+partB/base_event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/base_event.cpp.s
+.PHONY : partB/base_event.cpp.s
+
+partB/main_B.o: partB/main_B.cpp.o
+
+.PHONY : partB/main_B.o
+
+# target to build an object file
+partB/main_B.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/main_B.cpp.o
+.PHONY : partB/main_B.cpp.o
+
+partB/main_B.i: partB/main_B.cpp.i
+
+.PHONY : partB/main_B.i
+
+# target to preprocess a source file
+partB/main_B.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/main_B.cpp.i
+.PHONY : partB/main_B.cpp.i
+
+partB/main_B.s: partB/main_B.cpp.s
+
+.PHONY : partB/main_B.s
+
+# target to generate assembly for a file
+partB/main_B.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/main_B.cpp.s
+.PHONY : partB/main_B.cpp.s
 
 # Help Target
 help:
@@ -231,16 +258,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ex3"
-	@echo "... Part_A/date.o"
-	@echo "... Part_A/date.i"
-	@echo "... Part_A/date.s"
-	@echo "... Part_A/date_wrap.o"
-	@echo "... Part_A/date_wrap.i"
-	@echo "... Part_A/date_wrap.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... app"
+	@echo "... partA/date.o"
+	@echo "... partA/date.i"
+	@echo "... partA/date.s"
+	@echo "... partA/date_wrap.o"
+	@echo "... partA/date_wrap.i"
+	@echo "... partA/date_wrap.s"
+	@echo "... partB/base_event.o"
+	@echo "... partB/base_event.i"
+	@echo "... partB/base_event.s"
+	@echo "... partB/main_B.o"
+	@echo "... partB/main_B.i"
+	@echo "... partB/main_B.s"
 .PHONY : help
 
 
