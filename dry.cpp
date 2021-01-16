@@ -4,16 +4,13 @@
 template <class T>
 std::vector<T> slice(std::vector<T> vec, int start, int step, int stop)
 {
-    if(start < 0 || start >= (int)(vec.size())){
-        //throw BadInput;
-        return;
-    }else if(stop < 0 || stop >= (int)(vec.size())){
-        //throw BadInput;
-        return;
-    }else if(step <= 0){
-        //throw BadInput;
-        return;
-    }
+    // if(start < 0 || start >= (int)(vec.size())){
+    //     //throw BadInput;     
+    // }else if(stop < 0 || stop >= (int)(vec.size())){
+    //     //throw BadInput;      
+    // }else if(step <= 0){
+    //     //throw BadInput;
+    // }
 
     std::vector<T> new_vec;
     if(start >= stop){
@@ -25,6 +22,9 @@ std::vector<T> slice(std::vector<T> vec, int start, int step, int stop)
     }
     return new_vec;
 }
+
+
+
 
 
 //For testing
