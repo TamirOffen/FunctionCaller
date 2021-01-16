@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "open_event.h"
+#include "closed_event.h"
 using namespace std;
 
 
@@ -23,7 +23,7 @@ int main() {
 */
 
     
-
+    /*
     DateWrap date1(1,2,2000);
     string oeName = "boxing match";
     OpenEvent oe1(date1, oeName);
@@ -45,7 +45,33 @@ int main() {
 
     delete oe2;
 
-    // OpenEvent* oe1Clone = oe1.clone();
+    */
+
+    DateWrap date1(1,2,2000);
+    string ceName = "boxing match";
+    ClosedEvent ce1(date1, ceName);
+
+    ce1.registerParticpant(10);
+
+    ce1.addInvitee(10);
+    ce1.addInvitee(10);
+    ce1.registerParticpant(10);
+    ce1.printLong(cout);
+
+    ClosedEvent* ceClone = (ClosedEvent*)ce1.clone();
+
+    ce1.unregisterParticipant(10);
+    ce1.printLong(cout);
+
+    ceClone->addInvitee(5);
+    ceClone->registerParticpant(5);
+    ceClone->printLong(cout);
+
+    delete ceClone;
+
+    
+
+
 
 
     return 0;

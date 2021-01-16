@@ -38,7 +38,12 @@ class BaseEvent
 private:
     DateWrap date;
     string name;
+    
+// is protected fine?
+protected:
     StudentsList students;
+
+
 
 public:
     BaseEvent(const DateWrap&, const string&); //constructor

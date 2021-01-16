@@ -192,7 +192,9 @@ BaseEvent* BaseEvent::clone() const {
 */
 
 BaseEvent::BaseEvent(const BaseEvent& event): 
-    date(event.date), name(event.name), students(event.students)
+    date(event.date), 
+    name(event.name), 
+    students(event.students)
 {
 
 }
