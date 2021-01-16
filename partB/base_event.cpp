@@ -1,5 +1,4 @@
 
-
 #include <iostream>
 #include "base_event.h"
 
@@ -14,6 +13,7 @@ StudentsList::StudentsList(): head(NULL) {
 }
 
 StudentsList::~StudentsList() {
+
     while(head) {
         removeStudent(head->id);
     }
@@ -112,6 +112,7 @@ bool StudentsList::studentInList(int id) const {
 
 // copy constructor 
 StudentsList::StudentsList(const StudentsList& list): head(NULL){
+    
     for(StudentNode *elem = list.head; elem != NULL; elem=elem->next) 
     {
         addStudent(elem->id);
@@ -122,9 +123,20 @@ void StudentsList::printStudents(ostream& out) const {
     for(StudentNode *elem = head; elem != NULL; elem=elem->next) 
     {
         out << elem->id << endl;
+        // cout << "called: " <<  elem->id <<endl;
     }
 }
 
+StudentsList StudentsList::copy() const {
+    cout << "called" << endl;
+    StudentsList copy_list;
+    for(StudentNode *elem = head; elem != NULL; elem=elem->next) 
+    {
+        copy_list.addStudent(elem->id);
+    }
+
+    return copy_list;
+}
 
 
 // Implementation of BaseEvent class:
@@ -133,13 +145,19 @@ BaseEvent::BaseEvent(const DateWrap& date, const string& name): date(date), name
     
 }
 
+BaseEvent::~BaseEvent() {
+    
+}
+
 void BaseEvent::registerParticpant(int student) {
     if(student < MIN_STUDENT || student > MAX_STUDENT) {
         //TODO: Throw exeption  InvalidStudent
+        cout<<"illegal student"<<endl;
     }
     
     if(students.studentInList(student) == true) {
         //TODO: throw exeption  AlreadyRegistred
+        cout<<"alrady registered"<<endl;
     }
 
     students.addStudent(student);
@@ -171,11 +189,14 @@ ostream& BaseEvent::printLong(ostream& out) {
 
 
 BaseEvent* BaseEvent::clone() const {
-    BaseEvent* base_event_copy = new BaseEvent(DateWrap(date), string(name));
+    BaseEvent* base_event_copy = new BaseEvent(date, name);
     
-    base_event_copy->students.~StudentsList(); //maybe not needed?
-
-    base_event_copy->students = students;
+    //base_event_copy->students.~StudentsList(); //maybe not needed?
+    // StudentsList new_list = students.copy();
+    StudentsList new_list(students);
+    
+    base_event_copy->students = new_list;
+    // base_event_copy->students.printStudents(cout); works
 
     return base_event_copy;
 }

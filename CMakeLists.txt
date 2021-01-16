@@ -18,6 +18,7 @@ add_executable(
     partA/date.cpp  #need to link provided library instead
 
     partB/base_event.cpp
+    partB/open_event.cpp
     partB/main_B.cpp
 )
 

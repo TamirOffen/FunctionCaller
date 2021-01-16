@@ -250,6 +250,33 @@ partB/main_B.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/main_B.cpp.s
 .PHONY : partB/main_B.cpp.s
 
+partB/open_event.o: partB/open_event.cpp.o
+
+.PHONY : partB/open_event.o
+
+# target to build an object file
+partB/open_event.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/open_event.cpp.o
+.PHONY : partB/open_event.cpp.o
+
+partB/open_event.i: partB/open_event.cpp.i
+
+.PHONY : partB/open_event.i
+
+# target to preprocess a source file
+partB/open_event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/open_event.cpp.i
+.PHONY : partB/open_event.cpp.i
+
+partB/open_event.s: partB/open_event.cpp.s
+
+.PHONY : partB/open_event.s
+
+# target to generate assembly for a file
+partB/open_event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/open_event.cpp.s
+.PHONY : partB/open_event.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -271,6 +298,9 @@ help:
 	@echo "... partB/main_B.o"
 	@echo "... partB/main_B.i"
 	@echo "... partB/main_B.s"
+	@echo "... partB/open_event.o"
+	@echo "... partB/open_event.i"
+	@echo "... partB/open_event.s"
 .PHONY : help
 
 
