@@ -38,7 +38,7 @@ class BaseEvent
 private:
     DateWrap date;
     string name;
-    
+
 // is protected fine?
 protected:
     StudentsList students;
@@ -47,8 +47,8 @@ protected:
 
 public:
     BaseEvent(const DateWrap&, const string&); //constructor
-    BaseEvent(const BaseEvent&); //copy constructor TODO
-    virtual ~BaseEvent();
+    BaseEvent(const BaseEvent&); //copy constructor 
+    virtual ~BaseEvent(); //does destructor need to be virtual?
 
     virtual void registerParticpant(int);
     virtual void unregisterParticipant(int);
@@ -56,7 +56,7 @@ public:
     ostream& printShort(ostream&);
     ostream& printLong(ostream&);
 
-    virtual BaseEvent* clone() const = 0; 
+    virtual BaseEvent* clone() const = 0; //pure virtual
 
 };
 
