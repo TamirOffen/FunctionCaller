@@ -13,11 +13,9 @@ StudentsList::StudentsList(): head(NULL) {
 }
 
 StudentsList::~StudentsList() {
-
     while(head) {
         removeStudent(head->id);
     }
-
 }
 
 void StudentsList::addStudent(int id) {
@@ -146,7 +144,7 @@ BaseEvent::BaseEvent(const DateWrap& date, const string& name): date(date), name
 }
 
 BaseEvent::~BaseEvent() {
-    
+
 }
 
 void BaseEvent::registerParticpant(int student) {
@@ -189,16 +187,13 @@ ostream& BaseEvent::printLong(ostream& out) {
 
 
 BaseEvent* BaseEvent::clone() const {
-    BaseEvent* base_event_copy = new BaseEvent(date, name);
-    
-    //base_event_copy->students.~StudentsList(); //maybe not needed?
-    // StudentsList new_list = students.copy();
-    StudentsList new_list(students);
-    
-    base_event_copy->students = new_list;
-    // base_event_copy->students.printStudents(cout); works
+    return new BaseEvent(*this);
+}
 
-    return base_event_copy;
+BaseEvent::BaseEvent(const BaseEvent& event): 
+    date(event.date), name(event.name), students(event.students)
+{
+
 }
 
 

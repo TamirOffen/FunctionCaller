@@ -42,16 +42,16 @@ private:
 
 public:
     BaseEvent(const DateWrap&, const string&); //constructor
-    //BaseEvent(const BaseEvent&); //copy constructor TODO
+    BaseEvent(const BaseEvent&); //copy constructor TODO
     virtual ~BaseEvent();
 
     virtual void registerParticpant(int);
-    void unregisterParticipant(int);
+    virtual void unregisterParticipant(int);
 
     ostream& printShort(ostream&);
     ostream& printLong(ostream&);
 
-    virtual BaseEvent* clone() const; //doesn't work
+    virtual BaseEvent* clone() const; //works but mem leaks
 
 };
 

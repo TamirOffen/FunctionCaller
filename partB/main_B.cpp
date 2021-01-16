@@ -22,7 +22,7 @@ int main() {
 
 */
     
-/*
+
     DateWrap date1(30,10,2020);
     BaseEvent be1(date1, "test 1");
     be1.registerParticpant(10);
@@ -31,17 +31,20 @@ int main() {
     be1.registerParticpant(5);
     be1.registerParticpant(7);
     be1.registerParticpant(16);
-    // be1.printLong(cout);
+    
 
-    // BaseEvent* be2 = be1.clone();
-    // be2->registerParticpant(100);
+    // BaseEvent be2(be1);
+    BaseEvent* be2 = be1.clone();
 
     be1.unregisterParticipant(5);
     be1.unregisterParticipant(7); 
-    // be2->printShort(cout);
-    // (*be2).printLong(cout);
-    */
 
+    be2->printLong(cout);
+
+    delete be2;
+
+    
+/*
     DateWrap date1(1,2,2000);
     string oeName = "boxing match";
     OpenEvent oe1(date1, oeName);
@@ -55,8 +58,8 @@ int main() {
 
     oe1.printLong(cout);
 
-    OpenEvent* oe1Clone = oe1.clone();
-
+    // OpenEvent* oe1Clone = oe1.clone();
+*/
 
     return 0;
 }

@@ -11,4 +11,5 @@ OpenEvent::OpenEvent(const DateWrap& date, const string& name): BaseEvent(date, 
 OpenEvent* OpenEvent::clone() const{
     // BaseEvent* new_event = clone(); 
     // ?????? TODO
+    return NULL;
 }
