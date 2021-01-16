@@ -1,6 +1,4 @@
 
-
-
 #include "open_event.h"
 
 
@@ -8,8 +6,12 @@ OpenEvent::OpenEvent(const DateWrap& date, const string& name): BaseEvent(date, 
 
 }
 
-OpenEvent* OpenEvent::clone() const{
-    // BaseEvent* new_event = clone(); 
-    // ?????? TODO
-    return NULL;
+OpenEvent::OpenEvent(const OpenEvent& event) : 
+    BaseEvent(event)
+{
+
+}
+
+BaseEvent* OpenEvent::clone() const{
+    return new OpenEvent(*this);
 }

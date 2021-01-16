@@ -21,30 +21,9 @@ int main() {
     students2.printStudents(cout);
 
 */
-    
-
-    DateWrap date1(30,10,2020);
-    BaseEvent be1(date1, "test 1");
-    be1.registerParticpant(10);
-    be1.registerParticpant(15);
-    be1.registerParticpant(5);
-    be1.registerParticpant(5);
-    be1.registerParticpant(7);
-    be1.registerParticpant(16);
-    
-
-    // BaseEvent be2(be1);
-    BaseEvent* be2 = be1.clone();
-
-    be1.unregisterParticipant(5);
-    be1.unregisterParticipant(7); 
-
-    be2->printLong(cout);
-
-    delete be2;
 
     
-/*
+
     DateWrap date1(1,2,2000);
     string oeName = "boxing match";
     OpenEvent oe1(date1, oeName);
@@ -54,12 +33,20 @@ int main() {
     oe1.registerParticpant(-1);
     oe1.registerParticpant(7);
 
+    OpenEvent* oe2 =(OpenEvent*)oe1.clone();
+
     oe1.unregisterParticipant(7);
 
     oe1.printLong(cout);
 
+    oe2->unregisterParticipant(100);
+    oe2->registerParticpant(99);
+    oe2->printLong(cout);
+
+    delete oe2;
+
     // OpenEvent* oe1Clone = oe1.clone();
-*/
+
 
     return 0;
 }

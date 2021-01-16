@@ -185,10 +185,11 @@ ostream& BaseEvent::printLong(ostream& out) {
     return out;
 }
 
-
+/*
 BaseEvent* BaseEvent::clone() const {
     return new BaseEvent(*this);
 }
+*/
 
 BaseEvent::BaseEvent(const BaseEvent& event): 
     date(event.date), name(event.name), students(event.students)

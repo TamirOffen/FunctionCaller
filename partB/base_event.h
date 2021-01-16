@@ -51,7 +51,7 @@ public:
     ostream& printShort(ostream&);
     ostream& printLong(ostream&);
 
-    virtual BaseEvent* clone() const; //works but mem leaks
+    virtual BaseEvent* clone() const = 0; 
 
 };
 
