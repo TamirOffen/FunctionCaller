@@ -13,8 +13,21 @@ CMakeFiles/app.dir/partB/base_event.cpp.o: partA/date_wrap.h
 CMakeFiles/app.dir/partB/base_event.cpp.o: partB/base_event.cpp
 CMakeFiles/app.dir/partB/base_event.cpp.o: partB/base_event.h
 
+CMakeFiles/app.dir/partB/closed_event.cpp.o: partA/date.h
+CMakeFiles/app.dir/partB/closed_event.cpp.o: partA/date_wrap.h
+CMakeFiles/app.dir/partB/closed_event.cpp.o: partB/base_event.h
+CMakeFiles/app.dir/partB/closed_event.cpp.o: partB/closed_event.cpp
+CMakeFiles/app.dir/partB/closed_event.cpp.o: partB/closed_event.h
+
 CMakeFiles/app.dir/partB/main_B.cpp.o: partA/date.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partA/date_wrap.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/base_event.h
+CMakeFiles/app.dir/partB/main_B.cpp.o: partB/closed_event.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/main_B.cpp
+
+CMakeFiles/app.dir/partB/open_event.cpp.o: partA/date.h
+CMakeFiles/app.dir/partB/open_event.cpp.o: partA/date_wrap.h
+CMakeFiles/app.dir/partB/open_event.cpp.o: partB/base_event.h
+CMakeFiles/app.dir/partB/open_event.cpp.o: partB/open_event.cpp
+CMakeFiles/app.dir/partB/open_event.cpp.o: partB/open_event.h
 

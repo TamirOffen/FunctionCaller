@@ -1,11 +1,12 @@
 #include <iostream>
-#include "base_event.h"
+
+#include "closed_event.h"
 using namespace std;
 
 
 int main() {
 
-    /*
+  /* 
     StudentsList students;
 
     students.addStudent(2);
@@ -14,31 +15,63 @@ int main() {
     students.addStudent(6);
     students.printStudents(cout);
 
-    StudentsList students2 = students;
+    StudentsList students2 = students.copy();
     students2.removeStudent(6);
+    students.removeStudent(1);
     students2.printStudents(cout);
 
 */
-    
-
-    DateWrap date1(30,10,2020);
-    BaseEvent be1(date1, "test 1");
-    be1.registerParticpant(10);
-    be1.registerParticpant(15);
-    be1.registerParticpant(5);
-    be1.registerParticpant(5);
-    be1.registerParticpant(7);
-    be1.registerParticpant(16);
 
     
+    /*
+    DateWrap date1(1,2,2000);
+    string oeName = "boxing match";
+    OpenEvent oe1(date1, oeName);
+    oe1.registerParticpant(10);
+    oe1.registerParticpant(7);
+    oe1.registerParticpant(100);
+    oe1.registerParticpant(-1);
+    oe1.registerParticpant(7);
 
-    be1.printLong(cout);
+    OpenEvent* oe2 =(OpenEvent*)oe1.clone();
 
-    BaseEvent be2 = *(be1.clone());
+    oe1.unregisterParticipant(7);
 
-    be1.unregisterParticipant(5);
-    be1.unregisterParticipant(16);
-    be2.printLong(cout);
+    oe1.printLong(cout);
+
+    oe2->unregisterParticipant(100);
+    oe2->registerParticpant(99);
+    oe2->printLong(cout);
+
+    delete oe2;
+
+    */
+
+    DateWrap date1(1,2,2000);
+    string ceName = "boxing match";
+    ClosedEvent ce1(date1, ceName);
+
+    ce1.registerParticpant(10);
+
+    ce1.addInvitee(10);
+    ce1.addInvitee(10);
+    ce1.registerParticpant(10);
+    ce1.printLong(cout);
+
+    ClosedEvent* ceClone = (ClosedEvent*)ce1.clone();
+
+    ce1.unregisterParticipant(10);
+    ce1.printLong(cout);
+
+    ceClone->addInvitee(5);
+    ceClone->registerParticpant(5);
+    ceClone->printLong(cout);
+
+    delete ceClone;
+
+    
+
+
 
 
     return 0;

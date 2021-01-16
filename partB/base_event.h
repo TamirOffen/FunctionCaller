@@ -28,6 +28,7 @@ public:
     void removeStudent(int);
     bool studentInList(int) const;
     void printStudents(ostream&) const;
+    StudentsList copy() const; // not needed
 };
 
 
@@ -37,12 +38,17 @@ class BaseEvent
 private:
     DateWrap date;
     string name;
+    
+// is protected fine?
+protected:
     StudentsList students;
+
+
 
 public:
     BaseEvent(const DateWrap&, const string&); //constructor
-    //BaseEvent(const BaseEvent&); //copy constructor TODO
-
+    BaseEvent(const BaseEvent&); //copy constructor TODO
+    virtual ~BaseEvent();
 
     virtual void registerParticpant(int);
     virtual void unregisterParticipant(int);
@@ -50,7 +56,7 @@ public:
     ostream& printShort(ostream&);
     ostream& printLong(ostream&);
 
-    virtual BaseEvent* clone() const;
+    virtual BaseEvent* clone() const = 0; 
 
 };
 
