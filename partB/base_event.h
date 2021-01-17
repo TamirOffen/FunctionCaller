@@ -80,7 +80,7 @@ private:
 public:
     EventsList();
     EventsList(const EventsList&);
-    // ~EventsList();
+    ~EventsList();
 
     //add by order of increasing date / increasing event name
     void addEvent(BaseEvent&); 

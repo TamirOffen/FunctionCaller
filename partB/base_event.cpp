@@ -150,6 +150,16 @@ EventsList::EventsList() : head(NULL)
 {
 }
 
+EventsList::~EventsList() {
+    EventNode* elem = head;
+    while(elem) {
+        EventNode* temp = elem;
+        elem = elem->next;
+        delete temp;
+    }
+
+}
+
 void EventsList::addEvent(BaseEvent& event) {
     // not needed???
     if(eventInList(event) == true) {
