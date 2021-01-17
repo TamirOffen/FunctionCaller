@@ -150,6 +150,12 @@ EventsList::EventsList() : head(NULL)
 {
 }
 
+EventsList::EventsList(const EventsList& list) : head(NULL) {
+    for(EventNode* elem = list.head; elem != NULL; elem = elem->next) {
+        addEvent(elem->event);
+    }
+}
+
 EventsList::~EventsList() {
     EventNode* elem = head;
     while(elem) {

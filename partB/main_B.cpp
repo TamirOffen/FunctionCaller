@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "open_event.h"
+#include "festival.h"
 #include "base_event.h"
 using namespace std;
 
@@ -112,6 +113,13 @@ int main() {
     el.addEvent(oe6);
     el.addEvent(oe7);
     el.addEvent(oe8);
+    el.printEvents();
+
+    EventsList elCopy(el);
+    cout<<endl;
+    elCopy.addEvent(oe1);
+    elCopy.printEvents();
+
     el.addEvent(oe1);
     el.addEvent(oe2);
     el.addEvent(oe3);
@@ -120,14 +128,23 @@ int main() {
     el.addEvent(oe6);
     el.addEvent(oe7);
     el.addEvent(oe8);
-    el.printEvents();
     */
+    
 
-/*
+
     DateWrap date(2,4,2020);
     Festival f(date);
-    OpenEvent event1(date, "event 1");
+
+    OpenEvent event1(date, "event1");
+    event1.registerParticpant(12);
+    event1.registerParticpant(10);
     f.add(event1);
-*/
+
+    event1.registerParticpant(100);
+
+    f.printEvents();
+
+
+
     return 0;
 }

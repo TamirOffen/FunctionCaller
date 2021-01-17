@@ -8,11 +8,25 @@ Festival::Festival(const DateWrap& date) :
 {
 }
 
+Festival::~Festival() 
+{
+
+}
+
 
 void Festival::add(BaseEvent& event) {
     if(event.getDate() != date_of_festival) {
         //Throw exeption:  DateMismatch
         std::cout << "Exeption: DateMismatch" << std::endl;
     }
-    events.addEvent(event);
+    BaseEvent *event_copy = event.clone();
+    events.addEvent(*event_copy);
 }
+
+
+void Festival::printEvents() {
+    events.printEvents();
+}
+
+
+

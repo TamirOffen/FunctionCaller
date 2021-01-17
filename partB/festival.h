@@ -11,9 +11,13 @@ private:
     DateWrap date_of_festival;
 
 public:
-    Festival(const DateWrap&); //& or not???
+    Festival(const DateWrap&); //TODO: & or not???
+    ~Festival();
     
     void add(BaseEvent&) override;
+
+
+    void printEvents(); //remove
 
 };
 

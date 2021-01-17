@@ -35,6 +35,8 @@ CMakeFiles/app.dir/partB/festival.cpp.o: partB/festival.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partA/date.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partA/date_wrap.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/base_event.h
+CMakeFiles/app.dir/partB/main_B.cpp.o: partB/event_container.h
+CMakeFiles/app.dir/partB/main_B.cpp.o: partB/festival.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/main_B.cpp
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/open_event.h
 

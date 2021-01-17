@@ -1,12 +1,28 @@
 
 #include "event_container.h"
 
-EventContainer::EventContainer() 
+
+/////////////////////////////////////
+// Implementation of EventIterator //
+/////////////////////////////////////
+
+EventIterator::EventIterator(const EventsList& events) : 
+    events(events)
 {
 
 }
 
-void EventContainer::add(BaseEvent& base_event) {
 
+
+EventContainer::EventContainer() 
+{
 }
+
+EventIterator EventContainer::begin() 
+{
+    EventIterator iterator(events);
+    return iterator;
+}
+
+
 
