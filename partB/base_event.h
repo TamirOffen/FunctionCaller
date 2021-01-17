@@ -8,7 +8,7 @@ using std::ostream;
 using std::istream;
 using std::string;
 
-//linked list for the students
+//linked list for the students:
 struct StudentNode
 {
     int id;
@@ -32,7 +32,7 @@ public:
     StudentsList copy() const; // not needed
 };
 
-// BaseEvent class
+// BaseEvent class:
 class BaseEvent 
 {
 
@@ -64,6 +64,30 @@ public:
 
 };
 
+
+//linked list for the events:
+struct EventNode 
+{
+    BaseEvent& event;
+    EventNode *next;
+    EventNode(BaseEvent&);
+};
+
+class EventsList 
+{
+private:
+    EventNode *head;
+
+public:
+    EventsList();
+    EventsList(const EventsList&);
+    ~EventsList();
+
+    //add by order of increasing date / increasing event name
+    void addEvent(BaseEvent&); 
+    bool eventInList(BaseEvent&);
+    void printEvents();
+};
 
 
 #endif
