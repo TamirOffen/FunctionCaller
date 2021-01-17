@@ -26,6 +26,7 @@ public:
     {
     private:
         BaseEvent *current_event;
+        bool is_end;
 
     public:
         EventIterator();
