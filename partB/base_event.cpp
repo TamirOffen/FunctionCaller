@@ -286,7 +286,21 @@ void EventsList::printEvents() {
     }
 }
 
+BaseEvent* EventsList::first() {
+    if(head == NULL) {
+        return NULL;
+    }
+    return &(head->event);
+}
 
+BaseEvent* EventsList::next() {
+    if(head->next == NULL) {
+        return NULL;
+    }
+    BaseEvent& temp_event = head->next->event;
+    head->next = head->next->next;
+    return &temp_event;
+}
 
 
 ///////////////////////////////////////////

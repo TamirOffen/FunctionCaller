@@ -4,20 +4,23 @@
 #include "base_event.h"
 
 
-
+struct EventNode 
+{
+    BaseEvent *event;
+    EventNode *next;
+};
 
 class EventContainer 
 {
-
+private:
+    EventNode *head;
 
 public:
-    // EventContainer();
+    EventContainer();
     // ~EventContainer();
 
-
-    virtual void add(BaseEvent&) = 0; // = 0 ???
+    virtual void add(BaseEvent&); // = 0 ???
     //exeption: NotSupported, TODO!
-
 
     class EventIterator
     {

@@ -65,6 +65,7 @@ public:
 };
 
 
+/*
 //linked list for the events:
 struct EventNode 
 {
@@ -87,7 +88,13 @@ public:
     void addEvent(BaseEvent&); 
     bool eventInList(BaseEvent&);
     void printEvents();
+
+    //iterating through the events:
+    BaseEvent* first();
+    BaseEvent* next();
+
 };
+*/
 
 
 #endif
