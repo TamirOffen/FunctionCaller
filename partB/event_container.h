@@ -13,24 +13,24 @@ struct EventNode
 class EventContainer 
 {
 private:
-    EventNode *head;
+    EventNode *head = NULL;
 
 public:
     EventContainer();
     // ~EventContainer();
 
-    virtual void add(BaseEvent&); // = 0 ???
+    virtual void add(BaseEvent&); 
     //exeption: NotSupported, TODO!
 
     class EventIterator
     {
     private:
-        BaseEvent *current_event;
-        bool is_end;
+        EventNode *current_node;
 
     public:
-        EventIterator();
+        // EventIterator();
         EventIterator(const EventIterator&);
+        EventIterator(EventContainer&, bool is_end);
         // ~EventIterator();
 
         EventIterator& operator= (const EventIterator&); // i1 = i2 = i3 etc.
@@ -45,6 +45,7 @@ public:
 
 
     EventIterator begin();
+    EventIterator end();
 
 };
 

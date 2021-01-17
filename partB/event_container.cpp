@@ -108,15 +108,45 @@ void EventContainer::add(BaseEvent& event) {
 }
 
 
+
+
 /////////////////////////////////////
 // Implementation of EventIterator //
 /////////////////////////////////////
 
-EventContainer::EventIterator::EventIterator() : 
-    current_event(EventContainer::head->event),
-    is_end(false)
+EventContainer::EventIterator::EventIterator(EventContainer& eventContainer, bool is_end)
 {
+    if(is_end) {
+        current_node = NULL;
+    } else {
+        current_node = eventContainer.head;
+    }
+}
 
+EventContainer::EventIterator& EventContainer::EventIterator::operator++() {
+    //if ++iter goes out of bounds, throw exeption?
+    if(current_node == NULL) {
+        current_node = NULL;
+    }
+    current_node = current_node->next;
+    return *this;
+}
+
+BaseEvent& EventContainer::EventIterator::operator* () {
+    return *(current_node->event);
+}
+
+EventContainer::EventIterator& EventContainer::EventIterator::operator= (const EventIterator& iter) {
+    current_node = iter.current_node;
+    return *this;
+}
+
+
+EventContainer::EventIterator EventContainer::begin() {
+    return EventIterator(*this, false);
+}
+EventContainer::EventIterator EventContainer::end() {
+    return EventIterator(*this, true);
 }
 
 
