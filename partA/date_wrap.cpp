@@ -139,3 +139,11 @@ DateWrap operator+ (int increment, DateWrap& date)
 
     return newDate;
 }
+
+
+
+DateWrap::DateWrap(const DateWrap& date) :
+    day(date.day), month(date.month), year(date.year)
+{
+
+}

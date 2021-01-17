@@ -9,12 +9,10 @@
 class EventContainer 
 {
 
-protected:
-    EventsList events;
 
 public:
-    EventContainer();
-    ~EventContainer();
+    // EventContainer();
+    // ~EventContainer();
 
 
     virtual void add(BaseEvent&) = 0; // = 0 ???
@@ -23,6 +21,8 @@ public:
 
     class EventIterator
     {
+    private:
+        BaseEvent *current_event;
 
     public:
         EventIterator();
