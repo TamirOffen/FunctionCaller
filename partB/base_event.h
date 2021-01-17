@@ -31,7 +31,7 @@ public:
     StudentsList copy() const; // not needed
 };
 
-
+// BaseEvent class
 class BaseEvent 
 {
 

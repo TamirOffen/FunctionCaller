@@ -4,6 +4,7 @@
 
 class EventIterator
 {
+private:
 
 public:
     EventIterator();
@@ -26,16 +27,18 @@ public:
 class EventContainer 
 {
 
-private:
-
+protected:
+    EventsList events;
 
 public:
     EventContainer();
 
 
-    void add(const BaseEvent& base_event);
+    virtual void add(BaseEvent&);
 
     void begin();
 
 };
+
+
 

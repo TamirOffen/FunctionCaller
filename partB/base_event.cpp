@@ -162,10 +162,10 @@ EventsList::~EventsList() {
 
 void EventsList::addEvent(BaseEvent& event) {
     // not needed???
-    if(eventInList(event) == true) {
-        // event already is in the list
-        return;
-    }
+    // if(eventInList(event) == true) {
+    //     // event already is in the list
+    //     return;
+    // }
 
     EventNode *new_event = new EventNode(event);
     
@@ -192,7 +192,7 @@ void EventsList::addEvent(BaseEvent& event) {
             return;
         }
         // else: event's date is equal to head's date:
-        if(event.getName() < head->event.getName()) {
+        if(event.getName() <= head->event.getName()) { //here
             EventNode *temp_node = head;
             head = new_event;
             new_event->next = temp_node;
@@ -202,7 +202,6 @@ void EventsList::addEvent(BaseEvent& event) {
             new_event->next = NULL;
             return;
         }
-        // std::cout<<"copy event"<<std::endl; TODO: check
     }
 
     //if list has >1 event, and event is the smallest one:
@@ -213,7 +212,7 @@ void EventsList::addEvent(BaseEvent& event) {
         return;
     }
     if(head->event.getDate() == event.getDate()) {
-        if(head->event.getName() < event.getName()) {
+        if(head->event.getName() <= event.getName()) { //here
             new_event->next = head->next;
             head->next = new_event;
         } else if(head->event.getName() > event.getName()){
@@ -233,14 +232,14 @@ void EventsList::addEvent(BaseEvent& event) {
                 new_event->next = NULL;
                 elem->next = new_event;
             } 
-            if(event.getDate() == elem->event.getDate() && event.getName() > elem->event.getName()) {
+            if(event.getDate() == elem->event.getDate() && event.getName() >= elem->event.getName()) { //here
                 new_event->next = NULL;
                 elem->next = new_event;
             }
             return;
         }
         if(elem->next->event.getDate() == event.getDate()) {
-            if(elem->next->event.getName() > event.getName()) {
+            if(elem->next->event.getName() >= event.getName()) { //here
                 new_event->next = elem->next;
                 elem->next = new_event;
                 return;
@@ -248,7 +247,7 @@ void EventsList::addEvent(BaseEvent& event) {
         }
         if(event.getDate() == elem->event.getDate()) {
             //same date, but event's name comes after elem's name
-            if(elem->event.getName() < event.getName()) {
+            if(elem->event.getName() <= event.getName()) { //here
                 new_event->next = elem->next;
                 elem->next = new_event;
                 return;

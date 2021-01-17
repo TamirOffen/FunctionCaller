@@ -1,7 +1,7 @@
 #include <iostream>
 
-// #include "base_event.h"
 #include "open_event.h"
+#include "base_event.h"
 using namespace std;
 
 struct StudentFilter {
@@ -94,8 +94,9 @@ int main() {
     delete c1Clone;
     */
 
-    OpenEvent oe1(DateWrap(29,2,1999),"Boxing Match");
-    OpenEvent oe2(DateWrap(1,3,1999), "Boxing Match");
+    /*
+    OpenEvent oe1(DateWrap(29,2,1999),"Boxing Match 1");
+    OpenEvent oe2(DateWrap(1,3,1999), "Boxing Match 2");
     OpenEvent oe3(DateWrap(1,3,1999), "Rap Contest");
     OpenEvent oe4(DateWrap(30,2,1999), "Lunch");
     OpenEvent oe5(DateWrap(1,2,1999), "Boxing Weight in");
@@ -111,8 +112,22 @@ int main() {
     el.addEvent(oe6);
     el.addEvent(oe7);
     el.addEvent(oe8);
+    el.addEvent(oe1);
+    el.addEvent(oe2);
+    el.addEvent(oe3);
+    el.addEvent(oe4);
+    el.addEvent(oe5);
+    el.addEvent(oe6);
+    el.addEvent(oe7);
+    el.addEvent(oe8);
     el.printEvents();
+    */
 
-
+/*
+    DateWrap date(2,4,2020);
+    Festival f(date);
+    OpenEvent event1(date, "event 1");
+    f.add(event1);
+*/
     return 0;
 }
