@@ -1,4 +1,5 @@
-
+#ifndef BASE_CONTAINER_H_
+#define BASE_CONTAINER_H_
 
 #include "base_event.h"
 
@@ -40,5 +41,7 @@ public:
 
 };
 
+
+#endif
 
 

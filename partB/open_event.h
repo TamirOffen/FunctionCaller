@@ -1,5 +1,9 @@
+#ifndef OPEN_EVENT_H_
+#define OPEN_EVENT_H_
+
 
 #include "base_event.h"
+
 
 class OpenEvent : public BaseEvent
 {
@@ -10,5 +14,8 @@ public:
     ~OpenEvent() = default;
     BaseEvent* clone() const override; 
 };
+
+
+#endif
 
 

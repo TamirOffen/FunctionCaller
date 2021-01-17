@@ -1,4 +1,5 @@
-
+#ifndef FESTIVAL_H_
+#define FESTIVAL_H_
 
 #include "event_container.h"
 
@@ -15,4 +16,6 @@ public:
     void add(BaseEvent&) override;
 
 };
+
+#endif
 

@@ -1,4 +1,5 @@
-
+#ifndef CLOSED_EVENT_H_
+#define CLOSED_EVENT_H_
 
 #include "base_event.h"
 
@@ -21,4 +22,5 @@ public:
 
 };
 
+#endif
 

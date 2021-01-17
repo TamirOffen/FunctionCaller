@@ -1,4 +1,5 @@
-
+#ifndef CUSTOM_EVENT_H_
+#define CUSTROM_EVENT_H_
 
 #include "base_event.h"
 
@@ -53,4 +54,6 @@ BaseEvent* CustomEvent<CanRegister>::clone() const {
 }
 
 
+
+#endif
 

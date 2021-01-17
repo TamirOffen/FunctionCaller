@@ -1,4 +1,5 @@
-
+#ifndef BASE_EVENT_H_
+#define BASE_EVENT_H_
 
 #include <iostream>
 #include "../partA/date_wrap.h"
@@ -88,3 +89,4 @@ public:
     void printEvents();
 };
 
+#endif
