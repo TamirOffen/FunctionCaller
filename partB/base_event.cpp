@@ -8,7 +8,9 @@ using std::cout;
 #define MIN_STUDENT 1
 #define MAX_STUDENT 20000
 
-// Implementation of the Students Linked List:
+////////////////////////////////////////////////
+// Implementation of the Students Linked List //
+////////////////////////////////////////////////
 StudentsList::StudentsList(): head(NULL) {
 }
 
@@ -55,6 +57,7 @@ void StudentsList::addStudent(int id) {
         StudentNode *temp_node = head;
         head = new_student;
         head->next = temp_node;
+        // return ???
     }
 
     for(StudentNode *elem = head; elem != NULL; elem=elem->next) {
@@ -108,7 +111,6 @@ bool StudentsList::studentInList(int id) const {
     return false;
 }
 
-// copy constructor 
 StudentsList::StudentsList(const StudentsList& list): head(NULL){
     
     for(StudentNode *elem = list.head; elem != NULL; elem=elem->next) 
@@ -137,7 +139,141 @@ StudentsList StudentsList::copy() const {
 }
 
 
-// Implementation of BaseEvent class:
+//////////////////////////////////////////////
+// Implementation of the Events Linked List //
+//////////////////////////////////////////////
+EventNode::EventNode(BaseEvent& event) : event(event)
+{
+}
+
+EventsList::EventsList() : head(NULL)
+{
+}
+
+void EventsList::addEvent(BaseEvent& event) {
+    // not needed???
+    if(eventInList(event) == true) {
+        // event already is in the list
+        return;
+    }
+
+    EventNode *new_event = new EventNode(event);
+    
+    //if list is empty:
+    if(head == NULL) {
+        head = new_event;
+        new_event->next = NULL;
+        return;
+    }
+
+    //if there is only one event in the list:
+    if(head->next == NULL) {
+        //if event's date comes before the head's date
+        if(event.getDate() < head->event.getDate()) {
+            EventNode *temp_node = head;
+            head = new_event;
+            new_event->next = temp_node;
+            return;
+        }
+        //if event's date comes after the head's date
+        if(event.getDate() > head->event.getDate()) {
+            head->next = new_event;
+            new_event->next = NULL;
+            return;
+        }
+        // else: event's date is equal to head's date:
+        if(event.getName() < head->event.getName()) {
+            EventNode *temp_node = head;
+            head = new_event;
+            new_event->next = temp_node;
+            return;
+        } else {
+            head->next = new_event;
+            new_event->next = NULL;
+            return;
+        }
+        // std::cout<<"copy event"<<std::endl; TODO: check
+    }
+
+    //if list has >1 event, and event is the smallest one:
+    if(head->event.getDate() > event.getDate()) {
+        EventNode *temp_node = head;
+        head = new_event;
+        new_event->next = temp_node;
+        return;
+    }
+    if(head->event.getDate() == event.getDate()) {
+        if(head->event.getName() < event.getName()) {
+            new_event->next = head->next;
+            head->next = new_event;
+        } else if(head->event.getName() > event.getName()){
+            EventNode *temp_node = head;
+            head = new_event;
+            new_event->next = temp_node;
+        } else {
+            //SAME EXACT EVENT, what to do???
+        }
+        return;
+    }
+
+    //for every other case:
+    for(EventNode* elem = head; elem != NULL; elem = elem->next) {
+        if(elem->next == NULL) {
+            if(event.getDate() > elem->event.getDate()) {
+                new_event->next = NULL;
+                elem->next = new_event;
+            } 
+            if(event.getDate() == elem->event.getDate() && event.getName() > elem->event.getName()) {
+                new_event->next = NULL;
+                elem->next = new_event;
+            }
+            return;
+        }
+        if(elem->next->event.getDate() == event.getDate()) {
+            if(elem->next->event.getName() > event.getName()) {
+                new_event->next = elem->next;
+                elem->next = new_event;
+                return;
+            }
+        }
+        if(event.getDate() == elem->event.getDate()) {
+            //same date, but event's name comes after elem's name
+            if(elem->event.getName() < event.getName()) {
+                new_event->next = elem->next;
+                elem->next = new_event;
+                return;
+            }
+        }
+        if(event.getDate() > elem->event.getDate() && event.getDate() < elem->next->event.getDate()) {
+            new_event->next = elem->next;
+            elem->next = new_event;
+            return;
+        }
+        
+        
+    }
+
+}
+
+bool EventsList::eventInList(BaseEvent& event) {
+    for(EventNode* elem = head; elem != NULL; elem = elem->next) {
+        if(event == elem->event) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void EventsList::printEvents() {
+    for(EventNode* elem = head; elem != NULL; elem = elem->next) {
+        elem->event.printLong(cout);
+    }
+}
+
+
+///////////////////////////////////////////
+// Implementation of the BaseEvent class //
+///////////////////////////////////////////
 BaseEvent::BaseEvent(const DateWrap& date, const string& name): date(date), name(name)
 {
     
@@ -199,5 +335,21 @@ BaseEvent::BaseEvent(const BaseEvent& event):
 
 }
 
+// compares just the name and date of the events (not the students list)
+bool BaseEvent::operator== (const BaseEvent& event) {
+    if(name == event.name && date == event.date) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
 
+DateWrap& BaseEvent::getDate() {
+    return date;
+}
+
+string BaseEvent::getName() {
+    return name;
+}
 

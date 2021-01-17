@@ -20,6 +20,8 @@ add_executable(
     partB/base_event.cpp
     partB/open_event.cpp
     partB/closed_event.cpp
+    partB/event_container.cpp
+    partB/festival.cpp
     partB/main_B.cpp
 )
 
