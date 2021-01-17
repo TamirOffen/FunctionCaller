@@ -12,7 +12,8 @@ class DateWrap
     int year;
 
 public:
-    DateWrap(int day, int month, int year); //check if default vals are ok
+    DateWrap(int day, int month, int year); 
+    DateWrap(const DateWrap&);
 
     const int dayReturn () const; 
     const int monthReturn () const;

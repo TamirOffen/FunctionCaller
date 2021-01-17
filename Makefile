@@ -250,6 +250,60 @@ partB/closed_event.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/closed_event.cpp.s
 .PHONY : partB/closed_event.cpp.s
 
+partB/event_container.o: partB/event_container.cpp.o
+
+.PHONY : partB/event_container.o
+
+# target to build an object file
+partB/event_container.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/event_container.cpp.o
+.PHONY : partB/event_container.cpp.o
+
+partB/event_container.i: partB/event_container.cpp.i
+
+.PHONY : partB/event_container.i
+
+# target to preprocess a source file
+partB/event_container.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/event_container.cpp.i
+.PHONY : partB/event_container.cpp.i
+
+partB/event_container.s: partB/event_container.cpp.s
+
+.PHONY : partB/event_container.s
+
+# target to generate assembly for a file
+partB/event_container.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/event_container.cpp.s
+.PHONY : partB/event_container.cpp.s
+
+partB/festival.o: partB/festival.cpp.o
+
+.PHONY : partB/festival.o
+
+# target to build an object file
+partB/festival.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/festival.cpp.o
+.PHONY : partB/festival.cpp.o
+
+partB/festival.i: partB/festival.cpp.i
+
+.PHONY : partB/festival.i
+
+# target to preprocess a source file
+partB/festival.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/festival.cpp.i
+.PHONY : partB/festival.cpp.i
+
+partB/festival.s: partB/festival.cpp.s
+
+.PHONY : partB/festival.s
+
+# target to generate assembly for a file
+partB/festival.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/festival.cpp.s
+.PHONY : partB/festival.cpp.s
+
 partB/main_B.o: partB/main_B.cpp.o
 
 .PHONY : partB/main_B.o
@@ -325,6 +379,12 @@ help:
 	@echo "... partB/closed_event.o"
 	@echo "... partB/closed_event.i"
 	@echo "... partB/closed_event.s"
+	@echo "... partB/event_container.o"
+	@echo "... partB/event_container.i"
+	@echo "... partB/event_container.s"
+	@echo "... partB/festival.o"
+	@echo "... partB/festival.i"
+	@echo "... partB/festival.s"
 	@echo "... partB/main_B.o"
 	@echo "... partB/main_B.i"
 	@echo "... partB/main_B.s"

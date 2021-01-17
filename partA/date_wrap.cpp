@@ -101,7 +101,7 @@ DateWrap& DateWrap::operator+= (int increment)
 {
     if(increment < 0){
         //throw NegativeDays;
-        return;
+        // return ;
     }
 
     Date date = dateCreate(this->day, this->month, this->year);
@@ -118,7 +118,7 @@ DateWrap DateWrap::operator+(int increment)
 {
     if(increment < 0){
         //throw NegativeDays;
-        return;
+        // return;
     }
 
     DateWrap newDate(this->day, this->month, this->year);
@@ -131,11 +131,19 @@ DateWrap operator+ (int increment, DateWrap& date)
 {
         if(increment < 0){
         //throw NegativeDays;
-        return;
+        // return;
     }
 
     DateWrap newDate(date.day, date.month, date.year);
     newDate += increment;
 
     return newDate;
+}
+
+
+
+DateWrap::DateWrap(const DateWrap& date) :
+    day(date.day), month(date.month), year(date.year)
+{
+
 }

@@ -1,4 +1,5 @@
-
+#ifndef BASE_EVENT_H_
+#define BASE_EVENT_H_
 
 #include <iostream>
 #include "../partA/date_wrap.h"
@@ -31,24 +32,23 @@ public:
     StudentsList copy() const; // not needed
 };
 
-
+// BaseEvent class
 class BaseEvent 
 {
 
 private:
     DateWrap date;
     string name;
-    
+
 // is protected fine?
 protected:
     StudentsList students;
 
 
-
 public:
     BaseEvent(const DateWrap&, const string&); //constructor
-    BaseEvent(const BaseEvent&); //copy constructor TODO
-    virtual ~BaseEvent();
+    BaseEvent(const BaseEvent&); //copy constructor 
+    virtual ~BaseEvent(); //does destructor need to be virtual?
 
     virtual void registerParticpant(int);
     virtual void unregisterParticipant(int);
@@ -56,7 +56,16 @@ public:
     ostream& printShort(ostream&);
     ostream& printLong(ostream&);
 
-    virtual BaseEvent* clone() const = 0; 
+    virtual BaseEvent* clone() const = 0; //pure virtual
+
+    bool operator== (const BaseEvent&);
+    DateWrap& getDate();
+    string getName();
 
 };
+
+
+
+#endif
+
 

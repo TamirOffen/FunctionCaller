@@ -8,7 +8,9 @@ using std::cout;
 #define MIN_STUDENT 1
 #define MAX_STUDENT 20000
 
-// Implementation of the Students Linked List:
+////////////////////////////////////////////////
+// Implementation of the Students Linked List //
+////////////////////////////////////////////////
 StudentsList::StudentsList(): head(NULL) {
 }
 
@@ -55,6 +57,7 @@ void StudentsList::addStudent(int id) {
         StudentNode *temp_node = head;
         head = new_student;
         head->next = temp_node;
+        // return ???
     }
 
     for(StudentNode *elem = head; elem != NULL; elem=elem->next) {
@@ -108,7 +111,6 @@ bool StudentsList::studentInList(int id) const {
     return false;
 }
 
-// copy constructor 
 StudentsList::StudentsList(const StudentsList& list): head(NULL){
     
     for(StudentNode *elem = list.head; elem != NULL; elem=elem->next) 
@@ -137,7 +139,10 @@ StudentsList StudentsList::copy() const {
 }
 
 
-// Implementation of BaseEvent class:
+
+///////////////////////////////////////////
+// Implementation of the BaseEvent class //
+///////////////////////////////////////////
 BaseEvent::BaseEvent(const DateWrap& date, const string& name): date(date), name(name)
 {
     
@@ -199,5 +204,21 @@ BaseEvent::BaseEvent(const BaseEvent& event):
 
 }
 
+// compares just the name and date of the events (not the students list)
+bool BaseEvent::operator== (const BaseEvent& event) {
+    if(name == event.name && date == event.date) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
 
+DateWrap& BaseEvent::getDate() {
+    return date;
+}
+
+string BaseEvent::getName() {
+    return name;
+}
 
