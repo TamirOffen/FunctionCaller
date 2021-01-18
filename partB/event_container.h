@@ -15,6 +15,9 @@ class EventContainer
 private:
     EventNode *head = NULL;
 
+protected:
+    void add_event(const BaseEvent&);
+
 public:
     EventContainer();
     ~EventContainer();

@@ -18,7 +18,7 @@ void Festival::add(const BaseEvent& event) {
         //throw exeption
         std::cout << "Exeption: DateMismatch" << std::endl;
     }
-    EventContainer::add(event); //add func from event_contianer
+    add_event(event); //add func from event_contianer
 }
 
 

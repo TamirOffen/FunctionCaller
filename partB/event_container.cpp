@@ -15,9 +15,7 @@ EventContainer::~EventContainer() {
     }
 }
 
-void EventContainer::add(const BaseEvent& event) {
-    // BaseEvent* event_copy = event.clone();
-
+void EventContainer::add_event(const BaseEvent& event) {
     EventNode *new_event = new EventNode();
     new_event->event = event.clone();
     
