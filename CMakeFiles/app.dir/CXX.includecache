@@ -43,8 +43,8 @@ iostream
 -
 open_event.h
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/open_event.h
-event_container.h
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/event_container.h
+festival.h
+/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/festival.h
 base_event.h
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/base_event.h
 

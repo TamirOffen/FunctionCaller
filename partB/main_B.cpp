@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "open_event.h"
-#include "event_container.h"
+#include "festival.h"
 #include "base_event.h"
 using namespace std;
 
@@ -110,7 +110,7 @@ int main() {
     f.printEvents();
 */
 
-
+/*
     OpenEvent o1(DateWrap(1,2,2000), "event 1");
     OpenEvent o2(DateWrap(1,2,2000), "event  ");
     OpenEvent o3(DateWrap(1,2,2000), "event A");
@@ -133,8 +133,26 @@ int main() {
     // ++it2;
     // ++it2;
     // cout<<(it != it2) <<endl;
+*/
 
 
+    OpenEvent o1(DateWrap(1,2,2000), "event 1");
+    OpenEvent o2(DateWrap(1,2,2000), "event  ");
+    OpenEvent o3(DateWrap(1,2,2000), "event A");
+    OpenEvent o4(DateWrap(1,2,2002), "event A");
+
+    DateWrap date(1,2,2000);
+    Festival f(date);
+    f.add(o1);
+    f.add(o2);
+    f.add(o4);
+
+    EventContainer::EventIterator it = f.begin();
+
+    (*it).printShort(cout);
+
+    ++it;
+    (*it).printShort(cout);
 
     return 0;
 }

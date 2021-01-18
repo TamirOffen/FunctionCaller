@@ -10,6 +10,7 @@ EventContainer::~EventContainer() {
     while(head != NULL) {
         EventNode *temp = head->next;
         delete head->event;
+        delete head;
         head = temp;
     }
 }
