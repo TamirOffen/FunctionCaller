@@ -39,6 +39,7 @@ CMakeFiles/app.dir/partB/main_B.cpp.o: partB/closed_event.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/event_container.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/festival.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/main_B.cpp
+CMakeFiles/app.dir/partB/main_B.cpp.o: partB/one_time_event.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/open_event.h
 CMakeFiles/app.dir/partB/main_B.cpp.o: partB/recurring_event.h
 

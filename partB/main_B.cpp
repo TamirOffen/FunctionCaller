@@ -5,6 +5,7 @@
 #include "base_event.h"
 #include "closed_event.h"
 #include "recurring_event.h"
+#include "one_time_event.h"
 using namespace std;
 
 struct StudentFilter {
@@ -145,7 +146,7 @@ int main() {
     // cout<<(it != it2) <<endl;
 */
 
-/*
+    
     Festival festival(DateWrap(21,10,2020));
     festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1"));
     ClosedEvent closed(DateWrap(21,10,2020), "Performance 2");
@@ -158,12 +159,14 @@ int main() {
     
     RecurringEvent<OpenEvent> recurring(DateWrap(21,10,2020), "Wednesday Noon", 13, 7);
     printEventsShort(recurring);
-*/
 
-    DateWrap date(21,10,2020);
-    date += 3;
+    OneTimeEvent<OpenEvent> one_time(DateWrap(21,10,2020), "start of the semester");
+    printEventsShort(one_time);
 
-    cout << date.dayReturn() << endl;
+    
+
+    
+    
 
     return 0;
 }
