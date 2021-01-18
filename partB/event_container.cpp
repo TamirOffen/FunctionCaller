@@ -152,10 +152,7 @@ EventContainer::EventIterator& EventContainer::EventIterator::operator= (const E
 }
 
 bool EventContainer::EventIterator::operator== (const EventIterator& iter) {
-    if(iter.current_node == NULL) {
-        return false;
-    }
-    return this->current_node->event == iter.current_node->event;
+    return this->current_node == iter.current_node;
 }
 bool EventContainer::EventIterator::operator!= (const EventIterator& iter) {
     return !(*this == iter);

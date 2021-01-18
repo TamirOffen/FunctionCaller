@@ -151,6 +151,7 @@ int main() {
     closed.addInvitee(1);
     closed.addInvitee(500);
     festival.add(closed);
+    festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1"));
     printEventsShort(festival);
     
 
