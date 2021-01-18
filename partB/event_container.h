@@ -17,9 +17,9 @@ private:
 
 public:
     EventContainer();
-    // ~EventContainer();
+    ~EventContainer();
 
-    virtual void add(BaseEvent&); 
+    virtual void add(BaseEvent&); // =0 ???
     //exeption: NotSupported, TODO!
 
     class EventIterator
@@ -37,8 +37,8 @@ public:
         EventIterator& operator++ (); //++i
         BaseEvent& operator* (); //*i (dereference)
 
-        // maybe 2 param ???
         // returns T/F if the iterators are pointing to the same event?
+        // check these:
         bool operator== (const EventIterator& iter); // iter1 == iter2
         bool operator!= (const EventIterator& iter); // iter1 != iter2
     };

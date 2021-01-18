@@ -4,14 +4,21 @@
 
 EventContainer::EventContainer() : head(NULL)
 {
+}
 
+EventContainer::~EventContainer() {
+    while(head != NULL) {
+        EventNode *temp = head->next;
+        delete head->event;
+        head = temp;
+    }
 }
 
 void EventContainer::add(BaseEvent& event) {
-    BaseEvent* event_copy = event.clone();
+    // BaseEvent* event_copy = event.clone();
 
     EventNode *new_event = new EventNode();
-    new_event->event = event_copy;
+    new_event->event = event.clone();
     
     //if list is empty:
     if(head == NULL) {
@@ -141,6 +148,12 @@ EventContainer::EventIterator& EventContainer::EventIterator::operator= (const E
     return *this;
 }
 
+bool EventContainer::EventIterator::operator== (const EventIterator& iter) {
+    return this->current_node->event == iter.current_node->event;
+}
+bool EventContainer::EventIterator::operator!= (const EventIterator& iter) {
+    return !(*this == iter);
+}
 
 EventContainer::EventIterator EventContainer::begin() {
     return EventIterator(*this, false);
@@ -148,5 +161,7 @@ EventContainer::EventIterator EventContainer::begin() {
 EventContainer::EventIterator EventContainer::end() {
     return EventIterator(*this, true);
 }
+
+
 
 

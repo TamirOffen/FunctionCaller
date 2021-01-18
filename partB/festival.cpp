@@ -13,6 +13,13 @@ Festival::~Festival()
 
 }
 
+void Festival::add(BaseEvent& event) {
+    if(event.getDate() != date_of_festival) {
+        //throw exeption
+    }
+    EventContainer::add(event); //add func from event_contianer
+}
+
 
 
 

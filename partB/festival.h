@@ -14,7 +14,7 @@ public:
     Festival(const DateWrap&); //TODO: & or not???
     ~Festival();
 
-    // void add(BaseEvent&) override;
+    void add(BaseEvent&) override;
 
 };
 
