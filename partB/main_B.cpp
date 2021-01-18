@@ -11,6 +11,14 @@ struct StudentFilter {
     }
 };
 
+typedef EventContainer::EventIterator Iter;
+void printEventsShort(EventContainer& events) {
+    for(Iter iter = events.begin(); iter != events.end(); ++iter) {
+        BaseEvent& event = *iter;
+        event.printShort(cout);
+    }
+}
+
 int main() {
 
   /* 
@@ -136,23 +144,10 @@ int main() {
 */
 
 
-    OpenEvent o1(DateWrap(1,2,2000), "event 1");
-    OpenEvent o2(DateWrap(1,2,2000), "event  ");
-    OpenEvent o3(DateWrap(1,2,2000), "event A");
-    OpenEvent o4(DateWrap(1,2,2002), "event A");
-
-    DateWrap date(1,2,2000);
-    Festival f(date);
-    f.add(o1);
-    f.add(o2);
-    f.add(o4);
-
-    EventContainer::EventIterator it = f.begin();
-
-    (*it).printShort(cout);
-
-    ++it;
-    (*it).printShort(cout);
+    Festival festival(DateWrap(21,10,2020));
+    festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1"));
+    
+    
 
     return 0;
 }
