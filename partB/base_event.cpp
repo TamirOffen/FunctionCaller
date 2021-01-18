@@ -140,6 +140,9 @@ StudentsList StudentsList::copy() const {
 
 
 
+
+
+
 ///////////////////////////////////////////
 // Implementation of the BaseEvent class //
 ///////////////////////////////////////////
@@ -214,11 +217,11 @@ bool BaseEvent::operator== (const BaseEvent& event) {
     }
 }
 
-DateWrap& BaseEvent::getDate() {
+DateWrap BaseEvent::getDate() const {
     return date;
 }
 
-string BaseEvent::getName() {
+string BaseEvent::getName() const {
     return name;
 }
 

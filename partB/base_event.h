@@ -8,7 +8,7 @@ using std::ostream;
 using std::istream;
 using std::string;
 
-//linked list for the students
+//linked list for the students:
 struct StudentNode
 {
     int id;
@@ -32,7 +32,7 @@ public:
     StudentsList copy() const; // not needed
 };
 
-// BaseEvent class
+// BaseEvent class:
 class BaseEvent 
 {
 
@@ -59,11 +59,10 @@ public:
     virtual BaseEvent* clone() const = 0; //pure virtual
 
     bool operator== (const BaseEvent&);
-    DateWrap& getDate();
-    string getName();
+    DateWrap getDate() const ;
+    string getName() const ;
 
 };
-
 
 
 #endif

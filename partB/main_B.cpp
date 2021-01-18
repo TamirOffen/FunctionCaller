@@ -3,6 +3,8 @@
 #include "open_event.h"
 #include "festival.h"
 #include "base_event.h"
+#include "closed_event.h"
+#include "recurring_event.h"
 using namespace std;
 
 struct StudentFilter {
@@ -10,6 +12,14 @@ struct StudentFilter {
         return (student%2 == 0);
     }
 };
+
+typedef EventContainer::EventIterator Iter;
+void printEventsShort(EventContainer& events) {
+    for(Iter iter = events.begin(); iter != events.end(); ++iter) {
+        BaseEvent& event = *iter;
+        event.printShort(cout);
+    }
+}
 
 int main() {
 
@@ -110,6 +120,50 @@ int main() {
     f.printEvents();
 */
 
+/*
+    OpenEvent o1(DateWrap(1,2,2000), "event 1");
+    OpenEvent o2(DateWrap(1,2,2000), "event  ");
+    OpenEvent o3(DateWrap(1,2,2000), "event A");
+
+    EventContainer ec;
+    ec.add(o1);
+    ec.add(o2);
+    ec.add(o3);
+
+    // EventContainer::EventIterator it = ec.begin();
+    // EventContainer::EventIterator it2 = ec.begin();
+    // EventContainer::EventIterator it_end = ec.end();
+
+    // BaseEvent& ev = *it;
+    // ev.printLong(cout);
+
+    // ++it;
+    // (*it).printShort(cout);
+
+    // ++it2;
+    // ++it2;
+    // cout<<(it != it2) <<endl;
+*/
+
+/*
+    Festival festival(DateWrap(21,10,2020));
+    festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1"));
+    ClosedEvent closed(DateWrap(21,10,2020), "Performance 2");
+    closed.addInvitee(1);
+    closed.addInvitee(500);
+    festival.add(closed);
+    festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1"));
+    printEventsShort(festival);
+
+    
+    RecurringEvent<OpenEvent> recurring(DateWrap(21,10,2020), "Wednesday Noon", 13, 7);
+    printEventsShort(recurring);
+*/
+
+    DateWrap date(21,10,2020);
+    date += 3;
+
+    cout << date.dayReturn() << endl;
 
     return 0;
 }
