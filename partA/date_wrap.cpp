@@ -111,6 +111,7 @@ DateWrap& DateWrap::operator+= (int increment)
     }
     dateGet(date, &this->day, &this->month, &this->year);
 
+    dateDestroy(date);
     return *this;
 }
 
