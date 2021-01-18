@@ -15,7 +15,7 @@ EventContainer::~EventContainer() {
     }
 }
 
-void EventContainer::add(BaseEvent& event) {
+void EventContainer::add(const BaseEvent& event) {
     // BaseEvent* event_copy = event.clone();
 
     EventNode *new_event = new EventNode();
@@ -136,7 +136,9 @@ EventContainer::EventIterator& EventContainer::EventIterator::operator++() {
     if(current_node == NULL) {
         current_node = NULL;
     }
-    current_node = current_node->next;
+    else {
+        current_node = current_node->next;
+    }
     return *this;
 }
 
@@ -150,6 +152,9 @@ EventContainer::EventIterator& EventContainer::EventIterator::operator= (const E
 }
 
 bool EventContainer::EventIterator::operator== (const EventIterator& iter) {
+    if(iter.current_node == NULL) {
+        return false;
+    }
     return this->current_node->event == iter.current_node->event;
 }
 bool EventContainer::EventIterator::operator!= (const EventIterator& iter) {

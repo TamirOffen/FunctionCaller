@@ -3,6 +3,7 @@
 #include "open_event.h"
 #include "festival.h"
 #include "base_event.h"
+#include "closed_event.h"
 using namespace std;
 
 struct StudentFilter {
@@ -146,7 +147,11 @@ int main() {
 
     Festival festival(DateWrap(21,10,2020));
     festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1"));
-    
+    ClosedEvent closed(DateWrap(21,10,2020), "Performance 2");
+    closed.addInvitee(1);
+    closed.addInvitee(500);
+    festival.add(closed);
+    printEventsShort(festival);
     
 
     return 0;

@@ -19,7 +19,7 @@ public:
     EventContainer();
     ~EventContainer();
 
-    virtual void add(BaseEvent&) = 0; // =0 ???
+    virtual void add(const BaseEvent&) = 0; // =0 ???
     //exeption: NotSupported, TODO!
 
     class EventIterator

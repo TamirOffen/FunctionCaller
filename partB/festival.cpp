@@ -13,7 +13,7 @@ Festival::~Festival()
 
 }
 
-void Festival::add(BaseEvent& event) {
+void Festival::add(const BaseEvent& event) {
     if(event.getDate() != date_of_festival) {
         //throw exeption
         std::cout << "Exeption: DateMismatch" << std::endl;

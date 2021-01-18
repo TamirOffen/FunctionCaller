@@ -59,42 +59,10 @@ public:
     virtual BaseEvent* clone() const = 0; //pure virtual
 
     bool operator== (const BaseEvent&);
-    DateWrap& getDate();
-    string getName();
+    DateWrap getDate() const ;
+    string getName() const ;
 
 };
-
-
-/*
-//linked list for the events:
-struct EventNode 
-{
-    BaseEvent& event;
-    EventNode *next;
-    EventNode(BaseEvent&);
-};
-
-class EventsList 
-{
-private:
-    EventNode *head;
-
-public:
-    EventsList();
-    EventsList(const EventsList&);
-    ~EventsList();
-
-    //add by order of increasing date / increasing event name
-    void addEvent(BaseEvent&); 
-    bool eventInList(BaseEvent&);
-    void printEvents();
-
-    //iterating through the events:
-    BaseEvent* first();
-    BaseEvent* next();
-
-};
-*/
 
 
 #endif
