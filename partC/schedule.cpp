@@ -8,6 +8,13 @@ Schedule::Schedule()
 
 }
 
+Schedule::~Schedule() {
+    set<BaseEvent*>::iterator iter;
+    for(iter = events.begin(); iter != events.end(); ++iter) {
+        delete *iter;
+    }
+}
+
 // test:
 bool Schedule::isInEvents(BaseEvent& event) {
     set<BaseEvent*>::iterator iter;

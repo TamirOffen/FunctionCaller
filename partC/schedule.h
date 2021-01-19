@@ -24,6 +24,7 @@ private:
 
 public:
     Schedule();
+    ~Schedule();
 
     void addEvents(const EventContainer&); 
     void printAllEvents();
