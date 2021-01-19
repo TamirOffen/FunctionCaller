@@ -167,18 +167,31 @@ CMakeFiles/app.dir/partB/festival.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/partB/festival.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/festival.cpp" -o CMakeFiles/app.dir/partB/festival.cpp.s
 
-CMakeFiles/app.dir/partB/main_B.cpp.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/main_B.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/partB/main_B.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/partB/main_B.cpp.o -c "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/main_B.cpp"
+CMakeFiles/app.dir/partC/schedule.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/partC/schedule.cpp.o: partC/schedule.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/partC/schedule.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/partC/schedule.cpp.o -c "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partC/schedule.cpp"
 
-CMakeFiles/app.dir/partB/main_B.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/partB/main_B.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/main_B.cpp" > CMakeFiles/app.dir/partB/main_B.cpp.i
+CMakeFiles/app.dir/partC/schedule.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/partC/schedule.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partC/schedule.cpp" > CMakeFiles/app.dir/partC/schedule.cpp.i
 
-CMakeFiles/app.dir/partB/main_B.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/partB/main_B.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/main_B.cpp" -o CMakeFiles/app.dir/partB/main_B.cpp.s
+CMakeFiles/app.dir/partC/schedule.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/partC/schedule.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partC/schedule.cpp" -o CMakeFiles/app.dir/partC/schedule.cpp.s
+
+CMakeFiles/app.dir/partC/main_C.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/partC/main_C.cpp.o: partC/main_C.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/app.dir/partC/main_C.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/partC/main_C.cpp.o -c "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partC/main_C.cpp"
+
+CMakeFiles/app.dir/partC/main_C.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/partC/main_C.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partC/main_C.cpp" > CMakeFiles/app.dir/partC/main_C.cpp.i
+
+CMakeFiles/app.dir/partC/main_C.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/partC/main_C.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partC/main_C.cpp" -o CMakeFiles/app.dir/partC/main_C.cpp.s
 
 # Object files for target app
 app_OBJECTS = \
@@ -189,7 +202,8 @@ app_OBJECTS = \
 "CMakeFiles/app.dir/partB/closed_event.cpp.o" \
 "CMakeFiles/app.dir/partB/event_container.cpp.o" \
 "CMakeFiles/app.dir/partB/festival.cpp.o" \
-"CMakeFiles/app.dir/partB/main_B.cpp.o"
+"CMakeFiles/app.dir/partC/schedule.cpp.o" \
+"CMakeFiles/app.dir/partC/main_C.cpp.o"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
@@ -201,10 +215,11 @@ app: CMakeFiles/app.dir/partB/open_event.cpp.o
 app: CMakeFiles/app.dir/partB/closed_event.cpp.o
 app: CMakeFiles/app.dir/partB/event_container.cpp.o
 app: CMakeFiles/app.dir/partB/festival.cpp.o
-app: CMakeFiles/app.dir/partB/main_B.cpp.o
+app: CMakeFiles/app.dir/partC/schedule.cpp.o
+app: CMakeFiles/app.dir/partC/main_C.cpp.o
 app: CMakeFiles/app.dir/build.make
 app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -59,6 +59,8 @@ public:
     virtual BaseEvent* clone() const = 0; //pure virtual
 
     bool operator== (const BaseEvent&);
+    bool operator() (const BaseEvent& lhs, const BaseEvent& rhs ) const;
+    bool operator< (const BaseEvent& rhs ) const;
     DateWrap getDate() const ;
     string getName() const ;
 

@@ -304,33 +304,6 @@ partB/festival.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/festival.cpp.s
 .PHONY : partB/festival.cpp.s
 
-partB/main_B.o: partB/main_B.cpp.o
-
-.PHONY : partB/main_B.o
-
-# target to build an object file
-partB/main_B.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/main_B.cpp.o
-.PHONY : partB/main_B.cpp.o
-
-partB/main_B.i: partB/main_B.cpp.i
-
-.PHONY : partB/main_B.i
-
-# target to preprocess a source file
-partB/main_B.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/main_B.cpp.i
-.PHONY : partB/main_B.cpp.i
-
-partB/main_B.s: partB/main_B.cpp.s
-
-.PHONY : partB/main_B.s
-
-# target to generate assembly for a file
-partB/main_B.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/main_B.cpp.s
-.PHONY : partB/main_B.cpp.s
-
 partB/open_event.o: partB/open_event.cpp.o
 
 .PHONY : partB/open_event.o
@@ -357,6 +330,60 @@ partB/open_event.s: partB/open_event.cpp.s
 partB/open_event.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/open_event.cpp.s
 .PHONY : partB/open_event.cpp.s
+
+partC/main_C.o: partC/main_C.cpp.o
+
+.PHONY : partC/main_C.o
+
+# target to build an object file
+partC/main_C.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/main_C.cpp.o
+.PHONY : partC/main_C.cpp.o
+
+partC/main_C.i: partC/main_C.cpp.i
+
+.PHONY : partC/main_C.i
+
+# target to preprocess a source file
+partC/main_C.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/main_C.cpp.i
+.PHONY : partC/main_C.cpp.i
+
+partC/main_C.s: partC/main_C.cpp.s
+
+.PHONY : partC/main_C.s
+
+# target to generate assembly for a file
+partC/main_C.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/main_C.cpp.s
+.PHONY : partC/main_C.cpp.s
+
+partC/schedule.o: partC/schedule.cpp.o
+
+.PHONY : partC/schedule.o
+
+# target to build an object file
+partC/schedule.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/schedule.cpp.o
+.PHONY : partC/schedule.cpp.o
+
+partC/schedule.i: partC/schedule.cpp.i
+
+.PHONY : partC/schedule.i
+
+# target to preprocess a source file
+partC/schedule.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/schedule.cpp.i
+.PHONY : partC/schedule.cpp.i
+
+partC/schedule.s: partC/schedule.cpp.s
+
+.PHONY : partC/schedule.s
+
+# target to generate assembly for a file
+partC/schedule.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/schedule.cpp.s
+.PHONY : partC/schedule.cpp.s
 
 # Help Target
 help:
@@ -385,12 +412,15 @@ help:
 	@echo "... partB/festival.o"
 	@echo "... partB/festival.i"
 	@echo "... partB/festival.s"
-	@echo "... partB/main_B.o"
-	@echo "... partB/main_B.i"
-	@echo "... partB/main_B.s"
 	@echo "... partB/open_event.o"
 	@echo "... partB/open_event.i"
 	@echo "... partB/open_event.s"
+	@echo "... partC/main_C.o"
+	@echo "... partC/main_C.i"
+	@echo "... partC/main_C.s"
+	@echo "... partC/schedule.o"
+	@echo "... partC/schedule.i"
+	@echo "... partC/schedule.s"
 .PHONY : help
 
 

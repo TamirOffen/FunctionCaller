@@ -217,6 +217,29 @@ bool BaseEvent::operator== (const BaseEvent& event) {
     }
 }
 
+bool BaseEvent::operator< (const BaseEvent& rhs ) const {
+    cout << "called" << endl;
+    return true;
+}
+
+// test:
+bool BaseEvent::operator() (const BaseEvent& lhs, const BaseEvent& rhs) const 
+{
+    std::cout <<"called: " << std::endl;
+    if(lhs.date < rhs.date) {
+        return true;
+    } else if (lhs.date > rhs.date) {
+        return false;
+    } else {
+        // dates are equal, therefore we'll compare the names of the events
+        if(lhs.name <= rhs.name) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
 DateWrap BaseEvent::getDate() const {
     return date;
 }

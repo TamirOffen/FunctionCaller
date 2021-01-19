@@ -88,6 +88,25 @@ int main() {
 
     delete ceClone;
 
+    ClosedEvent closed_event(DateWrap(1,2,2000), "closed event test");
+    // closed_event.addInvitee(2);
+    closed_event.addInvitee(3);
+    closed_event.registerParticpant(3);
+    // closed_event.registerParticpant(2);
+    closed_event.printLong(cout);
+    cout << endl;
+
+    ClosedEvent *closed_event_clone = (ClosedEvent*)closed_event.clone();
+
+    closed_event.addInvitee(2);
+    closed_event_clone->registerParticpant(2);
+    closed_event_clone->printLong(cout);
+    cout << endl;
+
+    closed_event.printLong(cout);
+    cout << endl;
+
+    delete closed_event_clone;
 */
     
 /*
@@ -146,7 +165,7 @@ int main() {
     // cout<<(it != it2) <<endl;
 */
 
-    
+    /*
     Festival festival(DateWrap(21,10,2020));
     festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1"));
     ClosedEvent closed(DateWrap(21,10,2020), "Performance 2");
@@ -162,7 +181,7 @@ int main() {
 
     OneTimeEvent<OpenEvent> one_time(DateWrap(21,10,2020), "start of the semester");
     printEventsShort(one_time);
-
+    */
     
 
     

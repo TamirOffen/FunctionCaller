@@ -22,6 +22,10 @@ add_executable(
     partB/closed_event.cpp
     partB/event_container.cpp
     partB/festival.cpp
-    partB/main_B.cpp
+    # partB/main_B.cpp
+
+    partC/schedule.cpp
+    partC/main_C.cpp
+    
 )
 

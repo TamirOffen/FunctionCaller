@@ -32,20 +32,28 @@ CMakeFiles/app.dir/partB/festival.cpp.o: partB/event_container.h
 CMakeFiles/app.dir/partB/festival.cpp.o: partB/festival.cpp
 CMakeFiles/app.dir/partB/festival.cpp.o: partB/festival.h
 
-CMakeFiles/app.dir/partB/main_B.cpp.o: partA/date.h
-CMakeFiles/app.dir/partB/main_B.cpp.o: partA/date_wrap.h
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/base_event.h
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/closed_event.h
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/event_container.h
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/festival.h
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/main_B.cpp
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/one_time_event.h
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/open_event.h
-CMakeFiles/app.dir/partB/main_B.cpp.o: partB/recurring_event.h
-
 CMakeFiles/app.dir/partB/open_event.cpp.o: partA/date.h
 CMakeFiles/app.dir/partB/open_event.cpp.o: partA/date_wrap.h
 CMakeFiles/app.dir/partB/open_event.cpp.o: partB/base_event.h
 CMakeFiles/app.dir/partB/open_event.cpp.o: partB/open_event.cpp
 CMakeFiles/app.dir/partB/open_event.cpp.o: partB/open_event.h
+
+CMakeFiles/app.dir/partC/main_C.cpp.o: partA/date.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partA/date_wrap.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partB/base_event.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partB/closed_event.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partB/event_container.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partB/festival.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partB/one_time_event.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partB/open_event.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partB/recurring_event.h
+CMakeFiles/app.dir/partC/main_C.cpp.o: partC/main_C.cpp
+CMakeFiles/app.dir/partC/main_C.cpp.o: partC/schedule.h
+
+CMakeFiles/app.dir/partC/schedule.cpp.o: partA/date.h
+CMakeFiles/app.dir/partC/schedule.cpp.o: partA/date_wrap.h
+CMakeFiles/app.dir/partC/schedule.cpp.o: partB/base_event.h
+CMakeFiles/app.dir/partC/schedule.cpp.o: partB/event_container.h
+CMakeFiles/app.dir/partC/schedule.cpp.o: partC/schedule.cpp
+CMakeFiles/app.dir/partC/schedule.cpp.o: partC/schedule.h
 

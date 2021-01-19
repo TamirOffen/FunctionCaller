@@ -120,7 +120,7 @@ void EventContainer::add_event(const BaseEvent& event) {
 // Implementation of EventIterator //
 /////////////////////////////////////
 
-EventContainer::EventIterator::EventIterator(EventContainer& eventContainer, bool is_end)
+EventContainer::EventIterator::EventIterator(const EventContainer& eventContainer, bool is_end)
 {
     if(is_end) {
         current_node = NULL;
@@ -156,10 +156,10 @@ bool EventContainer::EventIterator::operator!= (const EventIterator& iter) {
     return !(*this == iter);
 }
 
-EventContainer::EventIterator EventContainer::begin() {
+EventContainer::EventIterator EventContainer::begin() const {
     return EventIterator(*this, false);
 }
-EventContainer::EventIterator EventContainer::end() {
+EventContainer::EventIterator EventContainer::end() const {
     return EventIterator(*this, true);
 }
 

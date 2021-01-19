@@ -33,7 +33,7 @@ public:
     public:
         // EventIterator();
         EventIterator(const EventIterator&);
-        EventIterator(EventContainer&, bool is_end);
+        EventIterator(const EventContainer&, bool is_end);
         // ~EventIterator();
 
         EventIterator& operator= (const EventIterator&); // i1 = i2 = i3 etc.
@@ -47,8 +47,8 @@ public:
     };
 
 
-    EventIterator begin();
-    EventIterator end();
+    EventIterator begin() const;
+    EventIterator end() const;
 
 };
 
