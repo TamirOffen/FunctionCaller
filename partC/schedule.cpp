@@ -142,6 +142,8 @@ void Schedule::unregisterFromEvent(const DateWrap& date, const string& name, con
 }
 
 
+// print funcs:
+
 void Schedule::printAllEvents() const {
     set<BaseEvent*>::iterator iter;
     for(iter = events.begin(); iter != events.end(); ++iter) {
@@ -160,5 +162,14 @@ void Schedule::printMonthEvents(const int month, const int year) const {
     }
 }
 
-
+void Schedule::printEventDetails(const string& name, const DateWrap& date) const {
+    BaseEvent* event = getBaseEvent(date, name);
+    if(event == NULL) {
+        // Exeption: EventDoesNotExist
+        std::cout << "Exeption: EventDoesNotExist" << std::endl;
+        return;
+    }
+    (*event).printLong(std::cout);
+    std::cout << std::endl;
+}
 

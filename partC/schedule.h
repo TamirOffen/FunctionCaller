@@ -36,7 +36,7 @@ public:
 
     void printAllEvents() const;
     void printMonthEvents(const int month, const int year) const;
-
+    void printEventDetails(const string&, const DateWrap&) const;
 
 };
 

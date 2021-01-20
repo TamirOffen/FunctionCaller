@@ -44,10 +44,12 @@ int main() {
     s.addEvents(one_time);
     s.printAllEvents();
 
-    s.registerToEvent(DateWrap(21,10,2020), "Performance 1", 1);
-    s.unregisterFromEvent(DateWrap(21,10,2020), "Performance 1", 1);
+    s.registerToEvent(DateWrap(21,10,2020), "Performance 2", 1);
+    // s.unregisterFromEvent(DateWrap(21,10,2020), "Performance 1", 1);
 
-    s.printMonthEvents(1, 2021);
+    closed.registerParticpant(500);
+
+    s.printEventDetails("Performance 1", DateWrap(21,10,2020));
 
 
 
