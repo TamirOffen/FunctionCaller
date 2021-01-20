@@ -15,6 +15,7 @@ Schedule::~Schedule() {
     }
 }
 
+// private funcs:
 // test:
 bool Schedule::isInEvents(BaseEvent& event) {
     set<BaseEvent*>::iterator iter;
@@ -54,6 +55,17 @@ bool Schedule::eventContainerIsLegal(const EventContainer& event_container) {
     return true;
 }
 
+BaseEvent* Schedule::getBaseEvent(const DateWrap& date, const string& name) const {
+    set<BaseEvent*>::iterator iter = events.begin();
+    for( ; iter != events.end(); ++iter) {
+        //compares events: dates and names are equal
+        if((**iter).isSameEvent(date, name)) {
+            return *iter;
+        }
+    }
+    return NULL;
+}
+
 
 void Schedule::addEvents(const EventContainer& event_container) {
     if(!eventContainerIsLegal(event_container) || !canAddEventContainer(event_container)) {
@@ -69,13 +81,6 @@ void Schedule::addEvents(const EventContainer& event_container) {
 
 }
 
-void Schedule::printAllEvents() {
-    set<BaseEvent*>::iterator iter;
-    for(iter = events.begin(); iter != events.end(); ++iter) {
-        (**iter).printShort(std::cout);
-        std::cout << std::endl;
-    }
-}
 
 bool compare::operator() (const BaseEvent* lhs, const BaseEvent* rhs) const
     {
@@ -93,6 +98,67 @@ bool compare::operator() (const BaseEvent* lhs, const BaseEvent* rhs) const
         }
     }
 
+void Schedule::registerToEvent(const DateWrap& date, const string& name, const int student) {
+    BaseEvent* event = getBaseEvent(date, name);
+    if(event == NULL) {
+        // Exeption: EventDoesNotExist
+        std::cout << "Exeption: EventDoesNotExist" << std::endl;
+        return;
+    }
+
+    try
+    {
+        (*event).registerParticpant(student);
+        std::cout<<"registred student (delete this)\n";
+    }
+    catch(const std::exception& e)
+    {
+        // std::cerr << e.what() << '\n';
+        //Exeptions : 2, see paper!
+        std::cout << "can't add student: either Registration Blocked / Already Registred" <<std::endl;
+    }
+}
+
+void Schedule::unregisterFromEvent(const DateWrap& date, const string& name, const int student) {
+    BaseEvent* event = getBaseEvent(date, name);
+    if(event == NULL) {
+        // Exeption: EventDoesNotExist
+        std::cout << "Exeption: EventDoesNotExist" << std::endl;
+        return;
+    }
+
+    try
+    {
+        (*event).unregisterParticipant(student);
+        std::cout<<"unregistred student (delete this)\n";
+    }
+    catch(const std::exception& e)
+    {
+        // std::cerr << e.what() << '\n';
+        //Exeptions : NotRegistred
+        std::cout << "can't add student: NotRegistred Exeption" <<std::endl;
+    }
+
+}
+
+
+void Schedule::printAllEvents() const {
+    set<BaseEvent*>::iterator iter;
+    for(iter = events.begin(); iter != events.end(); ++iter) {
+        (**iter).printShort(std::cout);
+        std::cout << std::endl;
+    }
+}
+
+void Schedule::printMonthEvents(const int month, const int year) const {
+    set<BaseEvent*>::iterator iter = events.begin();
+    for( ; iter != events.end(); ++iter) {
+        if((**iter).isInMonth(month, year)) {
+            (**iter).printShort(std::cout);
+            std::cout << std::endl;
+        }
+    }
+}
 
 
 

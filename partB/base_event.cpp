@@ -6,7 +6,7 @@ using std::endl;
 using std::cout;
 
 #define MIN_STUDENT 1
-#define MAX_STUDENT 20000
+#define MAX_STUDENT 20000 //update this, TODO!
 
 ////////////////////////////////////////////////
 // Implementation of the Students Linked List //
@@ -21,12 +21,6 @@ StudentsList::~StudentsList() {
 }
 
 void StudentsList::addStudent(int id) {
-    /*
-    StudentNode *new_student = new StudentNode(); //check the ()
-    new_student->id = id;
-    new_student->next = head;
-    head = new_student; 
-    */
 
     if(studentInList(id) == true) {
         return;
@@ -172,6 +166,7 @@ void BaseEvent::registerParticpant(int student) {
 void BaseEvent::unregisterParticipant(int student) {
     if(students.studentInList(student) == false) {
         //TODO: throw exeption  NotRegistered
+        std::cout << "Exception: NotRegistred" << std::endl;
     }
 
     //TODO: check if it is needed
@@ -208,7 +203,7 @@ BaseEvent::BaseEvent(const BaseEvent& event):
 }
 
 // compares just the name and date of the events (not the students list)
-bool BaseEvent::operator== (const BaseEvent& event) {
+bool BaseEvent::operator== (const BaseEvent& event) const {
     if(name == event.name && date == event.date) {
         return true;
     } 
@@ -247,4 +242,24 @@ DateWrap BaseEvent::getDate() const {
 string BaseEvent::getName() const {
     return name;
 }
+
+
+bool BaseEvent::isSameEvent(const DateWrap& date, const string& name) const {
+    if(this->date == date && this->name == name) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool BaseEvent::isInMonth(const int month, const int year) const {
+    if(date.monthReturn() == month && date.yearReturn() == year) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
 

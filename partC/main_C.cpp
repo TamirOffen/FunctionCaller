@@ -25,24 +25,29 @@ int main() {
     closed.addInvitee(1);
     closed.addInvitee(500);
     festival.add(closed);
-    festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1")); //duplicate events
-    printEventsShort(festival);
+    // festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1")); //duplicate events
+    // printEventsShort(festival);
 
     
-    RecurringEvent<OpenEvent> recurring(DateWrap(21,10,2020), "Wednesday Noon", 13, 7);
-    printEventsShort(recurring);
+    RecurringEvent<OpenEvent> recurring(DateWrap(21,10,2020), "Wednesday Noon", 17, 3);
+    // printEventsShort(recurring);
 
-    OneTimeEvent<OpenEvent> one_time(DateWrap(21,10,2000), "start of the semester");
-    printEventsShort(one_time); 
+    OneTimeEvent<ClosedEvent> one_time(DateWrap(21,10,2000), "start of the semester");
+    // printEventsShort(one_time); 
 
     cout << endl;
 
     Schedule s;
     s.addEvents(festival);
     s.addEvents(recurring);
-    s.addEvents(recurring);
+    // s.addEvents(recurring);
     s.addEvents(one_time);
     s.printAllEvents();
+
+    s.registerToEvent(DateWrap(21,10,2020), "Performance 1", 1);
+    s.unregisterFromEvent(DateWrap(21,10,2020), "Performance 1", 1);
+
+    s.printMonthEvents(1, 2021);
 
 
 

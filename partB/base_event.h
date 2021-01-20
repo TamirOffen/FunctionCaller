@@ -58,11 +58,13 @@ public:
 
     virtual BaseEvent* clone() const = 0; //pure virtual
 
-    bool operator== (const BaseEvent&);
-    bool operator() (const BaseEvent& lhs, const BaseEvent& rhs ) const;
-    bool operator< (const BaseEvent& rhs ) const;
+    bool operator== (const BaseEvent&) const;
+    bool operator() (const BaseEvent& lhs, const BaseEvent& rhs ) const; //delete
+    bool operator< (const BaseEvent& rhs ) const; // delete?
     DateWrap getDate() const ;
     string getName() const ;
+    bool isSameEvent(const DateWrap&, const string&) const;
+    bool isInMonth(const int month, const int year) const;
 
 };
 
