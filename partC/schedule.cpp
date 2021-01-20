@@ -108,7 +108,7 @@ void Schedule::registerToEvent(const DateWrap& date, const string& name, const i
 
     try
     {
-        (*event).registerParticpant(student);
+        (*event).registerParticipant(student);
         std::cout<<"registred student (delete this)\n";
     }
     catch(const std::exception& e)

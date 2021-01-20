@@ -16,7 +16,7 @@ public:
     // add destructor ?
 
     void addInvitee(const int);
-    void registerParticpant(int) override;
+    void registerParticipant(int) override;
     BaseEvent* clone() const override;
 
 

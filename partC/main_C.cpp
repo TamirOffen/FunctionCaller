@@ -47,7 +47,7 @@ int main() {
     s.registerToEvent(DateWrap(21,10,2020), "Performance 2", 1);
     // s.unregisterFromEvent(DateWrap(21,10,2020), "Performance 1", 1);
 
-    closed.registerParticpant(500);
+    closed.registerParticipant(500);
 
     s.printEventDetails("Performance 1", DateWrap(21,10,2020));
 

@@ -149,7 +149,7 @@ BaseEvent::~BaseEvent() {
 
 }
 
-void BaseEvent::registerParticpant(int student) {
+void BaseEvent::registerParticipant(int student) {
     if(student < MIN_STUDENT || student > MAX_STUDENT) {
         //TODO: Throw exeption  InvalidStudent
         cout<<"illegal student"<<endl;

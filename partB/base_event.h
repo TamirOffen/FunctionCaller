@@ -50,7 +50,7 @@ public:
     BaseEvent(const BaseEvent&); //copy constructor 
     virtual ~BaseEvent(); //does destructor need to be virtual?
 
-    virtual void registerParticpant(int);
+    virtual void registerParticipant(int);
     virtual void unregisterParticipant(int);
 
     ostream& printShort(ostream&);

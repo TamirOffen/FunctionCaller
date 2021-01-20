@@ -14,7 +14,7 @@ public:
     CustomEvent(const DateWrap&, const string&, const CanRegister&);
     CustomEvent(const CustomEvent&);
 
-    void registerParticpant(int) override;
+    void registerParticipant(int) override;
     BaseEvent* clone() const override;
 
 };
@@ -35,7 +35,7 @@ CustomEvent<CanRegister>::CustomEvent(const CustomEvent& event) :
 }
 
 template <class CanRegister>
-void CustomEvent<CanRegister>::registerParticpant(int student_id) {
+void CustomEvent<CanRegister>::registerParticipant(int student_id) {
     //TODO: check if student_id is legal
 
     if(registration_condition(student_id) == false) {
