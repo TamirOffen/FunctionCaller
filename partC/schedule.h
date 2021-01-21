@@ -38,7 +38,10 @@ namespace mtm
         void printAllEvents() const;
         void printMonthEvents(const int month, const int year) const;
         void printEventDetails(const string&, const DateWrap&) const;
-        void printSomeEvents(const string& predicate, const bool verbose) const;
+
+        // test:
+        template <class Predicate>
+        void printSomeEvents(const Predicate predicate, const bool verbose) const;
 
     };
 }
