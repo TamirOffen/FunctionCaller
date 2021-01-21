@@ -21,6 +21,8 @@ void printEventsShort(EventContainer& events) {
 int main() {
 
     Festival festival(mtm::DateWrap(21,10,2020));
+
+
     festival.add(OpenEvent(mtm::DateWrap(21,10,2020), "Performance 1")); //duplicate events
     mtm::ClosedEvent closed(mtm::DateWrap(21,10,2020), "Performance 2");
     closed.addInvitee(1);
@@ -51,7 +53,7 @@ int main() {
     closed.registerParticipant(500);
 
     s.printEventDetails("Performance 1", mtm::DateWrap(21,10,2020));
-
+    
 
 
     return 0;

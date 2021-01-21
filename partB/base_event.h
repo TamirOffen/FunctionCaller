@@ -8,11 +8,12 @@ using std::ostream;
 using std::istream;
 using std::string;
 
-
-
-
 namespace mtm 
 {
+
+    const int MIN_STUDENT = 1;
+    const int MAX_STUDENT = 1234567890;
+
     //linked list for the students:
     struct StudentNode
     {
@@ -60,8 +61,6 @@ namespace mtm
         virtual BaseEvent* clone() const = 0; //pure virtual
 
         bool operator== (const BaseEvent&) const;
-        bool operator() (const BaseEvent& lhs, const BaseEvent& rhs ) const; //delete
-        bool operator< (const BaseEvent& rhs ) const; // delete?
         DateWrap getDate() const ;
         string getName() const ;
         bool isSameEvent(const DateWrap&, const string&) const;

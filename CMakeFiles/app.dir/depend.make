@@ -11,6 +11,7 @@ CMakeFiles/app.dir/partA/date_wrap.cpp.o: partA/exceptions.h
 
 CMakeFiles/app.dir/partB/base_event.cpp.o: partA/date.h
 CMakeFiles/app.dir/partB/base_event.cpp.o: partA/date_wrap.h
+CMakeFiles/app.dir/partB/base_event.cpp.o: partA/exceptions.h
 CMakeFiles/app.dir/partB/base_event.cpp.o: partB/base_event.cpp
 CMakeFiles/app.dir/partB/base_event.cpp.o: partB/base_event.h
 

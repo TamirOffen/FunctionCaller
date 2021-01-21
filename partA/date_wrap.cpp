@@ -13,7 +13,7 @@ DateWrap::DateWrap(int day, int month, int year) : day(day), month(month), year(
 {
     if(day < 1 || day > 30 || month < 1 || month > 12) 
     {
-        throw mtm::InvalidDays();
+        throw mtm::InvalidDate();
     }
 }
 
@@ -40,7 +40,7 @@ ostream& mtm::operator<<(ostream& out, const DateWrap& date)
     return out;
 }
 
-bool DateWrap::operator< (const DateWrap& date) const //Should use the copy functions maybe instead of typing this.
+bool DateWrap::operator< (const DateWrap& date) const
 {
     if(this->year < date.year){
         return true;
@@ -91,17 +91,14 @@ DateWrap DateWrap::operator++ (int)
     Date date = dateCreate(this->day, this->month, this->year);
     dateTick(date);
     dateGet(date, &this->day, &this->month, &this->year);
-    // dateGet(date, &day, &month, &year);
     dateDestroy(date);
-
     return temp;    
 }
 
 DateWrap& DateWrap::operator+= (int increment)
 {
     if(increment < 0){
-        //throw NegativeDays;
-        // return ;
+        throw mtm::NegativeDays();
     }
 
     Date date = dateCreate(this->day, this->month, this->year);
@@ -117,9 +114,9 @@ DateWrap& DateWrap::operator+= (int increment)
 
 DateWrap DateWrap::operator+(int increment)
 {
-    if(increment < 0){
-        //throw NegativeDays;
-        // return;
+    if(increment < 0)
+    {
+        throw mtm::NegativeDays();
     }
 
     DateWrap newDate(this->day, this->month, this->year);
@@ -130,9 +127,9 @@ DateWrap DateWrap::operator+(int increment)
 
 DateWrap mtm::operator+ (int increment, DateWrap& date)
 {
-        if(increment < 0){
-        //throw NegativeDays;
-        // return;
+    if(increment < 0)
+    {
+        throw mtm::NegativeDays();
     }
 
     DateWrap newDate(date.day, date.month, date.year);
@@ -146,5 +143,8 @@ DateWrap mtm::operator+ (int increment, DateWrap& date)
 DateWrap::DateWrap(const DateWrap& date) :
     day(date.day), month(date.month), year(date.year)
 {
-
 }
+
+
+
+

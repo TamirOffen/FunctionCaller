@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include "base_event.h"
+#include "../partA/exceptions.h"
 
 using std::endl;
 using std::cout;
@@ -8,8 +9,8 @@ using mtm::DateWrap;
 using mtm::BaseEvent;
 using mtm::StudentsList;
 
-#define MIN_STUDENT 1
-#define MAX_STUDENT 1234567890 //TODO: check
+// #define MIN_STUDENT 1
+// #define MAX_STUDENT 1234567890 //TODO: check
 
 ////////////////////////////////////////////////
 // Implementation of the Students Linked List //
@@ -143,29 +144,29 @@ BaseEvent::~BaseEvent()
 {
 }
 
-void BaseEvent::registerParticipant(int student) {
+void BaseEvent::registerParticipant(int student) 
+{
     if(student < MIN_STUDENT || student > MAX_STUDENT) {
-        //TODO: Throw exeption  InvalidStudent
-        cout<<"illegal student"<<endl;
+        throw mtm::InvalidStudent();
     }
     
     if(students.studentInList(student) == true) {
-        //TODO: throw exeption  AlreadyRegistred
-        cout<<"alrady registered"<<endl;
+        throw mtm::AlreadyRegistered();
     }
 
     students.addStudent(student);
 }
 
-void BaseEvent::unregisterParticipant(int student) {
-    if(students.studentInList(student) == false) {
-        //TODO: throw exeption  NotRegistered
-        std::cout << "Exception: NotRegistred" << std::endl;
+void BaseEvent::unregisterParticipant(int student) 
+{
+    if(student < MIN_STUDENT || student > MAX_STUDENT) 
+    {
+        throw mtm::InvalidStudent();
     }
 
-    //TODO: check if it is needed
-    if(student < MIN_STUDENT || student > MAX_STUDENT) {
-        //TODO: Throw exeption  InvalidStudent
+    if(students.studentInList(student) == false) 
+    {
+        throw mtm::NotRegistered();
     }
 
     students.removeStudent(student);
@@ -199,28 +200,6 @@ bool BaseEvent::operator== (const BaseEvent& event) const {
     }
 }
 
-bool BaseEvent::operator< (const BaseEvent& rhs ) const {
-    cout << "called" << endl;
-    return true;
-}
-
-// test:
-bool BaseEvent::operator() (const BaseEvent& lhs, const BaseEvent& rhs) const 
-{
-    std::cout <<"called: " << std::endl;
-    if(lhs.date < rhs.date) {
-        return true;
-    } else if (lhs.date > rhs.date) {
-        return false;
-    } else {
-        // dates are equal, therefore we'll compare the names of the events
-        if(lhs.name <= rhs.name) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
 
 DateWrap BaseEvent::getDate() const {
     return date;

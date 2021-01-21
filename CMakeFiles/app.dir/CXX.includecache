@@ -10,16 +10,6 @@
 stdbool.h
 -
 
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date_wrap.cpp
-iostream
--
-date_wrap.h
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date_wrap.h
-exceptions.h
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/exceptions.h
-date.h
-/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date.h
-
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/date_wrap.h
 iostream
 -
@@ -35,6 +25,8 @@ iostream
 -
 base_event.h
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/base_event.h
+../partA/exceptions.h
+/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partA/exceptions.h
 
 /Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/base_event.h
 iostream

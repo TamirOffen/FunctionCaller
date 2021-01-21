@@ -14,7 +14,6 @@ namespace mtm
     public:
         ClosedEvent(const DateWrap&, const string&);
         ClosedEvent(const ClosedEvent&);
-        // add destructor ? TODO: destructor = default
 
         void addInvitee(const int);
         void registerParticipant(int) override;
