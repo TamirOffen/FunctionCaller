@@ -8,65 +8,67 @@ using std::ostream;
 using std::istream;
 using std::string;
 
-//linked list for the students:
-struct StudentNode
+
+
+
+namespace mtm 
 {
-    int id;
-    StudentNode *next;
-};
+    //linked list for the students:
+    struct StudentNode
+    {
+        int id;
+        StudentNode *next;
+    };
+    class StudentsList 
+    {
+    private:
+        StudentNode *head;
 
-class StudentsList 
+    public:
+        StudentsList(); //constructor
+        StudentsList(const StudentsList&); //copy constructor
+        ~StudentsList(); //destructor
+
+        void addStudent(int);
+        void removeStudent(int);
+        bool studentInList(int) const;
+        void printStudents(ostream&) const;
+        StudentsList copy() const; // not needed
+    };
+
+    class BaseEvent 
 {
-private:
-    StudentNode *head;
+    private:
+        DateWrap date;
+        string name;
 
-public:
-    StudentsList(); //constructor
-    StudentsList(const StudentsList&); //copy constructor
-    ~StudentsList(); //destructor
-
-    void addStudent(int);
-    void removeStudent(int);
-    bool studentInList(int) const;
-    void printStudents(ostream&) const;
-    StudentsList copy() const; // not needed
-};
-
-// BaseEvent class:
-class BaseEvent 
-{
-
-private:
-    DateWrap date;
-    string name;
-
-// is protected fine?
-protected:
-    StudentsList students;
+    protected:
+        StudentsList students;
 
 
-public:
-    BaseEvent(const DateWrap&, const string&); //constructor
-    BaseEvent(const BaseEvent&); //copy constructor 
-    virtual ~BaseEvent(); //does destructor need to be virtual?
+    public:
+        BaseEvent(const DateWrap&, const string&); //constructor
+        BaseEvent(const BaseEvent&); //copy constructor 
+        virtual ~BaseEvent(); //does destructor need to be virtual?
 
-    virtual void registerParticipant(int);
-    virtual void unregisterParticipant(int);
+        virtual void registerParticipant(int);
+        virtual void unregisterParticipant(int);
 
-    ostream& printShort(ostream&);
-    ostream& printLong(ostream&);
+        ostream& printShort(ostream&);
+        ostream& printLong(ostream&);
 
-    virtual BaseEvent* clone() const = 0; //pure virtual
+        virtual BaseEvent* clone() const = 0; //pure virtual
 
-    bool operator== (const BaseEvent&) const;
-    bool operator() (const BaseEvent& lhs, const BaseEvent& rhs ) const; //delete
-    bool operator< (const BaseEvent& rhs ) const; // delete?
-    DateWrap getDate() const ;
-    string getName() const ;
-    bool isSameEvent(const DateWrap&, const string&) const;
-    bool isInMonth(const int month, const int year) const;
+        bool operator== (const BaseEvent&) const;
+        bool operator() (const BaseEvent& lhs, const BaseEvent& rhs ) const; //delete
+        bool operator< (const BaseEvent& rhs ) const; // delete?
+        DateWrap getDate() const ;
+        string getName() const ;
+        bool isSameEvent(const DateWrap&, const string&) const;
+        bool isInMonth(const int month, const int year) const;
 
-};
+    };
+}
 
 
 #endif

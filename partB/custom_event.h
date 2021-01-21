@@ -3,22 +3,27 @@
 
 #include "base_event.h"
 
-template <class CanRegister>
-class CustomEvent : public BaseEvent
+namespace mtm 
 {
+    template <class CanRegister>
+    class CustomEvent : public BaseEvent
+    {
 
-private:
-    CanRegister registration_condition; 
+    private:
+        CanRegister registration_condition; 
 
-public:
-    CustomEvent(const DateWrap&, const string&, const CanRegister&);
-    CustomEvent(const CustomEvent&);
+    public:
+        CustomEvent(const DateWrap&, const string&, const CanRegister&);
+        CustomEvent(const CustomEvent&);
 
-    void registerParticipant(int) override;
-    BaseEvent* clone() const override;
+        void registerParticipant(int) override;
+        BaseEvent* clone() const override;
 
-};
+    };
+}
 
+using mtm::BaseEvent;
+using mtm::CustomEvent;
 //implementation in .h and not .cpp ???
 template <class CanRegister>
 CustomEvent<CanRegister>::CustomEvent(const DateWrap& date, const string& name, const CanRegister& condition) :

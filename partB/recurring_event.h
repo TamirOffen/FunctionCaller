@@ -3,14 +3,20 @@
 
 #include "event_container.h"
 
-template <class EventType>
-class RecurringEvent : public EventContainer 
+namespace mtm 
 {
+    template <class EventType>
+    class RecurringEvent : public EventContainer 
+    {
 
-public:
-    RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days);
-    void add(const BaseEvent&) override;
-};
+    public:
+        RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days);
+        void add(const BaseEvent&) override;
+    };
+}
+
+
+using mtm::RecurringEvent;
 
 template <class EventType>
 RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days) {

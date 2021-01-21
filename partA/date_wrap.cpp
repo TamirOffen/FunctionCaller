@@ -1,6 +1,7 @@
 #include <iostream>
 #include "date_wrap.h"
-//using std::ostream;
+
+using mtm::DateWrap;
 
 extern "C" 
 {
@@ -9,7 +10,6 @@ extern "C"
 
 DateWrap::DateWrap(int day, int month, int year) : day(day), month(month), year(year)
 {
-    // if(!((day >= 1 && day <= 30) && (month >= 1 && month <= 12))) 
     if(day < 1 || day > 30 || month < 1 || month > 12) 
     {
         //throw InvalidDate;
@@ -34,7 +34,7 @@ const int DateWrap::yearReturn() const
 }
 
 
-ostream& operator<<(ostream& out, const DateWrap& date)
+ostream& mtm::operator<<(ostream& out, const DateWrap& date)
 {
     out << date.day << '/' << date.month << '/' << date.year;
     return out;
@@ -128,7 +128,7 @@ DateWrap DateWrap::operator+(int increment)
     return newDate;
 }
 
-DateWrap operator+ (int increment, DateWrap& date)
+DateWrap mtm::operator+ (int increment, DateWrap& date)
 {
         if(increment < 0){
         //throw NegativeDays;

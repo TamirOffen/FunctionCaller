@@ -2,10 +2,11 @@
 
 #include "schedule.h"
 
+using mtm::Schedule;
+using mtm::BaseEvent;
 
 Schedule::Schedule()
 {
-
 }
 
 Schedule::~Schedule() {
@@ -82,7 +83,7 @@ void Schedule::addEvents(const EventContainer& event_container) {
 }
 
 
-bool compare::operator() (const BaseEvent* lhs, const BaseEvent* rhs) const
+bool mtm::compare::operator() (const BaseEvent* lhs, const BaseEvent* rhs) const
     {
         if(lhs->getDate() < rhs->getDate()) {
             return true;

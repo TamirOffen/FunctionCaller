@@ -4,9 +4,12 @@
 
 using std::endl;
 using std::cout;
+using mtm::DateWrap;
+using mtm::BaseEvent;
+using mtm::StudentsList;
 
 #define MIN_STUDENT 1
-#define MAX_STUDENT 20000 //update this, TODO!
+#define MAX_STUDENT 1234567890 //update this, TODO!
 
 ////////////////////////////////////////////////
 // Implementation of the Students Linked List //

@@ -3,24 +3,24 @@
 
 #include "base_event.h"
 
-
-class ClosedEvent : public BaseEvent
+namespace mtm 
 {
+    class ClosedEvent : public BaseEvent
+    {
 
-private:
-    StudentsList invited_students;
+    private:
+        StudentsList invited_students;
 
-public:
-    ClosedEvent(const DateWrap&, const string&);
-    ClosedEvent(const ClosedEvent&);
-    // add destructor ?
+    public:
+        ClosedEvent(const DateWrap&, const string&);
+        ClosedEvent(const ClosedEvent&);
+        // add destructor ? TODO: destructor = default
 
-    void addInvitee(const int);
-    void registerParticipant(int) override;
-    BaseEvent* clone() const override;
-
-
-};
+        void addInvitee(const int);
+        void registerParticipant(int) override;
+        BaseEvent* clone() const override;
+    };
+}
 
 #endif
 

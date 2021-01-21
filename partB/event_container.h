@@ -1,56 +1,57 @@
-#ifndef BASE_CONTAINER_H_
-#define BASE_CONTAINER_H_
+#ifndef EVENT_CONTAINER_H_
+#define EVENT_CONTAINER_H_
 
 #include "base_event.h"
 
-
-struct EventNode 
+namespace mtm 
 {
-    BaseEvent *event;
-    EventNode *next;
-};
-
-class EventContainer 
-{
-private:
-    EventNode *head = NULL;
-
-protected:
-    void add_event(const BaseEvent&);
-
-public:
-    EventContainer();
-    ~EventContainer();
-
-    virtual void add(const BaseEvent&) = 0; // =0 ???
-    //exeption: NotSupported, TODO!
-
-    class EventIterator
+    struct EventNode 
     {
-    private:
-        EventNode *current_node;
-
-    public:
-        // EventIterator();
-        EventIterator(const EventIterator&);
-        EventIterator(const EventContainer&, bool is_end);
-        // ~EventIterator();
-
-        EventIterator& operator= (const EventIterator&); // i1 = i2 = i3 etc.
-        EventIterator& operator++ (); //++i
-        BaseEvent& operator* (); //*i (dereference)
-
-        // returns T/F if the iterators are pointing to the same event?
-        // check these:
-        bool operator== (const EventIterator& iter); // iter1 == iter2
-        bool operator!= (const EventIterator& iter); // iter1 != iter2
+        BaseEvent *event;
+        EventNode *next;
     };
 
+    class EventContainer 
+    {
+    private:
+        EventNode *head = NULL;
 
-    EventIterator begin() const;
-    EventIterator end() const;
+    protected:
+        void add_event(const BaseEvent&);
 
-};
+    public:
+        EventContainer();
+        ~EventContainer();
+
+        virtual void add(const BaseEvent&) = 0; // =0 ???
+        //exeption: NotSupported, TODO!
+
+        class EventIterator
+        {
+        private:
+            EventNode *current_node;
+
+        public:
+            // EventIterator();
+            EventIterator(const EventIterator&);
+            EventIterator(const EventContainer&, bool is_end);
+            // ~EventIterator();
+
+            EventIterator& operator= (const EventIterator&); // i1 = i2 = i3 etc.
+            EventIterator& operator++ (); //++i
+            BaseEvent& operator* (); //*i (dereference)
+
+            // returns T/F if the iterators are pointing to the same event?
+            bool operator== (const EventIterator& iter); // iter1 == iter2
+            bool operator!= (const EventIterator& iter); // iter1 != iter2
+        };
+
+
+        EventIterator begin() const;
+        EventIterator end() const;
+
+    };
+}
 
 
 #endif

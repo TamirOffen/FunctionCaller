@@ -1,6 +1,8 @@
 
-
 #include "closed_event.h"
+
+using mtm::ClosedEvent;
+using mtm::BaseEvent;
 
 ClosedEvent::ClosedEvent(const DateWrap& date, const string& name) :
     BaseEvent(date, name)
@@ -48,4 +50,6 @@ void ClosedEvent::registerParticipant(int student_id)
 BaseEvent* ClosedEvent::clone() const {
     return new ClosedEvent(*this);
 }
+
+
 

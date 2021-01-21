@@ -9,37 +9,39 @@
 using std::set;
 
 
-struct compare {
-    bool operator() (const BaseEvent* lhs, const BaseEvent* rhs) const;
-};
-
-
-class Schedule
+namespace mtm 
 {
+    struct compare {
+        bool operator() (const BaseEvent* lhs, const BaseEvent* rhs) const;
+    };
 
-private:
-    set<BaseEvent*, compare> events;
-    bool isInEvents(BaseEvent&);
-    bool canAddEventContainer(const EventContainer&);
-    bool eventContainerIsLegal(const EventContainer&); //doesn't contain dublicate events
-    BaseEvent* getBaseEvent(const DateWrap&, const string&) const; //returns NULL if event isn't in events
+    class Schedule
+    {
 
-public:
-    Schedule();
-    ~Schedule();
+    private:
+        set<BaseEvent*, compare> events;
+        bool isInEvents(BaseEvent&);
+        bool canAddEventContainer(const EventContainer&);
+        bool eventContainerIsLegal(const EventContainer&); //doesn't contain dublicate events
+        BaseEvent* getBaseEvent(const DateWrap&, const string&) const; //returns NULL if event isn't in events
 
-    void addEvents(const EventContainer&); 
+    public:
+        Schedule();
+        ~Schedule();
 
-    // date + name => event
-    void registerToEvent(const DateWrap&, const string&, const int);
-    void unregisterFromEvent(const DateWrap&, const string&, const int);
+        void addEvents(const EventContainer&); 
 
-    void printAllEvents() const;
-    void printMonthEvents(const int month, const int year) const;
-    void printEventDetails(const string&, const DateWrap&) const;
-    void printSomeEvents(const string& predicate, const bool verbose) const;
+        // date + name => event
+        void registerToEvent(const DateWrap&, const string&, const int);
+        void unregisterFromEvent(const DateWrap&, const string&, const int);
 
-};
+        void printAllEvents() const;
+        void printMonthEvents(const int month, const int year) const;
+        void printEventDetails(const string&, const DateWrap&) const;
+        void printSomeEvents(const string& predicate, const bool verbose) const;
+
+    };
+}
 
 
 

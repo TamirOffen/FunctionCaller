@@ -2,6 +2,8 @@
 
 #include "festival.h"
 
+using mtm::Festival;
+
 Festival::Festival(const DateWrap& date) :
     EventContainer(),
     date_of_festival(date) //works???
@@ -18,7 +20,7 @@ void Festival::add(const BaseEvent& event) {
         //throw exeption
         std::cout << "Exeption: DateMismatch" << std::endl;
     }
-    add_event(event); //add func from event_contianer
+    add_event(event); //add func from event_contianer TODO: fix
 }
 
 

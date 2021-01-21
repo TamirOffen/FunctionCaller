@@ -1,6 +1,8 @@
 
 #include "event_container.h"
 
+using mtm::EventContainer;
+using mtm::BaseEvent;
 
 EventContainer::EventContainer() : head(NULL)
 {

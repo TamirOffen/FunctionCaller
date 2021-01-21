@@ -3,14 +3,20 @@
 
 #include "event_container.h"
 
-template <class EventType>
-class OneTimeEvent : public EventContainer 
+namespace mtm 
 {
+    template <class EventType>
+    class OneTimeEvent : public EventContainer 
+    {
 
-public:
-    OneTimeEvent(const DateWrap& date, const string& name);
-    void add(const BaseEvent&) override;
-};
+    public:
+        OneTimeEvent(const DateWrap& date, const string& name);
+        void add(const BaseEvent&) override;
+    };
+}
+
+
+using mtm::OneTimeEvent;
 
 template <class EventType>
 OneTimeEvent<EventType>::OneTimeEvent(const DateWrap& date, const string& name) {

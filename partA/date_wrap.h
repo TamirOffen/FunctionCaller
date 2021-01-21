@@ -5,35 +5,39 @@
 #include "date.h"
 using std::ostream;
 
-class DateWrap 
+namespace mtm 
 {
-    int day;
-    int month;
-    int year;
 
-public:
-    DateWrap(int day, int month, int year); 
-    DateWrap(const DateWrap&);
+    class DateWrap 
+    {
+        int day;
+        int month;
+        int year;
 
-    const int dayReturn () const; 
-    const int monthReturn () const;
-    const int yearReturn() const;
+    public:
+        DateWrap(int day, int month, int year); 
+        DateWrap(const DateWrap&);
+
+        const int dayReturn () const; 
+        const int monthReturn () const;
+        const int yearReturn() const;
 
 
-    friend ostream& operator<< (ostream& out, const DateWrap& date);
-    bool operator< (const DateWrap&) const;
-    bool operator> (const DateWrap&) const;
-    bool operator== (const DateWrap&) const;
-    bool operator<= (const DateWrap&) const;
-    bool operator>= (const DateWrap&) const;
-    bool operator!= (const DateWrap&) const;
-    DateWrap operator++ (int);
-    DateWrap& operator+= (int);
-    DateWrap operator+ (int);
-    friend DateWrap operator+ (int, DateWrap&);
-    
-    
-};
+        friend ostream& operator<< (ostream& out, const DateWrap& date);
+        bool operator< (const DateWrap&) const;
+        bool operator> (const DateWrap&) const;
+        bool operator== (const DateWrap&) const;
+        bool operator<= (const DateWrap&) const;
+        bool operator>= (const DateWrap&) const;
+        bool operator!= (const DateWrap&) const;
+        DateWrap operator++ (int);
+        DateWrap& operator+= (int);
+        DateWrap operator+ (int);
+        friend DateWrap operator+ (int, DateWrap&);
+        
+        
+    };
+}
 
 #endif//DATEWRAP_H_
 

@@ -7,21 +7,22 @@
 #include "../partB/recurring_event.h"
 #include "../partB/one_time_event.h"
 #include <iostream>
-using namespace std;
+using namespace std; 
+using namespace mtm;
 
 typedef EventContainer::EventIterator Iter;
 void printEventsShort(EventContainer& events) {
     for(Iter iter = events.begin(); iter != events.end(); ++iter) {
-        BaseEvent& event = *iter;
+        mtm::BaseEvent& event = *iter;
         event.printShort(cout);
     }
 }
 
 int main() {
 
-    Festival festival(DateWrap(21,10,2020));
-    festival.add(OpenEvent(DateWrap(21,10,2020), "Performance 1")); //duplicate events
-    ClosedEvent closed(DateWrap(21,10,2020), "Performance 2");
+    Festival festival(mtm::DateWrap(21,10,2020));
+    festival.add(OpenEvent(mtm::DateWrap(21,10,2020), "Performance 1")); //duplicate events
+    mtm::ClosedEvent closed(mtm::DateWrap(21,10,2020), "Performance 2");
     closed.addInvitee(1);
     closed.addInvitee(500);
     festival.add(closed);
@@ -29,10 +30,10 @@ int main() {
     // printEventsShort(festival);
 
     
-    RecurringEvent<OpenEvent> recurring(DateWrap(21,10,2020), "Wednesday Noon", 17, 3);
+    RecurringEvent<OpenEvent> recurring(mtm::DateWrap(21,10,2020), "Wednesday Noon", 17, 3);
     // printEventsShort(recurring);
 
-    OneTimeEvent<ClosedEvent> one_time(DateWrap(21,10,2000), "start of the semester");
+    OneTimeEvent<ClosedEvent> one_time(mtm::DateWrap(21,10,2000), "start of the semester");
     // printEventsShort(one_time); 
 
     cout << endl;
@@ -44,12 +45,12 @@ int main() {
     s.addEvents(one_time);
     s.printAllEvents();
 
-    s.registerToEvent(DateWrap(21,10,2020), "Performance 2", 1);
+    s.registerToEvent(mtm::DateWrap(21,10,2020), "Performance 2", 1);
     // s.unregisterFromEvent(DateWrap(21,10,2020), "Performance 1", 1);
 
     closed.registerParticipant(500);
 
-    s.printEventDetails("Performance 1", DateWrap(21,10,2020));
+    s.printEventDetails("Performance 1", mtm::DateWrap(21,10,2020));
 
 
 
