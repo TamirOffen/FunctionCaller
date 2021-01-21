@@ -12,7 +12,7 @@ namespace mtm
         DateWrap date_of_festival;
 
     public:
-        Festival(const DateWrap&); //TODO: & or not???
+        Festival(const DateWrap&);
         ~Festival();
 
         void add(const BaseEvent&) override;

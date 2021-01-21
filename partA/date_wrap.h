@@ -15,7 +15,7 @@ namespace mtm
         int year;
 
     public:
-        DateWrap(int day, int month, int year); 
+        DateWrap(int day, int month, int year); // throw: InvalidDate
         DateWrap(const DateWrap&);
 
         const int dayReturn () const; 
@@ -30,9 +30,10 @@ namespace mtm
         bool operator<= (const DateWrap&) const;
         bool operator>= (const DateWrap&) const;
         bool operator!= (const DateWrap&) const;
-        DateWrap operator++ (int);
-        DateWrap& operator+= (int);
-        DateWrap operator+ (int);
+        DateWrap operator++ (int); //i++
+        DateWrap& operator++ () = delete; //++i (is not supported)
+        DateWrap& operator+= (int); // throw: NegativeDays
+        DateWrap operator+ (int); // throw: NegativeDays
         friend DateWrap operator+ (int, DateWrap&);
         
         

@@ -9,7 +9,7 @@ using mtm::BaseEvent;
 using mtm::StudentsList;
 
 #define MIN_STUDENT 1
-#define MAX_STUDENT 1234567890 //update this, TODO!
+#define MAX_STUDENT 1234567890 //TODO: check
 
 ////////////////////////////////////////////////
 // Implementation of the Students Linked List //
@@ -24,7 +24,6 @@ StudentsList::~StudentsList() {
 }
 
 void StudentsList::addStudent(int id) {
-
     if(studentInList(id) == true) {
         return;
     }
@@ -109,7 +108,6 @@ bool StudentsList::studentInList(int id) const {
 }
 
 StudentsList::StudentsList(const StudentsList& list): head(NULL){
-    
     for(StudentNode *elem = list.head; elem != NULL; elem=elem->next) 
     {
         addStudent(elem->id);
@@ -120,23 +118,17 @@ void StudentsList::printStudents(ostream& out) const {
     for(StudentNode *elem = head; elem != NULL; elem=elem->next) 
     {
         out << elem->id << endl;
-        // cout << "called: " <<  elem->id <<endl;
     }
 }
 
 StudentsList StudentsList::copy() const {
-    cout << "called" << endl;
     StudentsList copy_list;
     for(StudentNode *elem = head; elem != NULL; elem=elem->next) 
     {
         copy_list.addStudent(elem->id);
     }
-
     return copy_list;
 }
-
-
-
 
 
 
@@ -144,12 +136,11 @@ StudentsList StudentsList::copy() const {
 // Implementation of the BaseEvent class //
 ///////////////////////////////////////////
 BaseEvent::BaseEvent(const DateWrap& date, const string& name): date(date), name(name)
-{
-    
+{  
 }
 
-BaseEvent::~BaseEvent() {
-
+BaseEvent::~BaseEvent() 
+{
 }
 
 void BaseEvent::registerParticipant(int student) {
@@ -191,18 +182,11 @@ ostream& BaseEvent::printLong(ostream& out) {
     return out;
 }
 
-/*
-BaseEvent* BaseEvent::clone() const {
-    return new BaseEvent(*this);
-}
-*/
-
 BaseEvent::BaseEvent(const BaseEvent& event): 
     date(event.date), 
     name(event.name), 
     students(event.students)
 {
-
 }
 
 // compares just the name and date of the events (not the students list)

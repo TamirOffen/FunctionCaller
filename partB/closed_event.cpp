@@ -31,7 +31,6 @@ void ClosedEvent::addInvitee(const int student_id)
 }
 
 
-// no override in cpp?
 void ClosedEvent::registerParticipant(int student_id) 
 {
     //check if student_id is legal ???

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "date_wrap.h"
+#include "exceptions.h"
 
 using mtm::DateWrap;
 
@@ -12,8 +13,7 @@ DateWrap::DateWrap(int day, int month, int year) : day(day), month(month), year(
 {
     if(day < 1 || day > 30 || month < 1 || month > 12) 
     {
-        //throw InvalidDate;
-        return;
+        throw mtm::InvalidDays();
     }
 }
 
