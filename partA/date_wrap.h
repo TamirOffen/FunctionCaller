@@ -5,10 +5,14 @@
 #include "date.h"
 using std::ostream;
 
-namespace mtm 
+namespace mtm
 {
+    class DateWrap;
+    ostream& operator<< (ostream& out, const DateWrap& date);
+    DateWrap operator+ (int, DateWrap&);
+}
 
-    class DateWrap 
+    class mtm::DateWrap 
     {
         int day;
         int month;
@@ -38,8 +42,6 @@ namespace mtm
         
         
     };
-}
 
 #endif//DATEWRAP_H_
-
 
