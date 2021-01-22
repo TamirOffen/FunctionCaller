@@ -140,7 +140,6 @@ void Schedule::unregisterFromEvent(const DateWrap& date, const string& name, con
     try
     {
         (*event).unregisterParticipant(student);
-        std::cout<<"unregistred student (delete this)\n";
     }
     catch(const mtm::NotRegistered& e)
     {

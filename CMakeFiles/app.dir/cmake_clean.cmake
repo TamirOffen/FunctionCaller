@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/app.dir/AdamTestB.cpp.o"
   "CMakeFiles/app.dir/partA/date.cpp.o"
   "CMakeFiles/app.dir/partA/date_wrap.cpp.o"
   "CMakeFiles/app.dir/partB/base_event.cpp.o"
@@ -7,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/partB/festival.cpp.o"
   "CMakeFiles/app.dir/partB/open_event.cpp.o"
   "CMakeFiles/app.dir/partC/schedule.cpp.o"
-  "CMakeFiles/app.dir/test_partC.cpp.o"
   "app"
   "app.pdb"
 )

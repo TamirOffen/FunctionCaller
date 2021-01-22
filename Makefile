@@ -142,6 +142,33 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+AdamTestB.o: AdamTestB.cpp.o
+
+.PHONY : AdamTestB.o
+
+# target to build an object file
+AdamTestB.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestB.cpp.o
+.PHONY : AdamTestB.cpp.o
+
+AdamTestB.i: AdamTestB.cpp.i
+
+.PHONY : AdamTestB.i
+
+# target to preprocess a source file
+AdamTestB.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestB.cpp.i
+.PHONY : AdamTestB.cpp.i
+
+AdamTestB.s: AdamTestB.cpp.s
+
+.PHONY : AdamTestB.s
+
+# target to generate assembly for a file
+AdamTestB.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestB.cpp.s
+.PHONY : AdamTestB.cpp.s
+
 partA/date.o: partA/date.cpp.o
 
 .PHONY : partA/date.o
@@ -358,33 +385,6 @@ partC/schedule.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/schedule.cpp.s
 .PHONY : partC/schedule.cpp.s
 
-test_partC.o: test_partC.cpp.o
-
-.PHONY : test_partC.o
-
-# target to build an object file
-test_partC.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partC.cpp.o
-.PHONY : test_partC.cpp.o
-
-test_partC.i: test_partC.cpp.i
-
-.PHONY : test_partC.i
-
-# target to preprocess a source file
-test_partC.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partC.cpp.i
-.PHONY : test_partC.cpp.i
-
-test_partC.s: test_partC.cpp.s
-
-.PHONY : test_partC.s
-
-# target to generate assembly for a file
-test_partC.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partC.cpp.s
-.PHONY : test_partC.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -394,6 +394,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... app"
+	@echo "... AdamTestB.o"
+	@echo "... AdamTestB.i"
+	@echo "... AdamTestB.s"
 	@echo "... partA/date.o"
 	@echo "... partA/date.i"
 	@echo "... partA/date.s"
@@ -418,9 +421,6 @@ help:
 	@echo "... partC/schedule.o"
 	@echo "... partC/schedule.i"
 	@echo "... partC/schedule.s"
-	@echo "... test_partC.o"
-	@echo "... test_partC.i"
-	@echo "... test_partC.s"
 .PHONY : help
 
 
