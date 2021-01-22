@@ -1,4 +1,5 @@
 NotSupported
+AlreadyRegistered
 InvalidStudent
 ev1 1/1/2000
 6

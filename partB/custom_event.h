@@ -25,7 +25,7 @@ namespace mtm
 
 using mtm::BaseEvent;
 using mtm::CustomEvent;
-//implementation in .h and not .cpp ???
+
 template <class CanRegister>
 CustomEvent<CanRegister>::CustomEvent(const DateWrap& date, const string& name, const CanRegister& condition) :
     BaseEvent(date, name)
@@ -45,6 +45,10 @@ void CustomEvent<CanRegister>::registerParticipant(int student_id) {
     if(student_id < MIN_STUDENT || student_id > MAX_STUDENT) 
     {
         throw mtm::InvalidStudent();
+    }
+
+    if(students.studentInList(student_id) == true) {
+        throw mtm::AlreadyRegistered();
     }
 
     if(registration_condition(student_id) == false) 
