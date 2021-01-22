@@ -115,12 +115,22 @@ void EventContainer::add_event(const BaseEvent& event) {
     }
 }
 
-
+EventContainer::EventIterator EventContainer::begin() const {
+    return EventIterator(*this, false);
+}
+EventContainer::EventIterator EventContainer::end() const {
+    return EventIterator(*this, true);
+}
 
 
 /////////////////////////////////////
 // Implementation of EventIterator //
 /////////////////////////////////////
+EventContainer::EventIterator::EventIterator(const EventIterator& iterator) :
+    current_node(iterator.current_node)
+{
+    
+}
 
 EventContainer::EventIterator::EventIterator(const EventContainer& eventContainer, bool is_end)
 {
@@ -157,12 +167,7 @@ bool EventContainer::EventIterator::operator!= (const EventIterator& iter) {
     return !(*this == iter);
 }
 
-EventContainer::EventIterator EventContainer::begin() const {
-    return EventIterator(*this, false);
-}
-EventContainer::EventIterator EventContainer::end() const {
-    return EventIterator(*this, true);
-}
+
 
 
 
