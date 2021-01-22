@@ -2,6 +2,7 @@
 #define RECURRING_EVENT_H_
 
 #include "event_container.h"
+#include "../partA/exceptions.h"
 
 namespace mtm 
 {
@@ -19,7 +20,15 @@ namespace mtm
 using mtm::RecurringEvent;
 
 template <class EventType>
-RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days) {
+RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days) 
+{
+    if(num_occurrences <= 0) 
+    {
+        throw mtm::InvalidNumber();
+    }
+    if(interval_days <= 0) {
+        throw mtm::InvalidInterval();
+    }
     DateWrap date_copy(first_date);
     for(int i = 0; i < num_occurrences; i++) {
         add_event(EventType(date_copy, name));
@@ -28,11 +37,13 @@ RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const stri
 }
 
 template <class EventType>
-void RecurringEvent<EventType>::add(const BaseEvent& event) {
-    //throw NotSupported
-    std::cout << "Exeption: NotSupported" << std::endl;
+void RecurringEvent<EventType>::add(const BaseEvent& event) 
+{
+    throw mtm::NotSupported();
 }
 
 
 
 #endif
+
+

@@ -17,14 +17,13 @@ namespace mtm
         EventNode *head = NULL;
 
     protected:
-        void add_event(const BaseEvent&);
+        void add_event(const BaseEvent&); //todo delete and move to festival
 
     public:
         EventContainer();
         ~EventContainer();
 
-        virtual void add(const BaseEvent&) = 0; // =0 ???
-        //exeption: NotSupported, TODO!
+        virtual void add(const BaseEvent&) = 0;
 
         class EventIterator
         {

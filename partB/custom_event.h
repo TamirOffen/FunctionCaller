@@ -41,20 +41,22 @@ CustomEvent<CanRegister>::CustomEvent(const CustomEvent& event) :
 
 template <class CanRegister>
 void CustomEvent<CanRegister>::registerParticipant(int student_id) {
-    //TODO: check if student_id is legal
+    if(student_id < MIN_STUDENT || student_id > MAX_STUDENT) 
+    {
+        throw mtm::InvalidStudent();
+    }
 
-    if(registration_condition(student_id) == false) {
-        //can't register
-        //throw Exeption ???
-        std::cout << "can't register student" << std::endl;
-        return;
+    if(registration_condition(student_id) == false) 
+    {
+        throw mtm::RegistrationBlocked();
     }
 
     students.addStudent(student_id);
 }
 
 template <class CanRegister>
-BaseEvent* CustomEvent<CanRegister>::clone() const {
+BaseEvent* CustomEvent<CanRegister>::clone() const 
+{
     return new CustomEvent(*this);
 }
 

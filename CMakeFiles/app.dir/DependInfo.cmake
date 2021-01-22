@@ -12,7 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/festival.cpp" "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles/app.dir/partB/festival.cpp.o"
   "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partB/open_event.cpp" "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles/app.dir/partB/open_event.cpp.o"
   "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/partC/schedule.cpp" "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles/app.dir/partC/schedule.cpp.o"
-  "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/test_partC.cpp" "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles/app.dir/test_partC.cpp.o"
+  "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/test_partA.cpp" "/Users/tamiroffen/Documents/Winter 2020 - Sem 2/Matam/HW/hw3/code_github/FunctionCaller/CMakeFiles/app.dir/test_partA.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

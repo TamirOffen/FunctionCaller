@@ -25,9 +25,9 @@ OneTimeEvent<EventType>::OneTimeEvent(const DateWrap& date, const string& name) 
 
 
 template <class EventType>
-void OneTimeEvent<EventType>::add(const BaseEvent& event) {
-    //throw NotSupported
-    std::cout << "Exeption: NotSupported" << std::endl;
+void OneTimeEvent<EventType>::add(const BaseEvent& event) 
+{
+    throw mtm::NotSupported();
 }
 
 

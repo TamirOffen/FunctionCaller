@@ -132,7 +132,6 @@ EventContainer::EventIterator::EventIterator(const EventContainer& eventContaine
 }
 
 EventContainer::EventIterator& EventContainer::EventIterator::operator++() {
-    //if ++iter goes out of bounds, throw exeption?
     if(current_node == NULL) {
         current_node = NULL;
     }
