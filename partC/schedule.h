@@ -41,9 +41,29 @@ namespace mtm
 
         // test:
         template <class Predicate>
-        void printSomeEvents(const Predicate predicate, const bool verbose) const;
+        void printSomeEvents(Predicate predicate, const bool verbose) const;
 
     };
+}
+
+
+template <class Predicate>
+void mtm::Schedule::printSomeEvents(Predicate predicate, const bool verbose) const {
+    set<BaseEvent*>::iterator iter = events.begin();
+    for( ; iter != events.end(); ++iter) 
+    {
+        if(predicate(**iter) == true) 
+        {
+            if(verbose == true) 
+            {
+                (**iter).printLong(std::cout);
+            } else 
+            {
+                (**iter).printShort(std::cout);
+            }
+            std::cout << std::endl;
+        }
+    }
 }
 
 

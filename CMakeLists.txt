@@ -28,7 +28,7 @@ add_executable(
     # partC/main_C.cpp
 
     # partA/main_A.cpp
-    test_partA.cpp
+    test_partC.cpp
     
 )
 
