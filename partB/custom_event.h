@@ -2,6 +2,7 @@
 #define CUSTOM_EVENT_H_
 
 #include "base_event.h"
+#include "../partA/exceptions.h"
 
 namespace mtm 
 {

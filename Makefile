@@ -358,32 +358,32 @@ partC/schedule.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/schedule.cpp.s
 .PHONY : partC/schedule.cpp.s
 
-test_partA.o: test_partA.cpp.o
+test_partC.o: test_partC.cpp.o
 
-.PHONY : test_partA.o
+.PHONY : test_partC.o
 
 # target to build an object file
-test_partA.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partA.cpp.o
-.PHONY : test_partA.cpp.o
+test_partC.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partC.cpp.o
+.PHONY : test_partC.cpp.o
 
-test_partA.i: test_partA.cpp.i
+test_partC.i: test_partC.cpp.i
 
-.PHONY : test_partA.i
+.PHONY : test_partC.i
 
 # target to preprocess a source file
-test_partA.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partA.cpp.i
-.PHONY : test_partA.cpp.i
+test_partC.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partC.cpp.i
+.PHONY : test_partC.cpp.i
 
-test_partA.s: test_partA.cpp.s
+test_partC.s: test_partC.cpp.s
 
-.PHONY : test_partA.s
+.PHONY : test_partC.s
 
 # target to generate assembly for a file
-test_partA.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partA.cpp.s
-.PHONY : test_partA.cpp.s
+test_partC.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partC.cpp.s
+.PHONY : test_partC.cpp.s
 
 # Help Target
 help:
@@ -418,9 +418,9 @@ help:
 	@echo "... partC/schedule.o"
 	@echo "... partC/schedule.i"
 	@echo "... partC/schedule.s"
-	@echo "... test_partA.o"
-	@echo "... test_partA.i"
-	@echo "... test_partA.s"
+	@echo "... test_partC.o"
+	@echo "... test_partC.i"
+	@echo "... test_partC.s"
 .PHONY : help
 
 

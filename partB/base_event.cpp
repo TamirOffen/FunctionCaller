@@ -146,7 +146,8 @@ BaseEvent::~BaseEvent()
 
 void BaseEvent::registerParticipant(int student) 
 {
-    if(student < MIN_STUDENT || student > MAX_STUDENT) {
+    if(student < MIN_STUDENT || student > MAX_STUDENT) 
+    {
         throw mtm::InvalidStudent();
     }
     

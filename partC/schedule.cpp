@@ -1,5 +1,6 @@
 
 #include "schedule.h"
+#include "../partA/exceptions.h"
 
 using mtm::Schedule;
 using mtm::BaseEvent;
@@ -67,15 +68,16 @@ BaseEvent* Schedule::getBaseEvent(const DateWrap& date, const string& name) cons
 }
 
 
-void Schedule::addEvents(const EventContainer& event_container) {
-    if(!eventContainerIsLegal(event_container) || !canAddEventContainer(event_container)) {
-        // throw exeption: EventAlreadyRegistered
-        std::cout << "Exeption: EventAlreadyRegistered" << std::endl;
-        return;
+void Schedule::addEvents(const EventContainer& event_container) 
+{
+    if(!eventContainerIsLegal(event_container) || !canAddEventContainer(event_container)) 
+    {
+        throw mtm::EventAlreadyExists();
     }
 
     EventContainer::EventIterator iter = event_container.begin();
-    for( ; iter != event_container.end(); ++iter) {
+    for( ; iter != event_container.end(); ++iter) 
+    {
         events.insert((*iter).clone());
     }
 
@@ -98,33 +100,41 @@ bool mtm::compare::operator() (const BaseEvent* lhs, const BaseEvent* rhs) const
         }
     }
 
-void Schedule::registerToEvent(const DateWrap& date, const string& name, const int student) {
+void Schedule::registerToEvent(const DateWrap& date, const string& name, const int student) 
+{
+    if(student < MIN_STUDENT || student > MAX_STUDENT) 
+    {
+        throw mtm::InvalidStudent();
+    }
     BaseEvent* event = getBaseEvent(date, name);
     if(event == NULL) {
-        // Exeption: EventDoesNotExist
-        std::cout << "Exeption: EventDoesNotExist" << std::endl;
-        return;
+        throw mtm::EventDoesNotExist();
     }
 
     try
     {
         (*event).registerParticipant(student);
-        std::cout<<"registred student (delete this)\n";
     }
-    catch(const std::exception& e)
+    catch(const mtm::RegistrationBlocked& e) 
     {
-        // std::cerr << e.what() << '\n';
-        //Exeptions : 2, see paper!
-        std::cout << "can't add student: either Registration Blocked / Already Registred" <<std::endl;
+        throw;
+    }
+    catch(const mtm::AlreadyRegistered& e)
+    {
+        throw;
     }
 }
 
-void Schedule::unregisterFromEvent(const DateWrap& date, const string& name, const int student) {
+void Schedule::unregisterFromEvent(const DateWrap& date, const string& name, const int student) 
+{
+    if(student < MIN_STUDENT || student > MAX_STUDENT) 
+    {
+        throw mtm::InvalidStudent();
+    }
     BaseEvent* event = getBaseEvent(date, name);
-    if(event == NULL) {
-        // Exeption: EventDoesNotExist
-        std::cout << "Exeption: EventDoesNotExist" << std::endl;
-        return;
+    if(event == NULL) 
+    {
+        throw mtm::EventDoesNotExist();
     }
 
     try
@@ -132,11 +142,9 @@ void Schedule::unregisterFromEvent(const DateWrap& date, const string& name, con
         (*event).unregisterParticipant(student);
         std::cout<<"unregistred student (delete this)\n";
     }
-    catch(const std::exception& e)
+    catch(const mtm::NotRegistered& e)
     {
-        // std::cerr << e.what() << '\n';
-        //Exeptions : NotRegistred
-        std::cout << "can't add student: NotRegistred Exeption" <<std::endl;
+        throw;
     }
 
 }
@@ -164,10 +172,9 @@ void Schedule::printMonthEvents(const int month, const int year) const {
 
 void Schedule::printEventDetails(const string& name, const DateWrap& date) const {
     BaseEvent* event = getBaseEvent(date, name);
-    if(event == NULL) {
-        // Exeption: EventDoesNotExist
-        std::cout << "Exeption: EventDoesNotExist" << std::endl;
-        return;
+    if(event == NULL) 
+    {
+        throw mtm::EventDoesNotExist();
     }
     (*event).printLong(std::cout);
     std::cout << std::endl;
