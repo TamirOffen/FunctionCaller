@@ -17,6 +17,7 @@ CMakeFiles/app.dir/partB/base_event.cpp.o: partB/base_event.h
 
 CMakeFiles/app.dir/partB/closed_event.cpp.o: partA/date.h
 CMakeFiles/app.dir/partB/closed_event.cpp.o: partA/date_wrap.h
+CMakeFiles/app.dir/partB/closed_event.cpp.o: partA/exceptions.h
 CMakeFiles/app.dir/partB/closed_event.cpp.o: partB/base_event.h
 CMakeFiles/app.dir/partB/closed_event.cpp.o: partB/closed_event.cpp
 CMakeFiles/app.dir/partB/closed_event.cpp.o: partB/closed_event.h
@@ -40,22 +41,15 @@ CMakeFiles/app.dir/partB/open_event.cpp.o: partB/base_event.h
 CMakeFiles/app.dir/partB/open_event.cpp.o: partB/open_event.cpp
 CMakeFiles/app.dir/partB/open_event.cpp.o: partB/open_event.h
 
-CMakeFiles/app.dir/partC/main_C.cpp.o: partA/date.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partA/date_wrap.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partB/base_event.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partB/closed_event.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partB/event_container.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partB/festival.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partB/one_time_event.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partB/open_event.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partB/recurring_event.h
-CMakeFiles/app.dir/partC/main_C.cpp.o: partC/main_C.cpp
-CMakeFiles/app.dir/partC/main_C.cpp.o: partC/schedule.h
-
 CMakeFiles/app.dir/partC/schedule.cpp.o: partA/date.h
 CMakeFiles/app.dir/partC/schedule.cpp.o: partA/date_wrap.h
 CMakeFiles/app.dir/partC/schedule.cpp.o: partB/base_event.h
 CMakeFiles/app.dir/partC/schedule.cpp.o: partB/event_container.h
 CMakeFiles/app.dir/partC/schedule.cpp.o: partC/schedule.cpp
 CMakeFiles/app.dir/partC/schedule.cpp.o: partC/schedule.h
+
+CMakeFiles/app.dir/test_partA.cpp.o: partA/date.h
+CMakeFiles/app.dir/test_partA.cpp.o: partA/date_wrap.h
+CMakeFiles/app.dir/test_partA.cpp.o: partA/exceptions.h
+CMakeFiles/app.dir/test_partA.cpp.o: test_partA.cpp
 

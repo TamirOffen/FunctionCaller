@@ -331,33 +331,6 @@ partB/open_event.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partB/open_event.cpp.s
 .PHONY : partB/open_event.cpp.s
 
-partC/main_C.o: partC/main_C.cpp.o
-
-.PHONY : partC/main_C.o
-
-# target to build an object file
-partC/main_C.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/main_C.cpp.o
-.PHONY : partC/main_C.cpp.o
-
-partC/main_C.i: partC/main_C.cpp.i
-
-.PHONY : partC/main_C.i
-
-# target to preprocess a source file
-partC/main_C.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/main_C.cpp.i
-.PHONY : partC/main_C.cpp.i
-
-partC/main_C.s: partC/main_C.cpp.s
-
-.PHONY : partC/main_C.s
-
-# target to generate assembly for a file
-partC/main_C.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/main_C.cpp.s
-.PHONY : partC/main_C.cpp.s
-
 partC/schedule.o: partC/schedule.cpp.o
 
 .PHONY : partC/schedule.o
@@ -384,6 +357,33 @@ partC/schedule.s: partC/schedule.cpp.s
 partC/schedule.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/partC/schedule.cpp.s
 .PHONY : partC/schedule.cpp.s
+
+test_partA.o: test_partA.cpp.o
+
+.PHONY : test_partA.o
+
+# target to build an object file
+test_partA.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partA.cpp.o
+.PHONY : test_partA.cpp.o
+
+test_partA.i: test_partA.cpp.i
+
+.PHONY : test_partA.i
+
+# target to preprocess a source file
+test_partA.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partA.cpp.i
+.PHONY : test_partA.cpp.i
+
+test_partA.s: test_partA.cpp.s
+
+.PHONY : test_partA.s
+
+# target to generate assembly for a file
+test_partA.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test_partA.cpp.s
+.PHONY : test_partA.cpp.s
 
 # Help Target
 help:
@@ -415,12 +415,12 @@ help:
 	@echo "... partB/open_event.o"
 	@echo "... partB/open_event.i"
 	@echo "... partB/open_event.s"
-	@echo "... partC/main_C.o"
-	@echo "... partC/main_C.i"
-	@echo "... partC/main_C.s"
 	@echo "... partC/schedule.o"
 	@echo "... partC/schedule.i"
 	@echo "... partC/schedule.s"
+	@echo "... test_partA.o"
+	@echo "... test_partA.i"
+	@echo "... test_partA.s"
 .PHONY : help
 
 
