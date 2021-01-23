@@ -4,6 +4,7 @@
 
 using mtm::ClosedEvent;
 using mtm::BaseEvent;
+using std::string;
 
 ClosedEvent::ClosedEvent(const DateWrap& date, const string& name) :
     BaseEvent(date, name)

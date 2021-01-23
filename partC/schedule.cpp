@@ -4,6 +4,8 @@
 
 using mtm::Schedule;
 using mtm::BaseEvent;
+using std::string;
+using std::set;
 
 Schedule::Schedule()
 {

@@ -12,7 +12,7 @@ namespace mtm
         StudentsList invited_students;
 
     public:
-        ClosedEvent(const DateWrap&, const string&);
+        ClosedEvent(const DateWrap&, const std::string&);
         ClosedEvent(const ClosedEvent&);
 
         void addInvitee(const int);

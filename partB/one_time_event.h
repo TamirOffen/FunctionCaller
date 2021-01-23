@@ -10,22 +10,20 @@ namespace mtm
     {
 
     public:
-        OneTimeEvent(const DateWrap& date, const string& name);
+        OneTimeEvent(const DateWrap& date, const std::string& name);
         void add(const BaseEvent&) override;
     };
 }
 
 
-using mtm::OneTimeEvent;
-
 template <class EventType>
-OneTimeEvent<EventType>::OneTimeEvent(const DateWrap& date, const string& name) {
+mtm::OneTimeEvent<EventType>::OneTimeEvent(const DateWrap& date, const std::string& name) {
     add_event(EventType(date, name));
 }
 
 
 template <class EventType>
-void OneTimeEvent<EventType>::add(const BaseEvent& event) 
+void mtm::OneTimeEvent<EventType>::add(const BaseEvent& event) 
 {
     throw mtm::NotSupported();
 }

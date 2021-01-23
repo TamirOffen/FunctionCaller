@@ -4,10 +4,6 @@
 #include <iostream>
 #include "../partA/date_wrap.h"
 
-using std::ostream;
-using std::istream;
-using std::string;
-
 namespace mtm 
 {
 
@@ -33,37 +29,35 @@ namespace mtm
         void addStudent(int);
         void removeStudent(int);
         bool studentInList(int) const;
-        void printStudents(ostream&) const;
-        StudentsList copy() const; // not needed
+        void printStudents(std::ostream&) const;
     };
 
     class BaseEvent 
 {
     private:
         DateWrap date;
-        string name;
+        std::string name;
 
     protected:
         StudentsList students;
 
-
     public:
-        BaseEvent(const DateWrap&, const string&); //constructor
+        BaseEvent(const DateWrap&, const std::string&); //constructor
         BaseEvent(const BaseEvent&); //copy constructor 
-        virtual ~BaseEvent(); //does destructor need to be virtual?
+        virtual ~BaseEvent() = default; 
 
         virtual void registerParticipant(int);
         virtual void unregisterParticipant(int);
 
-        ostream& printShort(ostream&);
-        ostream& printLong(ostream&);
+        std::ostream& printShort(std::ostream&);
+        std::ostream& printLong(std::ostream&);
 
         virtual BaseEvent* clone() const = 0; //pure virtual
 
         bool operator== (const BaseEvent&) const;
         DateWrap getDate() const ;
-        string getName() const ;
-        bool isSameEvent(const DateWrap&, const string&) const;
+        std::string getName() const ;
+        bool isSameEvent(const DateWrap&, const std::string&) const;
         bool isInMonth(const int month, const int year) const;
 
     };

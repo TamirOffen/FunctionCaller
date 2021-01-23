@@ -3,6 +3,7 @@
 #include "exceptions.h"
 
 using mtm::DateWrap;
+using std::ostream;
 
 extern "C" 
 {

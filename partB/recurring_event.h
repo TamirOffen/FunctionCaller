@@ -11,16 +11,14 @@ namespace mtm
     {
 
     public:
-        RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days);
+        RecurringEvent(const DateWrap& first_date, const std::string& name, const int num_occurrences, const int interval_days);
         void add(const BaseEvent&) override;
     };
 }
 
 
-using mtm::RecurringEvent;
-
 template <class EventType>
-RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days) 
+mtm::RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const std::string& name, const int num_occurrences, const int interval_days) 
 {
     if(num_occurrences <= 0) 
     {
@@ -37,7 +35,7 @@ RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const stri
 }
 
 template <class EventType>
-void RecurringEvent<EventType>::add(const BaseEvent& event) 
+void mtm::RecurringEvent<EventType>::add(const BaseEvent& event) 
 {
     throw mtm::NotSupported();
 }

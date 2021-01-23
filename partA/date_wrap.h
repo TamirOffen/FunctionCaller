@@ -3,12 +3,11 @@
 
 #include <iostream>
 #include "date.h"
-using std::ostream;
 
 namespace mtm
 {
     class DateWrap;
-    ostream& operator<< (ostream& out, const DateWrap& date);
+    std::ostream& operator<< (std::ostream& out, const DateWrap& date);
     DateWrap operator+ (int, DateWrap&);
 }
 
@@ -19,7 +18,7 @@ namespace mtm
         int year;
 
     public:
-        DateWrap(int day, int month, int year); // throw: InvalidDate
+        DateWrap(int day, int month, int year);
         DateWrap(const DateWrap&);
 
         const int dayReturn () const; 
@@ -27,7 +26,7 @@ namespace mtm
         const int yearReturn() const;
 
 
-        friend ostream& operator<< (ostream& out, const DateWrap& date);
+        friend std::ostream& operator<< (std::ostream& out, const DateWrap& date);
         bool operator< (const DateWrap&) const;
         bool operator> (const DateWrap&) const;
         bool operator== (const DateWrap&) const;
@@ -36,8 +35,8 @@ namespace mtm
         bool operator!= (const DateWrap&) const;
         DateWrap operator++ (int); //i++
         DateWrap& operator++ () = delete; //++i (is not supported)
-        DateWrap& operator+= (int); // throw: NegativeDays
-        DateWrap operator+ (int); // throw: NegativeDays
+        DateWrap& operator+= (int); 
+        DateWrap operator+ (int); 
         friend DateWrap operator+ (int, DateWrap&);
         
         

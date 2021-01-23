@@ -57,12 +57,6 @@ void EventContainer::add_event(const BaseEvent& event) {
     }
 
     //if list has >1 event, and event is the smallest one:
-    if(this->head->event->getDate() > event.getDate()) {
-        EventNode *temp_node = head;
-        head = new_event;
-        new_event->next = temp_node;
-        return;
-    }
     if(this->head->event->getDate() == event.getDate()) {
         if(this->head->event->getName() <= event.getName()) { //here
             new_event->next = head->next;
@@ -71,8 +65,6 @@ void EventContainer::add_event(const BaseEvent& event) {
             EventNode *temp_node = head;
             head = new_event;
             new_event->next = temp_node;
-        } else {
-            //SAME EXACT EVENT, what to do???
         }
         return;
     }
@@ -91,7 +83,7 @@ void EventContainer::add_event(const BaseEvent& event) {
             return;
         }
         if(this->head->event->getDate() == event.getDate()) {
-            if(this->head->event->getName() >= event.getName()) { //here
+            if(this->head->event->getName() >= event.getName()) {
                 new_event->next = elem->next;
                 elem->next = new_event;
                 return;
@@ -99,19 +91,12 @@ void EventContainer::add_event(const BaseEvent& event) {
         }
         if(event.getDate() == this->head->event->getDate()) {
             //same date, but event's name comes after elem's name
-            if(this->head->event->getName() <= event.getName()) { //here
+            if(this->head->event->getName() <= event.getName()) {
                 new_event->next = elem->next;
                 elem->next = new_event;
                 return;
             }
-        }
-        if(event.getDate() > this->head->event->getDate() && event.getDate() < this->head->event->getDate()) {
-            new_event->next = elem->next;
-            elem->next = new_event;
-            return;
-        }
-        
-        
+        }        
     }
 }
 

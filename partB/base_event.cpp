@@ -8,9 +8,8 @@ using std::cout;
 using mtm::DateWrap;
 using mtm::BaseEvent;
 using mtm::StudentsList;
-
-// #define MIN_STUDENT 1
-// #define MAX_STUDENT 1234567890 //TODO: check
+using std::string;
+using std::ostream;
 
 ////////////////////////////////////////////////
 // Implementation of the Students Linked List //
@@ -122,15 +121,6 @@ void StudentsList::printStudents(ostream& out) const {
     }
 }
 
-StudentsList StudentsList::copy() const {
-    StudentsList copy_list;
-    for(StudentNode *elem = head; elem != NULL; elem=elem->next) 
-    {
-        copy_list.addStudent(elem->id);
-    }
-    return copy_list;
-}
-
 
 
 ///////////////////////////////////////////
@@ -138,10 +128,6 @@ StudentsList StudentsList::copy() const {
 ///////////////////////////////////////////
 BaseEvent::BaseEvent(const DateWrap& date, const string& name): date(date), name(name)
 {  
-}
-
-BaseEvent::~BaseEvent() 
-{
 }
 
 void BaseEvent::registerParticipant(int student) 

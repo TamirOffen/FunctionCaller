@@ -10,7 +10,7 @@ namespace mtm
     {
 
     public:
-        OpenEvent(const DateWrap&, const string&);
+        OpenEvent(const DateWrap&, const std::string&);
         OpenEvent(const OpenEvent&);
         ~OpenEvent() = default;
         BaseEvent* clone() const override; 

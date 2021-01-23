@@ -14,7 +14,7 @@ namespace mtm
         CanRegister registration_condition; 
 
     public:
-        CustomEvent(const DateWrap&, const string&, const CanRegister&);
+        CustomEvent(const DateWrap&, const std::string&, const CanRegister&);
         CustomEvent(const CustomEvent&);
 
         void registerParticipant(int) override;
@@ -27,7 +27,7 @@ using mtm::BaseEvent;
 using mtm::CustomEvent;
 
 template <class CanRegister>
-CustomEvent<CanRegister>::CustomEvent(const DateWrap& date, const string& name, const CanRegister& condition) :
+CustomEvent<CanRegister>::CustomEvent(const DateWrap& date, const std::string& name, const CanRegister& condition) :
     BaseEvent(date, name)
 {
     registration_condition = condition;
