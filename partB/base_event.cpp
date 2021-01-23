@@ -158,12 +158,12 @@ void BaseEvent::unregisterParticipant(int student)
     students.removeStudent(student);
 }
 
-ostream& BaseEvent::printShort(ostream& out) {
+ostream& BaseEvent::printShort(ostream& out) const {
     out << name << " " << date << endl;
     return out;
 }
 
-ostream& BaseEvent::printLong(ostream& out) {
+ostream& BaseEvent::printLong(ostream& out) const {
     out << name << " " << date << endl;
     students.printStudents(out);
     return out;

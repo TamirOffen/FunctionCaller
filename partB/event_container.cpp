@@ -145,10 +145,10 @@ EventContainer::EventIterator& EventContainer::EventIterator::operator= (const E
     return *this;
 }
 
-bool EventContainer::EventIterator::operator== (const EventIterator& iter) {
+bool EventContainer::EventIterator::operator== (const EventIterator& iter) const {
     return this->current_node == iter.current_node;
 }
-bool EventContainer::EventIterator::operator!= (const EventIterator& iter) {
+bool EventContainer::EventIterator::operator!= (const EventIterator& iter) const {
     return !(*this == iter);
 }
 

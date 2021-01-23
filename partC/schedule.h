@@ -20,9 +20,9 @@ namespace mtm
 
     private:
         std::set<BaseEvent*, compare> events;
-        bool isInEvents(BaseEvent&);
-        bool canAddEventContainer(const EventContainer&);
-        bool eventContainerIsLegal(const EventContainer&); //doesn't contain dublicate events
+        bool isInEvents(BaseEvent&) const;
+        bool canAddEventContainer(const EventContainer&) const;
+        bool eventContainerIsLegal(const EventContainer&) const; //doesn't contain dublicate events
         BaseEvent* getBaseEvent(const DateWrap&, const std::string&) const; //returns NULL if event isn't in events
 
     public:

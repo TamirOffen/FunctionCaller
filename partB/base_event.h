@@ -49,8 +49,8 @@ namespace mtm
         virtual void registerParticipant(int);
         virtual void unregisterParticipant(int);
 
-        std::ostream& printShort(std::ostream&);
-        std::ostream& printLong(std::ostream&);
+        std::ostream& printShort(std::ostream&) const;
+        std::ostream& printLong(std::ostream&) const;
 
         virtual BaseEvent* clone() const = 0; 
 

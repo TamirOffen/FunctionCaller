@@ -16,7 +16,7 @@ Schedule::~Schedule() {
 
 // private funcs:
 // test:
-bool Schedule::isInEvents(BaseEvent& event) {
+bool Schedule::isInEvents(BaseEvent& event) const {
     set<BaseEvent*>::iterator iter;
     for(iter = events.begin(); iter != events.end(); ++iter) {
         //compares events: dates and names are equal
@@ -28,7 +28,7 @@ bool Schedule::isInEvents(BaseEvent& event) {
 }
 
 // test:
-bool Schedule::canAddEventContainer(const EventContainer& events_to_be_added) {
+bool Schedule::canAddEventContainer(const EventContainer& events_to_be_added) const {
     EventContainer::EventIterator iter = events_to_be_added.begin();
     for( ; iter != events_to_be_added.end(); ++iter) {
         if(isInEvents(*iter)) {
@@ -38,7 +38,7 @@ bool Schedule::canAddEventContainer(const EventContainer& events_to_be_added) {
     return true;
 }
 
-bool Schedule::eventContainerIsLegal(const EventContainer& event_container) {
+bool Schedule::eventContainerIsLegal(const EventContainer& event_container) const {
     EventContainer::EventIterator iter1 = event_container.begin();
     EventContainer::EventIterator iter2 = event_container.begin();
     for( ; iter1 != event_container.end(); ++iter1) {

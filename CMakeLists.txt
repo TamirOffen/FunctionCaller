@@ -29,7 +29,7 @@ add_executable(
 
     # partA/main_A.cpp
     
-    AdamTestB.cpp
+    AdamTestC.cpp
     
 )
 

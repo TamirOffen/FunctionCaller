@@ -41,8 +41,8 @@ namespace mtm
             BaseEvent& operator* (); //*i (dereference)
 
             // returns T/F if the iterators are pointing to the same event
-            bool operator== (const EventIterator& iter); // iter1 == iter2
-            bool operator!= (const EventIterator& iter); // iter1 != iter2
+            bool operator== (const EventIterator& iter) const; // iter1 == iter2
+            bool operator!= (const EventIterator& iter) const; // iter1 != iter2
         };
 
 
