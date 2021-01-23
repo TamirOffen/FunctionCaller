@@ -4,12 +4,12 @@
 using mtm::EventContainer;
 using mtm::BaseEvent;
 
-EventContainer::EventContainer() : head(NULL)
+EventContainer::EventContainer() : head(nullptr)
 {
 }
 
 EventContainer::~EventContainer() {
-    while(head != NULL) {
+    while(head != nullptr) {
         EventNode *temp = head->next;
         delete head->event;
         delete head;
@@ -22,14 +22,14 @@ void EventContainer::add_event(const BaseEvent& event) {
     new_event->event = event.clone();
     
     //if list is empty:
-    if(head == NULL) {
+    if(head == nullptr) {
         head = new_event;
-        new_event->next = NULL;
+        new_event->next = nullptr;
         return;
     }
 
     //if there is only one event in the list:
-    if(head->next == NULL) {
+    if(head->next == nullptr) {
         //if event's date comes before the head's date
         if(event.getDate() < this->head->event->getDate()) {
             EventNode *temp_node = head;
@@ -40,7 +40,7 @@ void EventContainer::add_event(const BaseEvent& event) {
         //if event's date comes after the head's date
         if(event.getDate() > this->head->event->getDate()) {
             head->next = new_event;
-            new_event->next = NULL;
+            new_event->next = nullptr;
             return;
         }
         // else: event's date is equal to head's date:
@@ -51,7 +51,7 @@ void EventContainer::add_event(const BaseEvent& event) {
             return;
         } else {
             head->next = new_event;
-            new_event->next = NULL;
+            new_event->next = nullptr;
             return;
         }
     }
@@ -70,14 +70,14 @@ void EventContainer::add_event(const BaseEvent& event) {
     }
 
     //for every other case:
-    for(EventNode* elem = head; elem != NULL; elem = elem->next) {
-        if(elem->next == NULL) {
+    for(EventNode* elem = head; elem != nullptr; elem = elem->next) {
+        if(elem->next == nullptr) {
             if(event.getDate() > this->head->event->getDate()) {
-                new_event->next = NULL;
+                new_event->next = nullptr;
                 elem->next = new_event;
             } 
             if(event.getDate() == this->head->event->getDate() && event.getName() >= this->head->event->getName()) { //here
-                new_event->next = NULL;
+                new_event->next = nullptr;
                 elem->next = new_event;
             }
             return;
@@ -120,15 +120,15 @@ EventContainer::EventIterator::EventIterator(const EventIterator& iterator) :
 EventContainer::EventIterator::EventIterator(const EventContainer& eventContainer, bool is_end)
 {
     if(is_end) {
-        current_node = NULL;
+        current_node = nullptr;
     } else {
         current_node = eventContainer.head;
     }
 }
 
 EventContainer::EventIterator& EventContainer::EventIterator::operator++() {
-    if(current_node == NULL) {
-        current_node = NULL;
+    if(current_node == nullptr) {
+        current_node = nullptr;
     }
     else {
         current_node = current_node->next;

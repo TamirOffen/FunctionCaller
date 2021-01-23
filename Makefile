@@ -142,32 +142,32 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
-AdamTestA.o: AdamTestA.cpp.o
+AdamTestB.o: AdamTestB.cpp.o
 
-.PHONY : AdamTestA.o
+.PHONY : AdamTestB.o
 
 # target to build an object file
-AdamTestA.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestA.cpp.o
-.PHONY : AdamTestA.cpp.o
+AdamTestB.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestB.cpp.o
+.PHONY : AdamTestB.cpp.o
 
-AdamTestA.i: AdamTestA.cpp.i
+AdamTestB.i: AdamTestB.cpp.i
 
-.PHONY : AdamTestA.i
+.PHONY : AdamTestB.i
 
 # target to preprocess a source file
-AdamTestA.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestA.cpp.i
-.PHONY : AdamTestA.cpp.i
+AdamTestB.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestB.cpp.i
+.PHONY : AdamTestB.cpp.i
 
-AdamTestA.s: AdamTestA.cpp.s
+AdamTestB.s: AdamTestB.cpp.s
 
-.PHONY : AdamTestA.s
+.PHONY : AdamTestB.s
 
 # target to generate assembly for a file
-AdamTestA.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestA.cpp.s
-.PHONY : AdamTestA.cpp.s
+AdamTestB.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/AdamTestB.cpp.s
+.PHONY : AdamTestB.cpp.s
 
 partA/date.o: partA/date.cpp.o
 
@@ -394,9 +394,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... app"
-	@echo "... AdamTestA.o"
-	@echo "... AdamTestA.i"
-	@echo "... AdamTestA.s"
+	@echo "... AdamTestB.o"
+	@echo "... AdamTestB.i"
+	@echo "... AdamTestB.s"
 	@echo "... partA/date.o"
 	@echo "... partA/date.i"
 	@echo "... partA/date.s"

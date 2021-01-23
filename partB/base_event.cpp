@@ -14,7 +14,7 @@ using std::ostream;
 ////////////////////////////////////////////////
 // Implementation of the Students Linked List //
 ////////////////////////////////////////////////
-StudentsList::StudentsList(): head(NULL) {
+StudentsList::StudentsList(): head(nullptr) {
 }
 
 StudentsList::~StudentsList() {
@@ -31,16 +31,16 @@ void StudentsList::addStudent(int id) {
     StudentNode *new_student = new StudentNode(); //check the ()
     new_student->id = id;
 
-    if(head == NULL) {
+    if(head == nullptr) {
         head = new_student;
-        head->next = NULL;
+        head->next = nullptr;
         return;
     }
 
-    if(head->next == NULL) {
+    if(head->next == nullptr) {
         if(id > head->id) {
             head->next = new_student;
-            new_student->next = NULL;
+            new_student->next = nullptr;
         } else {
             StudentNode *temp_node = head;
             head = new_student;
@@ -53,12 +53,11 @@ void StudentsList::addStudent(int id) {
         StudentNode *temp_node = head;
         head = new_student;
         head->next = temp_node;
-        // return ???
     }
 
-    for(StudentNode *elem = head; elem != NULL; elem=elem->next) {
-        if(id > elem->id && elem->next == NULL) {
-            new_student->next = NULL;
+    for(StudentNode *elem = head; elem != nullptr; elem=elem->next) {
+        if(id > elem->id && elem->next == nullptr) {
+            new_student->next = nullptr;
             elem->next = new_student;
             return;
         }
@@ -86,7 +85,7 @@ void StudentsList::removeStudent(int id) {
         return;
     }
 
-    for(StudentNode *elem = head; elem != NULL; elem=elem->next) {
+    for(StudentNode *elem = head; elem != nullptr; elem=elem->next) {
         if(elem->next->id == id) {
             StudentNode *temp = elem->next;
             elem->next = elem->next->next;
@@ -107,15 +106,15 @@ bool StudentsList::studentInList(int id) const {
     return false;
 }
 
-StudentsList::StudentsList(const StudentsList& list): head(NULL){
-    for(StudentNode *elem = list.head; elem != NULL; elem=elem->next) 
+StudentsList::StudentsList(const StudentsList& list): head(nullptr){
+    for(StudentNode *elem = list.head; elem != nullptr; elem=elem->next) 
     {
         addStudent(elem->id);
     }
 }
 
 void StudentsList::printStudents(ostream& out) const {
-    for(StudentNode *elem = head; elem != NULL; elem=elem->next) 
+    for(StudentNode *elem = head; elem != nullptr; elem=elem->next) 
     {
         out << elem->id << endl;
     }
