@@ -13,7 +13,7 @@ namespace mtm
 
     public:
         Festival(const DateWrap&);
-        ~Festival();
+        ~Festival() = default;
 
         void add(const BaseEvent&) override;
 

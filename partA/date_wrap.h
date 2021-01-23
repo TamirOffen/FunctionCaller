@@ -20,6 +20,7 @@ namespace mtm
     public:
         DateWrap(int day, int month, int year);
         DateWrap(const DateWrap&);
+        ~DateWrap() = default;
 
         const int dayReturn () const; 
         const int monthReturn () const;

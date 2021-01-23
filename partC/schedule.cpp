@@ -7,10 +7,6 @@ using mtm::BaseEvent;
 using std::string;
 using std::set;
 
-Schedule::Schedule()
-{
-}
-
 Schedule::~Schedule() {
     set<BaseEvent*>::iterator iter;
     for(iter = events.begin(); iter != events.end(); ++iter) {

@@ -7,13 +7,8 @@ using mtm::Festival;
 
 Festival::Festival(const DateWrap& date) :
     EventContainer(),
-    date_of_festival(date) //works???
+    date_of_festival(date) 
 {
-}
-
-Festival::~Festival() 
-{
-
 }
 
 void Festival::add(const BaseEvent& event) 
@@ -22,7 +17,7 @@ void Festival::add(const BaseEvent& event)
     {
         throw mtm::DateMismatch();
     }
-    add_event(event); //add func from event_contianer TODO: fix!!!
+    add_event(event);
 }
 
 

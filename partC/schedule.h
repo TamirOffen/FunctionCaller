@@ -26,7 +26,7 @@ namespace mtm
         BaseEvent* getBaseEvent(const DateWrap&, const std::string&) const; //returns NULL if event isn't in events
 
     public:
-        Schedule();
+        Schedule() = default;
         ~Schedule();
 
         void addEvents(const EventContainer&); 

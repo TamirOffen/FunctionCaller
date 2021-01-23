@@ -17,7 +17,7 @@ namespace mtm
         EventNode *head = NULL;
 
     protected:
-        void add_event(const BaseEvent&); //todo delete and move to festival
+        void add_event(const BaseEvent&); 
 
     public:
         EventContainer();
@@ -34,13 +34,13 @@ namespace mtm
             // EventIterator();
             EventIterator(const EventIterator&);
             EventIterator(const EventContainer&, bool is_end);
-            // ~EventIterator();
+            ~EventIterator() = default;
 
             EventIterator& operator= (const EventIterator&); // i1 = i2 = i3 etc.
             EventIterator& operator++ (); //++i
             BaseEvent& operator* (); //*i (dereference)
 
-            // returns T/F if the iterators are pointing to the same event?
+            // returns T/F if the iterators are pointing to the same event
             bool operator== (const EventIterator& iter); // iter1 == iter2
             bool operator!= (const EventIterator& iter); // iter1 != iter2
         };

@@ -52,7 +52,7 @@ namespace mtm
         std::ostream& printShort(std::ostream&);
         std::ostream& printLong(std::ostream&);
 
-        virtual BaseEvent* clone() const = 0; //pure virtual
+        virtual BaseEvent* clone() const = 0; 
 
         bool operator== (const BaseEvent&) const;
         DateWrap getDate() const ;

@@ -14,6 +14,7 @@ namespace mtm
     public:
         ClosedEvent(const DateWrap&, const std::string&);
         ClosedEvent(const ClosedEvent&);
+        ~ClosedEvent() = default;
 
         void addInvitee(const int);
         void registerParticipant(int) override;
