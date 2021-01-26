@@ -5,6 +5,7 @@
 
 namespace mtm 
 {
+    //A subclass of EventContainer which represents only one event of EventType.
     template <class EventType>
     class OneTimeEvent : public EventContainer 
     {

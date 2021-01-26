@@ -6,12 +6,14 @@
 
 namespace mtm 
 {
+    //A subclass of EventContainer which contains a number of occurences of the same event with different dates.
     template <class EventType>
     class RecurringEvent : public EventContainer 
     {
 
     public:
         RecurringEvent(const DateWrap& first_date, const std::string& name, const int num_occurrences, const int interval_days);
+        //Used in order to override the add function for EventContainer in order to throw an error.
         void add(const BaseEvent&) override;
     };
 }
