@@ -6,24 +6,19 @@
 
 namespace mtm 
 {
-    //A subclass of EventContainer which contains a number of occurences of the same event with different dates.
     template <class EventType>
     class RecurringEvent : public EventContainer 
     {
 
     public:
-        //Constructor
-        RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days);
-        //Used in order to override the add function for EventContainer in order to throw an error. 
+        RecurringEvent(const DateWrap& first_date, const std::string& name, const int num_occurrences, const int interval_days);
         void add(const BaseEvent&) override;
     };
 }
 
 
-using mtm::RecurringEvent;
-
 template <class EventType>
-RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const string& name, const int num_occurrences, const int interval_days) 
+mtm::RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const std::string& name, const int num_occurrences, const int interval_days) 
 {
     if(num_occurrences <= 0) 
     {
@@ -40,7 +35,7 @@ RecurringEvent<EventType>::RecurringEvent(const DateWrap& first_date, const stri
 }
 
 template <class EventType>
-void RecurringEvent<EventType>::add(const BaseEvent& event) 
+void mtm::RecurringEvent<EventType>::add(const BaseEvent& event) 
 {
     throw mtm::NotSupported();
 }
@@ -48,4 +43,5 @@ void RecurringEvent<EventType>::add(const BaseEvent& event)
 
 
 #endif
+
 
