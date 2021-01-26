@@ -4,10 +4,7 @@
 
 using mtm::DateWrap;
 
-extern "C" 
-{
-    #include "date.h"
-}
+
 //Initialize this's day month and year to the given day month and year.
 DateWrap::DateWrap(int day, int month, int year) : date_day(day), date_month(month), date_year(year)
 {

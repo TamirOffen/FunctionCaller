@@ -2,7 +2,10 @@
 #define DATEWRAP_H_
 
 #include <iostream>
-#include "date.h"
+extern "C" 
+{
+    #include "../provided/date.h"
+}
 using std::ostream;
 
 namespace mtm
