@@ -26,7 +26,7 @@ namespace mtm
     public:
         StudentsList(); //constructor
         StudentsList(const StudentsList&); //copy constructor
-        ~StudentsList() = default; //destructor
+        ~StudentsList(); //destructor
 
         void addStudent(int);//Adds a student to the StudentNode list of students.
         void removeStudent(int);//Removes a student from the list of students.
