@@ -6,18 +6,19 @@
 
 namespace mtm
 {
+    //A subclass of BaseEvent which is represents an open event for anyone.
     class OpenEvent : public BaseEvent
     {
 
     public:
-        OpenEvent(const DateWrap&, const std::string&);
-        OpenEvent(const OpenEvent&);
+        OpenEvent(const DateWrap&, const string&);//Constructor
+        OpenEvent(const OpenEvent&);//Copy constructor
         ~OpenEvent() = default;
+        //Copies the current event to a new one and return it.
         BaseEvent* clone() const override; 
     };
 }
 
 
 #endif
-
 
