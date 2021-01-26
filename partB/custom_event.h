@@ -6,19 +6,23 @@
 
 namespace mtm 
 {
+    //A generic subclass that represents a custom event which returns if a student can participate in the event or not.
     template <class CanRegister>
     class CustomEvent : public BaseEvent
     {
 
     private:
+        //shows if a student can participate in the event or not.
         CanRegister registration_condition; 
 
     public:
-        CustomEvent(const DateWrap&, const std::string&, const CanRegister&);
-        CustomEvent(const CustomEvent&);
+        CustomEvent(const DateWrap&, const string&, const CanRegister&);//Constructor
+        CustomEvent(const CustomEvent&);//Copy constructor
         ~CustomEvent() = default;
-
+        
+        //Registers a participant to the event.
         void registerParticipant(int) override;
+        //Copies the current event to a new one and return it.
         BaseEvent* clone() const override;
 
     };
@@ -28,17 +32,17 @@ using mtm::BaseEvent;
 using mtm::CustomEvent;
 
 template <class CanRegister>
-CustomEvent<CanRegister>::CustomEvent(const DateWrap& date, const std::string& name, const CanRegister& condition) :
-    BaseEvent(date, name),
-    registration_condition(condition)
+CustomEvent<CanRegister>::CustomEvent(const DateWrap& date, const string& name, const CanRegister& condition) :
+    BaseEvent(date, name)
 {
+    registration_condition = condition;
 }
 
 template <class CanRegister>
 CustomEvent<CanRegister>::CustomEvent(const CustomEvent& event) :
-    BaseEvent(event),
-    registration_condition(event.registration_condition)
+    BaseEvent(event)
 {
+    registration_condition = event.registration_condition;
 }
 
 template <class CanRegister>
@@ -69,4 +73,3 @@ BaseEvent* CustomEvent<CanRegister>::clone() const
 
 
 #endif
-
