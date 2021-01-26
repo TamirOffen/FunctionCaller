@@ -10,7 +10,8 @@ extern "C"
     #include "date.h"
 }
 
-DateWrap::DateWrap(int day, int month, int year) : day(day), month(month), year(year)
+DateWrap::DateWrap(int day, int month, int year) : 
+    day(day), month(month), year(year)
 {
     if(day < 1 || day > 30 || month < 1 || month > 12) 
     {
@@ -19,17 +20,17 @@ DateWrap::DateWrap(int day, int month, int year) : day(day), month(month), year(
 }
 
 
-const int DateWrap::dayReturn () const
+const int DateWrap::day() const
 {
     return day;
 }
 
-const int DateWrap::monthReturn () const
+const int DateWrap::month() const
 {
     return month;
 }
 
-const int DateWrap::yearReturn() const
+const int DateWrap::year() const
 {
     return year;
 }

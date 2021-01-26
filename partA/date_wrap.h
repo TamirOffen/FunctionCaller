@@ -22,9 +22,9 @@ namespace mtm
         DateWrap(const DateWrap&);
         ~DateWrap() = default;
 
-        const int dayReturn () const; 
-        const int monthReturn () const;
-        const int yearReturn() const;
+        const int day() const; 
+        const int month() const;
+        const int year() const;
 
 
         friend std::ostream& operator<< (std::ostream& out, const DateWrap& date);

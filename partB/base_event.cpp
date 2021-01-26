@@ -205,7 +205,7 @@ bool BaseEvent::isSameEvent(const DateWrap& date, const string& name) const {
 }
 
 bool BaseEvent::isInMonth(const int month, const int year) const {
-    if(date.monthReturn() == month && date.yearReturn() == year) {
+    if(date.month() == month && date.year() == year) {
         return true;
     } else {
         return false;

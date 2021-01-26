@@ -167,7 +167,7 @@ void Schedule::printMonthEvents(const int month, const int year) const {
     }
 }
 
-void Schedule::printEventDetails(const string& name, const DateWrap& date) const {
+void Schedule::printEventDetails(const DateWrap& date, const string& name) const {
     BaseEvent* event = getBaseEvent(date, name);
     if(event == NULL) 
     {
