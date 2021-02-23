@@ -56,14 +56,14 @@ namespace mtm
         // Prints all the events which the given predicate returns true over them, 
         // detailed print if verbose it true and short print if not.
         template <class Predicate>
-        void printSomeEvents(Predicate predicate, const bool verbose) const;
+        void printSomeEvents(Predicate predicate, const bool verbose=false) const;
 
     };
 }
 
 
 template <class Predicate>
-void mtm::Schedule::printSomeEvents(Predicate predicate, const bool verbose) const {
+void mtm::Schedule::printSomeEvents(Predicate predicate, const bool verbose=false) const {
     std::set<BaseEvent*>::iterator iter = events.begin();
     for( ; iter != events.end(); ++iter) 
     {
